@@ -37,23 +37,20 @@ export function SideNav() {
         visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
       }`}
     >
-      <ul className="flex flex-col gap-1">
+      <ul className="flex flex-col gap-1.5">
         {ITEMS.map((it) => {
           const on = active === it.id;
           return (
             <li key={it.id}>
               <a
                 href={`#${it.id}`}
-                className="group flex items-center gap-3 py-2 text-xs uppercase tracking-[0.18em]"
+                className={`block py-1.5 text-[11px] uppercase tracking-[0.18em] transition-colors ${
+                  on
+                    ? "text-foreground font-semibold border-b-2 border-[color:var(--brand-yellow)]"
+                    : "text-muted-foreground border-b-2 border-transparent hover:text-foreground"
+                }`}
               >
-                <span
-                  className={`h-px transition-all ${
-                    on ? "w-10 bg-foreground" : "w-4 bg-foreground/30 group-hover:w-8 group-hover:bg-foreground/60"
-                  }`}
-                />
-                <span className={on ? "text-foreground font-semibold" : "text-muted-foreground"}>
-                  {it.label}
-                </span>
+                {it.label}
               </a>
             </li>
           );
