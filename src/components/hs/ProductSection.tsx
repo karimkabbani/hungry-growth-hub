@@ -149,8 +149,8 @@ function Econ({ k, v, note }: { k: string; v: string; note: string }) {
 function Stat({ n, l }: { n: string; l: string }) {
   return (
     <div>
-      <div className="font-display text-2xl">{n}</div>
-      <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">{l}</div>
+      <div className="font-display text-2xl text-foreground">{n}</div>
+      <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{l}</div>
     </div>
   );
 }
