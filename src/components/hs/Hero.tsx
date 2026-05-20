@@ -1,0 +1,84 @@
+import { useEffect, useState } from "react";
+import heroImg from "@/assets/hero-kitchen.jpg";
+import { StatCounter } from "./StatCounter";
+
+export function Hero() {
+  const [scrollY, setScrollY] = useState(0);
+  useEffect(() => {
+    const onScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <section className="relative min-h-screen w-full overflow-hidden bg-[color:var(--ink)] text-cream">
+      <div
+        className="absolute inset-0 will-change-transform"
+        style={{ transform: `translate3d(0, ${scrollY * 0.35}px, 0)` }}
+      >
+        <img
+          src={heroImg}
+          alt="Saudi restaurant kitchen"
+          className="h-[120%] w-full object-cover opacity-70"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--ink)]/40 via-[color:var(--ink)]/40 to-[color:var(--ink)]" />
+      </div>
+
+      <header className="container-x relative z-10 flex items-center justify-between py-6">
+        <a href="#top" className="flex items-center gap-2">
+          <span className="grid h-9 w-9 place-items-center rounded-md bg-yellow text-ink font-display text-xl">H</span>
+          <span className="font-display text-xl tracking-tight">HungerStation</span>
+          <span className="ml-2 hidden md:inline rounded-full border border-white/20 px-2 py-0.5 text-[10px] uppercase tracking-widest">For Restaurants</span>
+        </a>
+        <nav className="hidden md:flex items-center gap-8 text-sm text-cream/70">
+          <a href="#grow-online" className="hover:text-cream">Products</a>
+          <a href="#roi" className="hover:text-cream">ROI</a>
+          <a href="#stories" className="hover:text-cream">Stories</a>
+          <a href="#plan" className="hover:text-cream">Contact</a>
+        </nav>
+        <a
+          href="#plan"
+          className="rounded-full bg-yellow px-4 py-2 text-sm font-semibold text-ink hover:bg-yellow/90 transition"
+        >
+          Talk to Sales
+        </a>
+      </header>
+
+      <div className="container-x relative z-10 flex min-h-[80vh] flex-col justify-center pb-24 pt-12">
+        <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-3 py-1 text-xs uppercase tracking-[0.22em] text-cream/80 backdrop-blur">
+          <span className="h-1.5 w-1.5 rounded-full bg-yellow" /> Product Guide · 2025
+        </span>
+        <h1 className="font-display text-balance text-[14vw] md:text-[8.5vw] lg:text-[7rem] leading-[0.88] max-w-[18ch]">
+          Your Door<br />to Growth in<br />
+          <span className="text-yellow">Saudi Arabia.</span>
+        </h1>
+        <p className="mt-8 max-w-xl text-lg md:text-xl text-cream/70">
+          Learn how HungerStation helps <span className="text-cream font-semibold">55,000+ restaurant partners</span> grow across 100+ cities — from first listing to nine-figure GMV.
+        </p>
+
+        <div className="mt-10 flex flex-wrap gap-3">
+          <a
+            href="#goals"
+            className="group inline-flex items-center gap-2 rounded-full bg-yellow px-6 py-3.5 text-sm font-semibold text-ink hover:bg-yellow/90 transition"
+          >
+            See How It Works
+            <span className="transition group-hover:translate-x-0.5">→</span>
+          </a>
+          <a
+            href="#plan"
+            className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-6 py-3.5 text-sm font-semibold text-cream hover:bg-cream/10 transition"
+          >
+            Talk to Sales
+          </a>
+        </div>
+      </div>
+
+      <div className="container-x relative z-10 grid grid-cols-2 gap-8 border-t border-cream/15 py-10 md:grid-cols-4">
+        <StatCounter value={9_000_000} suffix="M+" label="Customers" />
+        <StatCounter value={100} suffix="+" label="Cities" />
+        <StatCounter value={55_000} suffix="+" label="Restaurant Partners" />
+        <StatCounter value={30_000} suffix="+" label="Brands" />
+      </div>
+    </section>
+  );
+}
