@@ -94,19 +94,20 @@ export function GrowOnlineSection() {
             <div className="flex flex-col items-center justify-between gap-12">
               <PhoneMockup />
 
-              <div className="w-full rounded-3xl bg-yellow p-6 text-ink">
-                <Quote className="h-6 w-6 opacity-60" />
-                <p className="mt-3 font-display text-xl leading-tight text-balance">
+              <div className="w-full rounded-3xl bg-card border p-6 shadow-sm">
+                <div className="h-1 w-10 rounded-full bg-[color:var(--brand-yellow)]" />
+                <Quote className="h-5 w-5 mt-4 text-muted-foreground" />
+                <p className="mt-3 font-display text-xl leading-tight text-balance text-foreground">
                   "We went from one branch to seven in 18 months. HungerStation is half our revenue."
                 </p>
                 <div className="mt-6 flex items-center gap-4">
-                  <img src={vendor} alt="Vendor portrait" loading="lazy" className="h-12 w-12 rounded-full object-cover ring-2 ring-ink/20" />
+                  <img src={vendor} alt="Vendor portrait" loading="lazy" className="h-12 w-12 rounded-full object-cover" />
                   <div>
                     <div className="font-semibold">Ahmed Al-Saud</div>
-                    <div className="text-xs opacity-70">Owner · Bayt Mansaf · Riyadh</div>
+                    <div className="text-xs text-muted-foreground">Owner · Bayt Mansaf · Riyadh</div>
                   </div>
                 </div>
-                <div className="mt-6 grid grid-cols-3 gap-3 border-t border-ink/15 pt-5">
+                <div className="mt-6 grid grid-cols-3 gap-3 border-t pt-5">
                   <Stat n="+312%" l="Orders" />
                   <Stat n="4.9★" l="Rating" />
                   <Stat n="7" l="Branches" />
