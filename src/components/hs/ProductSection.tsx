@@ -34,7 +34,7 @@ export function GrowOnlineSection() {
         {/* Featured product: Delivery Service */}
         <article
           className={`relative overflow-hidden rounded-[2rem] border bg-card p-8 md:p-14 transition-all duration-500 ${
-            highlight ? "ring-2 ring-yellow ring-offset-4 ring-offset-background" : ""
+            highlight ? "ring-1 ring-[color:var(--brand-yellow)] shadow-xl" : "shadow-sm"
           }`}
         >
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
