@@ -79,7 +79,7 @@ export function BuildYourPlan() {
           <div>
             <div className="text-xs uppercase tracking-[0.22em] text-cream/60">08 — Build your plan</div>
             <h2 className="mt-3 font-display text-5xl md:text-7xl text-balance">
-              Your HungerStation<br /><span className="text-yellow">growth stack.</span>
+              Your HungerStation<br /><span className="accent-underline">growth stack.</span>
             </h2>
             <p className="mt-5 max-w-lg text-lg text-cream/70">
               Based on what you explored, here's what we'd recommend you launch first.
