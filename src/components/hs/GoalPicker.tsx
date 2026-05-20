@@ -50,28 +50,26 @@ export function GoalPicker() {
               onClick={() => pick(g)}
               className={`group relative overflow-hidden rounded-3xl border p-7 text-left transition-all duration-500 ${
                 active
-                  ? "border-ink bg-ink text-cream shadow-2xl shadow-black/20 -translate-y-1"
-                  : "border-border bg-card hover:-translate-y-1 hover:border-ink/30 hover:shadow-xl"
+                  ? "border-foreground bg-card shadow-xl -translate-y-1 ring-1 ring-[color:var(--brand-yellow)]"
+                  : "border-border bg-card hover:-translate-y-1 hover:border-foreground/30 hover:shadow-lg hover:ring-1 hover:ring-[color:var(--brand-yellow)]"
               }`}
               style={{ animationDelay: `${i * 80}ms` }}
             >
-              <div
-                className={`absolute -right-12 -top-12 h-40 w-40 rounded-full transition-opacity ${
-                  active ? "opacity-100 bg-yellow" : "opacity-0 group-hover:opacity-60 bg-yellow"
-                }`}
-              />
               <div className="relative flex h-full flex-col gap-10">
-                <Icon className={`h-7 w-7 ${active ? "text-yellow" : "text-foreground"}`} strokeWidth={1.5} />
+                <div className="flex items-center justify-between">
+                  <Icon className="h-7 w-7 text-foreground" strokeWidth={1.5} />
+                  {active && <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)]" />}
+                </div>
                 <div>
-                  <div className={`text-xs uppercase tracking-[0.18em] ${active ? "text-cream/60" : "text-muted-foreground"}`}>
+                  <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                     Goal · 0{i + 1}
                   </div>
-                  <h3 className="mt-2 font-display text-2xl md:text-3xl">{GOAL_META[g].label}</h3>
-                  <p className={`mt-3 text-sm ${active ? "text-cream/70" : "text-muted-foreground"}`}>
+                  <h3 className="mt-2 font-display text-2xl md:text-3xl text-foreground">{GOAL_META[g].label}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground">
                     {COPY[g]}
                   </p>
                 </div>
-                <div className={`mt-auto inline-flex items-center gap-2 text-sm font-semibold ${active ? "text-yellow" : "text-foreground"}`}>
+                <div className={`mt-auto inline-flex items-center gap-2 text-sm font-semibold ${active ? "text-blue" : "text-foreground"}`}>
                   {active ? "Selected" : "Explore"} <span aria-hidden>→</span>
                 </div>
               </div>
