@@ -40,7 +40,7 @@ export function GrowOnlineSection() {
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
             <div>
               <div className="flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                <span className="grid h-7 w-7 place-items-center rounded-full bg-yellow text-ink font-display">1</span>
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-blue text-white font-display text-xs">1</span>
                 Flagship Product
               </div>
               <h3 className="mt-6 font-display text-5xl md:text-7xl text-balance">Delivery Service.</h3>
