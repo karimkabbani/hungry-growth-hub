@@ -52,11 +52,11 @@ export function StatCounter({ value, suffix = "", label, duration = 1800 }: Prop
 
   return (
     <div ref={ref} className="flex flex-col gap-2">
-      <div className="font-display text-5xl md:text-7xl text-foreground">
+      <div className="font-display text-5xl md:text-7xl">
         {formatted}
-        <span className="text-magenta">{suffix}</span>
+        <span className="text-[color:var(--brand-yellow)]">{suffix}</span>
       </div>
-      <div className="text-xs md:text-sm uppercase tracking-[0.18em] text-muted-foreground">
+      <div className="text-xs md:text-sm uppercase tracking-[0.18em] opacity-70">
         {label}
       </div>
     </div>
