@@ -146,8 +146,8 @@ export function BuildYourPlan() {
                 <div className="text-xs text-cream/70">Senior Partner Manager · KSA</div>
               </div>
               <div className="hidden sm:flex flex-col gap-1 text-xs text-cream/80">
-                <a href="tel:+966500000000" className="flex items-center gap-2 hover:text-yellow"><Phone className="h-3 w-3" /> +966 50 000 0000</a>
-                <a href="mailto:partners@hungerstation.com" className="flex items-center gap-2 hover:text-yellow"><Mail className="h-3 w-3" /> partners@hungerstation.com</a>
+                <a href="tel:+966500000000" className="flex items-center gap-2 hover:text-yellow"><Phone className="h-3 w-3" /><span>+966 50 000 0000</span></a>
+                <a href="mailto:partners@hungerstation.com" className="flex items-center gap-2 hover:text-yellow"><Mail className="h-3 w-3" /><span>partners@hungerstation.com</span></a>
               </div>
             </div>
           </div>
