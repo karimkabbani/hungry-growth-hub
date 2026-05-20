@@ -171,26 +171,26 @@ export function RoiCalculator() {
         .hs-slider {
           -webkit-appearance: none;
           width: 100%;
-          height: 6px;
-          background: color-mix(in oklab, var(--ink) 12%, transparent);
+          height: 4px;
+          background: #E5E7EB;
           border-radius: 999px;
           outline: none;
         }
         .hs-slider::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
-          height: 26px; width: 26px;
+          height: 22px; width: 22px;
           border-radius: 999px;
-          background: var(--brand-yellow);
-          border: 3px solid var(--ink);
+          background: var(--brand-blue);
+          border: 3px solid #FFFFFF;
           cursor: grab;
-          box-shadow: 0 6px 16px color-mix(in oklab, var(--ink) 25%, transparent);
+          box-shadow: 0 4px 14px rgba(0, 118, 255, 0.35);
         }
         .hs-slider::-moz-range-thumb {
-          height: 26px; width: 26px;
+          height: 22px; width: 22px;
           border-radius: 999px;
-          background: var(--brand-yellow);
-          border: 3px solid var(--ink);
+          background: var(--brand-blue);
+          border: 3px solid #FFFFFF;
           cursor: grab;
         }
       `}</style>
