@@ -50,7 +50,7 @@ export function Hero() {
         </span>
         <h1 className="font-display text-balance text-[14vw] md:text-[8.5vw] lg:text-[7rem] leading-[0.88] max-w-[18ch]">
           Your Door<br />to Growth in<br />
-          <span className="text-yellow">Saudi Arabia.</span>
+          <span className="accent-underline">Saudi Arabia.</span>
         </h1>
         <p className="mt-8 max-w-xl text-lg md:text-xl text-cream/70">
           Learn how HungerStation helps <span className="text-cream font-semibold">55,000+ restaurant partners</span> grow across 100+ cities — from first listing to nine-figure GMV.
