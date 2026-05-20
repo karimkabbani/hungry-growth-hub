@@ -119,14 +119,14 @@ export function BuildYourPlan() {
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 rounded-full bg-ink text-cream font-semibold py-3.5 hover:bg-ink/90 transition"
+                  className="flex-1 rounded-full bg-blue text-white font-semibold py-3.5 hover:bg-blue-hover transition"
                 >
                   {submitted ? "✓ Submitted" : "Get started"}
                 </button>
                 <button
                   type="button"
                   onClick={downloadPdf}
-                  className="flex-1 rounded-full bg-yellow text-ink font-semibold py-3.5 hover:bg-yellow/90 transition"
+                  className="flex-1 rounded-full bg-white text-foreground border border-border font-semibold py-3.5 hover:border-foreground/30 transition"
                 >
                   Download my plan
                 </button>
