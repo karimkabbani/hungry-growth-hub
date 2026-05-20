@@ -124,9 +124,10 @@ export function FinancingSection() {
         </div>
         <div className="relative">
           <img src={rider} alt="HungerStation rider" loading="lazy" className="rounded-3xl w-full aspect-[4/5] object-cover" />
-          <div className="absolute -bottom-6 -left-6 bg-yellow text-ink rounded-2xl p-5 max-w-[240px] shadow-xl">
-            <div className="font-display text-3xl">SAR 180K</div>
-            <div className="text-xs uppercase tracking-[0.18em]">Example unlocked for a Riyadh fast-casual</div>
+          <div className="absolute -bottom-6 -left-6 bg-card border rounded-2xl p-5 max-w-[240px] shadow-xl">
+            <div className="h-1 w-8 rounded-full bg-[color:var(--brand-yellow)]" />
+            <div className="mt-3 font-display text-3xl text-foreground">SAR 180K</div>
+            <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-1">Example unlocked for a Riyadh fast-casual</div>
           </div>
         </div>
       </div>

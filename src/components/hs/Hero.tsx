@@ -38,7 +38,7 @@ export function Hero() {
         </nav>
         <a
           href="#plan"
-          className="rounded-full bg-yellow px-4 py-2 text-sm font-semibold text-ink hover:bg-yellow/90 transition"
+          className="rounded-full bg-blue px-4 py-2 text-sm font-semibold text-white hover:bg-blue-hover transition"
         >
           Talk to Sales
         </a>
@@ -50,7 +50,7 @@ export function Hero() {
         </span>
         <h1 className="font-display text-balance text-[14vw] md:text-[8.5vw] lg:text-[7rem] leading-[0.88] max-w-[18ch]">
           Your Door<br />to Growth in<br />
-          <span className="text-yellow">Saudi Arabia.</span>
+          <span className="accent-underline">Saudi Arabia.</span>
         </h1>
         <p className="mt-8 max-w-xl text-lg md:text-xl text-cream/70">
           Learn how HungerStation helps <span className="text-cream font-semibold">55,000+ restaurant partners</span> grow across 100+ cities — from first listing to nine-figure GMV.
@@ -59,7 +59,7 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap gap-3">
           <a
             href="#goals"
-            className="group inline-flex items-center gap-2 rounded-full bg-yellow px-6 py-3.5 text-sm font-semibold text-ink hover:bg-yellow/90 transition"
+            className="group inline-flex items-center gap-2 rounded-full bg-blue px-6 py-3.5 text-sm font-semibold text-white hover:bg-blue-hover transition"
           >
             See How It Works
             <span className="transition group-hover:translate-x-0.5">→</span>

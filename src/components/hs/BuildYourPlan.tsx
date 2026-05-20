@@ -79,7 +79,7 @@ export function BuildYourPlan() {
           <div>
             <div className="text-xs uppercase tracking-[0.22em] text-cream/60">08 — Build your plan</div>
             <h2 className="mt-3 font-display text-5xl md:text-7xl text-balance">
-              Your HungerStation<br /><span className="text-yellow">growth stack.</span>
+              Your HungerStation<br /><span className="accent-underline">growth stack.</span>
             </h2>
             <p className="mt-5 max-w-lg text-lg text-cream/70">
               Based on what you explored, here's what we'd recommend you launch first.
@@ -119,14 +119,14 @@ export function BuildYourPlan() {
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 rounded-full bg-ink text-cream font-semibold py-3.5 hover:bg-ink/90 transition"
+                  className="flex-1 rounded-full bg-blue text-white font-semibold py-3.5 hover:bg-blue-hover transition"
                 >
                   {submitted ? "✓ Submitted" : "Get started"}
                 </button>
                 <button
                   type="button"
                   onClick={downloadPdf}
-                  className="flex-1 rounded-full bg-yellow text-ink font-semibold py-3.5 hover:bg-yellow/90 transition"
+                  className="flex-1 rounded-full bg-white text-foreground border border-border font-semibold py-3.5 hover:border-foreground/30 transition"
                 >
                   Download my plan
                 </button>
@@ -146,8 +146,8 @@ export function BuildYourPlan() {
                 <div className="text-xs text-cream/70">Senior Partner Manager · KSA</div>
               </div>
               <div className="hidden sm:flex flex-col gap-1 text-xs text-cream/80">
-                <a href="tel:+966500000000" className="flex items-center gap-2 hover:text-yellow"><Phone className="h-3 w-3" /> +966 50 000 0000</a>
-                <a href="mailto:partners@hungerstation.com" className="flex items-center gap-2 hover:text-yellow"><Mail className="h-3 w-3" /> partners@hungerstation.com</a>
+                <a href="tel:+966500000000" className="flex items-center gap-2 hover:text-yellow"><Phone className="h-3 w-3" /><span>+966 50 000 0000</span></a>
+                <a href="mailto:partners@hungerstation.com" className="flex items-center gap-2 hover:text-yellow"><Mail className="h-3 w-3" /><span>partners@hungerstation.com</span></a>
               </div>
             </div>
           </div>

@@ -142,8 +142,8 @@ export function RoiCalculator() {
 
               <div className="mt-10 border-t border-cream/15 pt-8">
                 <div className="text-xs uppercase tracking-[0.22em] text-cream/60">Projected GMV gain</div>
-                <div className="mt-3 font-display text-6xl md:text-8xl text-yellow leading-none">
-                  SAR {sar(gmvDisp)}
+                <div className="mt-3 font-display text-6xl md:text-8xl text-white leading-none">
+                  <span className="accent-underline">SAR {sar(gmvDisp)}</span>
                 </div>
               </div>
 
@@ -156,9 +156,9 @@ export function RoiCalculator() {
                 <a
                   href="#plan"
                   onClick={() => markEngaged("roi-cta")}
-                  className="rounded-2xl bg-yellow text-ink p-5 flex flex-col justify-between hover:bg-yellow/90 transition"
+                  className="rounded-2xl bg-blue text-white p-5 flex flex-col justify-between hover:bg-blue-hover transition"
                 >
-                  <div className="text-xs uppercase tracking-[0.22em] opacity-70">Next step</div>
+                  <div className="text-xs uppercase tracking-[0.22em] opacity-80">Next step</div>
                   <div className="mt-6 font-display text-2xl">Talk to sales →</div>
                 </a>
               </div>
@@ -171,26 +171,26 @@ export function RoiCalculator() {
         .hs-slider {
           -webkit-appearance: none;
           width: 100%;
-          height: 6px;
-          background: color-mix(in oklab, var(--ink) 12%, transparent);
+          height: 4px;
+          background: #E5E7EB;
           border-radius: 999px;
           outline: none;
         }
         .hs-slider::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
-          height: 26px; width: 26px;
+          height: 22px; width: 22px;
           border-radius: 999px;
-          background: var(--brand-yellow);
-          border: 3px solid var(--ink);
+          background: var(--brand-blue);
+          border: 3px solid #FFFFFF;
           cursor: grab;
-          box-shadow: 0 6px 16px color-mix(in oklab, var(--ink) 25%, transparent);
+          box-shadow: 0 4px 14px rgba(0, 118, 255, 0.35);
         }
         .hs-slider::-moz-range-thumb {
-          height: 26px; width: 26px;
+          height: 22px; width: 22px;
           border-radius: 999px;
-          background: var(--brand-yellow);
-          border: 3px solid var(--ink);
+          background: var(--brand-blue);
+          border: 3px solid #FFFFFF;
           cursor: grab;
         }
       `}</style>
