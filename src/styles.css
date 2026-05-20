@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Archivo Black", "Anton", system-ui, sans-serif;
+  --font-display: "Manrope", "Inter Tight", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -34,50 +34,59 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-cream: var(--cream);
-  --color-ink: var(--ink);
-  --color-magenta: var(--magenta);
+
+  /* Brand-system tokens (V4) — referenced via Tailwind utilities */
+  --color-cream: var(--cream);            /* white surface */
+  --color-ink: var(--ink);                /* blue-gray-900 */
+  --color-magenta: var(--magenta);        /* repurposed → blue-600 accent */
   --color-magenta-foreground: var(--magenta-foreground);
-  --color-yellow: var(--brand-yellow);
+  --color-yellow: var(--brand-yellow);    /* yellow-500 small accent */
+  --color-blue: var(--brand-blue);
+  --color-blue-hover: var(--brand-blue-hover);
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 1rem;
 
-  /* HungerStation brand */
-  --brand-yellow: oklch(0.91 0.18 95);          /* #FFD60A-ish */
-  --ink: oklch(0.22 0.04 50);                    /* #3B2A1A charcoal-brown */
-  --cream: oklch(0.975 0.025 95);                /* #FFF8E7 warm cream */
-  --magenta: oklch(0.58 0.22 0);                 /* #E91E63 accent */
-  --magenta-foreground: oklch(1 0 0);
+  /* HungerStation V4 brand tokens
+     70% neutral · 20% blue · 10% yellow accent */
+  --brand-yellow: #FFC400;            /* Yellow/500 — accents only */
+  --brand-yellow-soft: #FEFDC8;       /* Yellow/100 */
+  --brand-blue: #0076FF;              /* Blue/600 — primary interactive */
+  --brand-blue-hover: #0057FF;        /* Blue/700 */
+  --ink: #1D2539;                     /* Blue-Gray/900 — primary text & dark surfaces */
+  --blue-gray-600: #4B5675;           /* Blue-Gray/600 — secondary text */
+  --cream: #FFFFFF;                   /* white — cards / elevated surfaces */
+  --magenta: #0076FF;                 /* repurposed: alias to blue */
+  --magenta-foreground: #FFFFFF;
 
-  --background: var(--cream);
-  --foreground: var(--ink);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--ink);
-  --popover: oklch(1 0 0);
-  --popover-foreground: var(--ink);
-  --primary: var(--ink);
-  --primary-foreground: var(--cream);
-  --secondary: oklch(0.94 0.02 90);
-  --secondary-foreground: var(--ink);
-  --muted: oklch(0.94 0.02 90);
-  --muted-foreground: oklch(0.45 0.03 60);
-  --accent: var(--brand-yellow);
-  --accent-foreground: var(--ink);
-  --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.88 0.02 80);
-  --input: oklch(0.88 0.02 80);
-  --ring: var(--brand-yellow);
+  --background: #FAFAFA;              /* Gray/100 */
+  --foreground: #1D2539;
+  --card: #FFFFFF;
+  --card-foreground: #1D2539;
+  --popover: #FFFFFF;
+  --popover-foreground: #1D2539;
+  --primary: #0076FF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F5F5;               /* Gray/200 */
+  --secondary-foreground: #1D2539;
+  --muted: #F5F5F5;
+  --muted-foreground: #4B5675;        /* Blue-Gray/600 */
+  --accent: #FEFDC8;                  /* Yellow/100 soft */
+  --accent-foreground: #1D2539;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #ECEEF3;                  /* hairline ~ Gray/200 */
+  --input: #ECEEF3;
+  --ring: #FFC400;                    /* focus ring = yellow */
 }
 
 .dark {
   --background: var(--ink);
-  --foreground: var(--cream);
-  --card: oklch(0.27 0.03 50);
-  --card-foreground: var(--cream);
-  --border: oklch(1 0 0 / 12%);
+  --foreground: #FFFFFF;
+  --card: #232C45;
+  --card-foreground: #FFFFFF;
+  --border: rgba(255,255,255,0.12);
 }
 
 @layer base {
@@ -94,17 +103,15 @@
 }
 
 @layer utilities {
-  .font-display { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 0.9; }
+  .font-display { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.025em; line-height: 0.92; }
   .text-balance { text-wrap: balance; }
   .container-x { padding-left: clamp(1rem, 4vw, 4rem); padding-right: clamp(1rem, 4vw, 4rem); }
-  .grain::before {
-    content: "";
-    position: absolute; inset: 0;
-    background-image: radial-gradient(rgba(0,0,0,0.18) 1px, transparent 1px);
-    background-size: 3px 3px;
-    opacity: 0.08;
-    pointer-events: none;
-    mix-blend-mode: multiply;
+
+  /* yellow accent underline for stats and key emphasis */
+  .accent-underline {
+    background-image: linear-gradient(transparent 78%, var(--brand-yellow) 78%, var(--brand-yellow) 92%, transparent 92%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 
   @keyframes hs-fade-up {
