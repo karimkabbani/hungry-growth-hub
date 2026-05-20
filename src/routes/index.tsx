@@ -1,26 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HsProvider } from "@/lib/hs-context";
+import { Hero } from "@/components/hs/Hero";
+import { GoalPicker } from "@/components/hs/GoalPicker";
+import { SideNav } from "@/components/hs/SideNav";
+import { GrowOnlineSection } from "@/components/hs/ProductSection";
+import {
+  OrderValueSection,
+  AttractSection,
+  FinancingSection,
+  OpsSection,
+} from "@/components/hs/SkeletonSections";
+import { RoiCalculator } from "@/components/hs/RoiCalculator";
+import { VendorStories } from "@/components/hs/VendorStories";
+import { BuildYourPlan } from "@/components/hs/BuildYourPlan";
+import { StickyCta } from "@/components/hs/StickyCta";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "HungerStation for Restaurants — Your Door to Growth in Saudi Arabia" },
+      {
+        name: "description",
+        content:
+          "The 2025 product guide for HungerStation restaurant partners. Delivery, ads, financing and ops — engineered for 9M+ Saudi customers across 100+ cities.",
+      },
+      { property: "og:title", content: "HungerStation for Restaurants — 2025 Product Guide" },
+      { property: "og:description", content: "How 55,000+ KSA restaurant partners grow on HungerStation." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <HsProvider>
+      <main id="top" className="relative">
+        <Hero />
+        <SideNav />
+        <GoalPicker />
+        <GrowOnlineSection />
+        <OrderValueSection />
+        <AttractSection />
+        <FinancingSection />
+        <OpsSection />
+        <RoiCalculator />
+        <VendorStories />
+        <BuildYourPlan />
+        <StickyCta />
+      </main>
+    </HsProvider>
+  );
 }
