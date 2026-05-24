@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-kitchen.jpg";
 import hsLogo from "@/assets/hungerstation-logo.png";
+import phoneYellow from "@/assets/hs-phone-yellow.gif";
 import { StatCounter } from "./StatCounter";
 
 export function Hero() {
@@ -48,32 +49,48 @@ export function Hero() {
         </a>
       </header>
 
-      <div className="container-x relative z-10 flex min-h-[80vh] flex-col justify-center pb-24 pt-12">
-        <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-3 py-1 text-xs uppercase tracking-[0.22em] text-cream/80 backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full bg-yellow" /> Product Guide · 2025
-        </span>
-        <h1 className="font-display text-balance text-[14vw] md:text-[8.5vw] lg:text-[7rem] leading-[0.88] max-w-[18ch]">
-          Your Door<br />to Growth in<br />
-          <span className="accent-underline">Saudi Arabia.</span>
-        </h1>
-        <p className="mt-8 max-w-xl text-lg md:text-xl text-cream/70">
-          Learn how HungerStation helps <span className="text-cream font-semibold">55,000+ restaurant partners</span> grow across 100+ cities — from first listing to nine-figure GMV.
-        </p>
+      <div className="container-x relative z-10 grid min-h-[80vh] grid-cols-1 items-center gap-10 pb-24 pt-12 md:grid-cols-12">
+        <div className="md:col-span-7 flex flex-col justify-center">
+          <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-3 py-1 text-xs uppercase tracking-[0.22em] text-cream/80 backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-yellow" /> Product Guide · 2025
+          </span>
+          <h1 className="font-display text-balance text-[14vw] md:text-[7.5vw] lg:text-[6.25rem] leading-[0.88] max-w-[18ch]">
+            Your Door<br />to Growth in<br />
+            <span className="accent-underline">Saudi Arabia.</span>
+          </h1>
+          <p className="mt-8 max-w-xl text-lg md:text-xl text-cream/70">
+            Saudi Arabia's largest food delivery platform — and a lot more. <span className="text-cream font-semibold">13 years</span> building it, <span className="text-cream font-semibold">9 million customers</span> using it, <span className="text-cream font-semibold">55,000 restaurants</span> growing on it.
+          </p>
 
-        <div className="mt-10 flex flex-wrap gap-3">
-          <a
-            href="#goals"
-            className="group inline-flex items-center gap-2 rounded-full bg-blue px-6 py-3.5 text-sm font-semibold text-white hover:bg-blue-hover transition"
-          >
-            See How It Works
-            <span className="transition group-hover:translate-x-0.5">→</span>
-          </a>
-          <a
-            href="#plan"
-            className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-6 py-3.5 text-sm font-semibold text-cream hover:bg-cream/10 transition"
-          >
-            Talk to Sales
-          </a>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <a
+              href="#goals"
+              className="group inline-flex items-center gap-2 rounded-full bg-blue px-6 py-3.5 text-sm font-semibold text-white hover:bg-blue-hover transition"
+            >
+              See How It Works
+              <span className="transition group-hover:translate-x-0.5">→</span>
+            </a>
+            <a
+              href="#plan"
+              className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-6 py-3.5 text-sm font-semibold text-cream hover:bg-cream/10 transition"
+            >
+              Talk to Sales
+            </a>
+          </div>
+        </div>
+
+        <div className="md:col-span-5 flex justify-center md:justify-end">
+          <div className="relative w-[60vw] max-w-[280px] md:w-full md:max-w-[440px] rotate-[6deg] md:rotate-[8deg]">
+            <div
+              className="absolute -inset-10 -z-10 rounded-full opacity-50 blur-3xl"
+              style={{ background: "radial-gradient(closest-side, var(--brand-yellow), transparent)" }}
+            />
+            <img
+              src={phoneYellow}
+              alt="HungerStation app — Made with love in Al Khobar"
+              className="w-full h-auto drop-shadow-2xl"
+            />
+          </div>
         </div>
       </div>
 
