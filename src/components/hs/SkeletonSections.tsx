@@ -1,5 +1,6 @@
 import { SectionHeader } from "./ProductSection";
 import { useHs, type Goal } from "@/lib/hs-context";
+import { Banknote, ShieldCheck, TrendingUp, FileSearch, Wallet, Repeat, Store, Flame, Sparkles } from "lucide-react";
 import foodSpread from "@/assets/food-spread.jpg";
 import rider from "@/assets/delivery-rider.jpg";
 
