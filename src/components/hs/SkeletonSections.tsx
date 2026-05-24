@@ -32,16 +32,21 @@ function isOn(goal: Goal | null, target: Goal) {
 const AOV_FLAGSHIP: ProductCardData = {
   name: "RDF / HPlus",
   subhead: "Free-delivery membership that locks in your best customers.",
-  body: null,
+  body: "An always-on membership. Customers pay a flat monthly fee for unlimited free delivery on participating restaurants — driving higher order frequency and basket size for partner brands.",
+  stats: [
+    { value: "3×", label: "order frequency" },
+    { value: "+27%", label: "basket size" },
+    { value: "+312%", label: "monthly orders (case)" },
+  ],
   benefits: ["3× order frequency", "+27% basket size", "Lower CAC per repeat"],
   testimonial: {
     quote:
       "A leading Riyadh Arabic QSR saw +47% monthly order frequency in the first 90 days after enabling HPlus.",
   },
   economics: [
-    { label: "Pricing", value: "Revenue share", note: "no upfront" },
-    { label: "Expected lift", value: "+312%", note: "orders vs non-members" },
-    { label: "Payout cadence", value: "[Payout cadence]" },
+    { label: "Pricing model", value: "Vendor-funded discount" },
+    { label: "Minimum spend", value: "[NEEDS Sherif]" },
+    { label: "Expected lift", value: "[NEEDS Sherif]" },
   ],
 };
 
@@ -49,57 +54,56 @@ const AOV_SECONDARY: ProductCardData[] = [
   {
     name: "Super Saver",
     subhead: "Smart price drops on selected items to drive volume.",
-    body: null,
+    stats: [{ value: "+18%", label: "units per order" }],
     benefits: ["+18% units per order", "Margin-safe items only", "Auto-pricing engine"],
     testimonial: {
       quote: "A Jeddah burger chain lifted weekday AOV by 19% after enabling Super Saver on its top 10 SKUs.",
     },
     economics: [
-      { label: "Pricing", value: "Discount funded 50/50" },
-      { label: "Expected lift", value: "+22%", note: "AOV uplift" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Discount funded 50/50" },
+      { label: "Expected lift", value: "+22% AOV" },
     ],
   },
   {
     name: "Full Menu Discounts",
     subhead: "Site-wide promo banners across the app.",
-    body: null,
+    stats: [{ value: "+34%", label: "weekend orders MoM (case)" }],
     benefits: ["Maximum reach", "Tier-based discounting", "Great for new launches"],
     testimonial: {
       quote: "A Dammam shawarma group ran a 20%-off menu weekend and saw +34% weekend orders MoM.",
     },
     economics: [
-      { label: "Pricing", value: "Vendor-funded" },
-      { label: "Expected lift", value: "+34%", note: "weekend orders" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Vendor-funded" },
+      { label: "Expected lift", value: "+34% weekend orders" },
     ],
   },
   {
     name: "Meal for One",
     subhead: "Curated single-portion bundles for solo diners.",
-    body: null,
+    stats: [{ value: "+SAR 12", label: "AOV uplift" }],
     benefits: ["+SAR 12 AOV", "Targets lunch crowd", "Pre-built bundles"],
     testimonial: {
       quote: "A Khobar café added 4 Meal-for-One bundles and lifted weekday lunch AOV by 15% in 6 weeks.",
     },
     economics: [
-      { label: "Pricing", value: "Bundle pricing", note: "no fee" },
-      { label: "Expected lift", value: "+15%", note: "weekday lunch AOV" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Bundle pricing" },
+      { label: "Expected lift", value: "+15% lunch AOV" },
     ],
   },
   {
     name: "HRewards",
     subhead: "Stamp-card loyalty. Repeat customers get rewards on us.",
-    body: null,
+    stats: [
+      { value: "+2.1×", label: "60-day repeat rate" },
+      { value: "0", label: "vendor cost" },
+    ],
     benefits: ["+2.1× repeat rate", "HungerStation-funded", "Zero setup"],
     testimonial: {
       quote: "A Riyadh dessert brand doubled its 60-day repeat rate after joining HRewards in its first month.",
     },
     economics: [
-      { label: "Pricing", value: "Funded by HungerStation" },
-      { label: "Expected lift", value: "+2.1×", note: "60-day repeat" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Funded by HungerStation" },
+      { label: "Vendor cost", value: "SAR 0" },
     ],
   },
 ];
