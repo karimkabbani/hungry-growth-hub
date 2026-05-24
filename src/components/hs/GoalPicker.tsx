@@ -1,17 +1,19 @@
-import { ShoppingBag, Users, TrendingUp, Settings } from "lucide-react";
+import { ShoppingBag, Users, TrendingUp, Settings, Banknote } from "lucide-react";
 import { GOAL_META, useHs, type Goal } from "@/lib/hs-context";
 
 const ICONS: Record<Goal, typeof ShoppingBag> = {
   online: ShoppingBag,
-  newcustomers: Users,
   aov: TrendingUp,
+  newcustomers: Users,
+  financing: Banknote,
   ops: Settings,
 };
 
 const COPY: Record<Goal, string> = {
   online: "Get listed, take orders, and ship across 100+ KSA cities.",
-  newcustomers: "Run paid placements, search ads and FlashDeals to fill your funnel.",
   aov: "Push average ticket with HPlus, Super Saver and loyalty.",
+  newcustomers: "Run paid placements, search ads and FlashDeals to fill your funnel.",
+  financing: "Unlock upfront cash with Mofawter — repaid as you sell.",
   ops: "Cut prep time and stockouts with POS-integrated tools.",
 };
 
