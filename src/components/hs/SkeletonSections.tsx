@@ -14,15 +14,7 @@ function ProductGrid({ items, highlight }: { items: { name: string; pitch: strin
             highlight ? "ring-2 ring-yellow/40" : ""
           }`}
         >
-          <div className="flex items-start justify-between">
-            <span className="font-display text-xs text-muted-foreground">0{i + 1}</span>
-            {p.tag && (
-              <span className="rounded-full bg-magenta/10 text-magenta px-2 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
-                {p.tag}
-              </span>
-            )}
-          </div>
-          <h4 className="mt-4 font-display text-2xl md:text-3xl">{p.name}</h4>
+          <h4 className="font-display text-2xl md:text-3xl">{p.name}</h4>
           <p className="mt-2 text-sm text-muted-foreground">{p.pitch}</p>
           <div className="mt-6 text-sm font-semibold underline-offset-4 decoration-yellow decoration-4 group-hover:underline">
             Learn more →
@@ -144,16 +136,7 @@ function AovHero({ p, highlight }: { p: AovProduct; highlight?: boolean }) {
     >
       <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
         <div>
-          <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-blue text-white font-display text-xs">{p.n}</span>
-            Flagship · Loyalty
-            {p.tag && (
-              <span className="rounded-full bg-[color:var(--brand-yellow)] text-ink px-2.5 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
-                {p.tag}
-              </span>
-            )}
-          </div>
-          <h3 className="mt-6 font-display text-5xl md:text-7xl text-balance">{p.name}.</h3>
+          <h3 className="font-display text-5xl md:text-7xl text-balance">{p.name}.</h3>
           <p className="mt-4 max-w-lg text-lg text-muted-foreground">{p.tagline}</p>
 
           <div className="mt-8 flex flex-wrap gap-2">
@@ -207,16 +190,7 @@ function AovHero({ p, highlight }: { p: AovProduct; highlight?: boolean }) {
 function AovCard({ p }: { p: AovProduct }) {
   return (
     <article className="group flex flex-col rounded-3xl border bg-card p-8 transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="flex items-start justify-between">
-        <span className="font-display text-xs text-muted-foreground">{p.n}</span>
-        {p.tag && (
-          <span className="rounded-full bg-[color:var(--brand-yellow)] text-ink px-2.5 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
-            {p.tag}
-          </span>
-        )}
-      </div>
-
-      <h3 className="mt-5 font-display text-3xl md:text-4xl text-balance">{p.name}</h3>
+      <h3 className="font-display text-3xl md:text-4xl text-balance">{p.name}</h3>
       <p className="mt-3 text-muted-foreground">{p.tagline}</p>
 
       <div className="mt-6 flex flex-wrap gap-2">
@@ -414,16 +388,7 @@ function AdCard({ p, featured }: { p: AdProduct; featured?: boolean }) {
         featured ? "md:p-10" : ""
       }`}
     >
-      <div className="flex items-start justify-between">
-        <span className="font-display text-xs text-muted-foreground">{p.n}</span>
-        {p.tag && (
-          <span className="rounded-full bg-[color:var(--brand-yellow)] text-ink px-2.5 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
-            {p.tag}
-          </span>
-        )}
-      </div>
-
-      <h3 className={`mt-5 font-display text-balance text-foreground ${featured ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl"}`}>
+      <h3 className={`font-display text-balance text-foreground ${featured ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl"}`}>
         {p.name}
       </h3>
       <p className="mt-3 max-w-md text-muted-foreground">{p.tagline}</p>
@@ -722,12 +687,9 @@ export function OpsSection() {
 function OpsCard({ p }: { p: OpsProduct }) {
   return (
     <article className="group flex flex-col rounded-3xl border bg-card p-8 transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="flex items-start justify-between">
-        <span className="grid h-11 w-11 place-items-center rounded-2xl bg-ink text-cream">
-          <p.icon className="h-5 w-5" strokeWidth={1.8} />
-        </span>
-        <span className="font-display text-xs text-muted-foreground">{p.n}</span>
-      </div>
+      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-ink text-cream">
+        <p.icon className="h-5 w-5" strokeWidth={1.8} />
+      </span>
 
       <h3 className="mt-6 font-display text-2xl md:text-3xl text-foreground">{p.name}</h3>
       <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.tagline}</p>

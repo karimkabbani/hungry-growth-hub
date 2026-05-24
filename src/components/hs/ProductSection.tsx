@@ -39,11 +39,7 @@ export function GrowOnlineSection() {
         >
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
             <div>
-              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                <span className="grid h-7 w-7 place-items-center rounded-full bg-blue text-white font-display text-xs">1</span>
-                Flagship Product
-              </div>
-              <h3 className="mt-6 font-display text-5xl md:text-7xl text-balance">Delivery Service.</h3>
+              <h3 className="font-display text-5xl md:text-7xl text-balance">Delivery Service.</h3>
               <p className="mt-4 max-w-lg text-lg text-muted-foreground">
                 Boost sales across 100+ cities. Our riders handle the last mile, you focus on the food.
               </p>
@@ -168,11 +164,7 @@ function SecondaryProduct({
 }) {
   return (
     <article className="group rounded-3xl border bg-card p-8 transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-        <span className="grid h-7 w-7 place-items-center rounded-full bg-ink text-cream font-display">{n}</span>
-        Product
-      </div>
-      <h3 className="mt-6 font-display text-3xl md:text-4xl">{name}</h3>
+      <h3 className="font-display text-3xl md:text-4xl">{name}</h3>
       <p className="mt-2 text-muted-foreground">{pitch}</p>
       <ul className="mt-6 space-y-2">
         {benefits.map((b) => (
