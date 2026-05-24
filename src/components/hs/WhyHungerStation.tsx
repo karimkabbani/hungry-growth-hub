@@ -68,9 +68,9 @@ export function WhyHungerStation() {
         <div className="mt-16 md:mt-20 grid gap-12 md:gap-10 md:grid-cols-5 items-center">
           <figure className="md:col-span-3 relative text-center md:text-left">
 
-          <Quote
-            className="mx-auto h-16 w-16 md:h-20 md:w-20 text-[color:var(--brand-yellow)]"
-            strokeWidth={1}
+            <Quote
+              className="mx-auto md:mx-0 h-16 w-16 md:h-20 md:w-20 text-[color:var(--brand-yellow)]"
+              strokeWidth={1}
             aria-hidden
           />
 
@@ -83,16 +83,15 @@ export function WhyHungerStation() {
             </p>
           </blockquote>
 
-          <figcaption className="mt-10 flex items-center justify-center gap-4">
-            <span className="h-px w-10 bg-foreground/40" aria-hidden />
-            <div className="text-left">
-              <div className="font-semibold text-sm text-foreground">— ENG. Ali Aldamanhori</div>
-              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
-                CEO, HungerStation
+            <figcaption className="mt-10 flex items-center justify-center md:justify-start gap-4">
+              <span className="h-px w-10 bg-foreground/40" aria-hidden />
+              <div className="text-left">
+                <div className="font-semibold text-sm text-foreground">— ENG. Ali Aldamanhori</div>
+                <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
+                  CEO, HungerStation
+                </div>
               </div>
-            </div>
-            <span className="h-px w-10 bg-foreground/40" aria-hidden />
-          </figcaption>
+            </figcaption>
 
           <Collapsible open={open} onOpenChange={setOpen}>
             <CollapsibleContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
@@ -128,7 +127,16 @@ export function WhyHungerStation() {
               </button>
             </CollapsibleTrigger>
           </Collapsible>
-        </figure>
+          </figure>
+
+          <div className="md:col-span-2 flex justify-center md:justify-end">
+            <img
+              src={phoneMenu}
+              alt="HungerStation restaurant menu — bestsellers and SAR pricing"
+              className="w-full max-w-[320px] md:max-w-[380px] h-auto drop-shadow-2xl"
+            />
+          </div>
+        </div>
 
         {/* Three pillars */}
         <div className="mt-20 md:mt-24 grid gap-12 md:gap-10 md:grid-cols-3">
