@@ -360,10 +360,14 @@ const MOFAWTER: ProductCardData = {
   testimonial: {
     quote: "Example: SAR 180K unlocked for a Riyadh fast-casual to refresh its kitchen.",
   },
+  stats: [
+    { value: "48h", label: "to payout" },
+    { value: "0", label: "collateral required" },
+  ],
   economics: [
-    { label: "Avg payout", value: "48h", note: "from approval" },
-    { label: "Limit", value: "~10%", note: "of annual GMV" },
-    { label: "Collateral", value: "0", note: "none required" },
+    { label: "Advance size", value: "Up to [PLACEHOLDER]" },
+    { label: "Repayment", value: "% of daily sales" },
+    { label: "Term length", value: "Until repaid" },
   ],
 };
 
