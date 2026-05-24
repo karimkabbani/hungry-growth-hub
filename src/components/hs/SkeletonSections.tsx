@@ -111,7 +111,7 @@ export function OrderValueSection() {
   return (
     <section id="order-value" className="relative scroll-mt-24 border-t border-border">
       <SectionHeader
-        index="03"
+        icon={TrendingUp}
         eyebrow="Increase Order Value & Volume"
         title="More orders. Bigger baskets."
         copy="Tools that grow how often customers order — and how much they spend per order."
