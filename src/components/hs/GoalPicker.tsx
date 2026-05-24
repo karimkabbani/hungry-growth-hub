@@ -32,8 +32,7 @@ export function GoalPicker() {
     <section id="goals" className="container-x relative py-24 md:py-32">
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">01 — Start here</span>
-          <h2 className="mt-3 font-display text-5xl md:text-7xl text-balance max-w-[14ch]">
+          <h2 className="font-display text-5xl md:text-7xl text-balance max-w-[14ch]">
             What do you want to grow?
           </h2>
         </div>
