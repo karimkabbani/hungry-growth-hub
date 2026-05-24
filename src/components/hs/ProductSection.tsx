@@ -23,7 +23,7 @@ export function GrowOnlineSection() {
   return (
     <section id="grow-online" className="relative scroll-mt-24 border-t border-border">
       <SectionHeader
-        index="02"
+        icon={Smartphone}
         eyebrow="Grow Online"
         title="Take orders across Saudi Arabia."
         copy="Delivery Service, Self Pick-Up and HungerStation Kitchens. Three ways to meet customers wherever — and however — they want to eat."
