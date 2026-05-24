@@ -3,6 +3,7 @@ import { PhoneMockup } from "./PhoneMockup";
 import { useHs } from "@/lib/hs-context";
 import vendor from "@/assets/vendor-portrait.jpg";
 import { ProductCard, type ProductCardData } from "./ProductCard";
+import { ProductIndex, slugifyProduct } from "./ProductIndex";
 
 const DELIVERY: ProductCardData = {
   name: "Delivery Service.",
@@ -62,12 +63,19 @@ export function GrowOnlineSection() {
         highlight={highlight}
       />
 
+      <ProductIndex names={["Delivery Service", "Self Pick-Up", "HSK"]} />
+
       <div className="container-x">
-        <ProductCard data={DELIVERY} size="flagship" highlight={highlight} />
+        <ProductCard
+          data={DELIVERY}
+          size="flagship"
+          highlight={highlight}
+          id={slugifyProduct("Delivery Service")}
+        />
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <ProductCard data={SELF_PICKUP} size="secondary" />
-          <ProductCard data={KITCHENS} size="secondary" />
+          <ProductCard data={SELF_PICKUP} size="secondary" id={slugifyProduct("Self Pick-Up")} />
+          <ProductCard data={KITCHENS} size="secondary" id={slugifyProduct("HSK")} />
         </div>
       </div>
     </section>
