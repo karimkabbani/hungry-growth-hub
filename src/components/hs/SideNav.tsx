@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ITEMS = [
   { id: "why", label: "Why HungerStation" },
@@ -15,6 +15,8 @@ const ITEMS = [
 export function SideNav() {
   const [active, setActive] = useState("goals");
   const [visible, setVisible] = useState(false);
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -31,44 +33,91 @@ export function SideNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleEnter = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(true);
+  };
+  const handleLeave = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setOpen(false), 180);
+  };
+
+  const activeItem = ITEMS.find((i) => i.id === active) ?? ITEMS[0];
+  const activeIndex = ITEMS.indexOf(activeItem);
+
   return (
     <nav
       aria-label="Section navigation"
-      className={`group/nav fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 transition-all duration-500 xl:block ${
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+      onFocusCapture={handleEnter}
+      onBlurCapture={handleLeave}
+      className={`fixed right-3 top-1/2 z-40 hidden -translate-y-1/2 transition-all duration-500 lg:block ${
         visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
       }`}
     >
-      <ul className="flex flex-col items-end gap-3">
-        {ITEMS.map((it) => {
-          const on = active === it.id;
-          return (
-            <li key={it.id}>
-              <a
-                href={`#${it.id}`}
-                aria-label={it.label}
-                className="group/item flex items-center gap-3 py-1"
-              >
+      {/* Collapsed rail: just dots + current section label chip */}
+      <div
+        className={`flex items-center gap-2 transition-all duration-300 ${
+          open ? "opacity-0 pointer-events-none -translate-x-2" : "opacity-100"
+        }`}
+      >
+        <div
+          className="rounded-full border border-[color:var(--ink)]/10 bg-[color:var(--cream)]/85 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-[color:var(--ink)]/70 shadow-sm backdrop-blur-md whitespace-nowrap"
+        >
+          {String(activeIndex + 1).padStart(2, "0")} · {activeItem.label}
+        </div>
+        <ul className="flex flex-col items-center gap-2 rounded-full border border-[color:var(--ink)]/10 bg-[color:var(--cream)]/85 px-1.5 py-2 shadow-sm backdrop-blur-md">
+          {ITEMS.map((it) => {
+            const on = active === it.id;
+            return (
+              <li key={it.id}>
                 <span
-                  className={`order-2 h-1.5 w-1.5 rounded-full transition-all ${
+                  aria-hidden
+                  className={`block h-1.5 w-1.5 rounded-full transition-all ${
                     on
-                      ? "bg-[color:var(--brand-yellow)] scale-150 shadow-[0_0_0_4px_rgba(255,196,0,0.18)]"
-                      : "bg-foreground/25 group-hover/item:bg-foreground/60"
+                      ? "bg-[color:var(--brand-yellow)] scale-150 shadow-[0_0_0_3px_rgba(252,228,19,0.25)]"
+                      : "bg-[color:var(--ink)]/25"
                   }`}
                 />
-                <span
-                  className={`order-1 text-[10px] uppercase tracking-[0.2em] whitespace-nowrap transition-all duration-300 ${
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {/* Expanded panel */}
+      <div
+        className={`absolute right-0 top-1/2 -translate-y-1/2 transition-all duration-300 ${
+          open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2 pointer-events-none"
+        }`}
+      >
+        <ul className="flex flex-col gap-1 rounded-2xl border border-[color:var(--ink)]/10 bg-[color:var(--cream)]/95 p-2 shadow-xl backdrop-blur-md min-w-[220px]">
+          {ITEMS.map((it, i) => {
+            const on = active === it.id;
+            return (
+              <li key={it.id}>
+                <a
+                  href={`#${it.id}`}
+                  className={`flex items-center gap-3 rounded-xl px-3 py-2 text-sm transition-colors ${
                     on
-                      ? "opacity-100 translate-x-0 text-foreground font-semibold"
-                      : "opacity-0 -translate-x-1 group-hover/nav:opacity-100 group-hover/nav:translate-x-0 text-muted-foreground"
+                      ? "bg-[color:var(--brand-yellow)]/20 text-[color:var(--ink)] font-semibold"
+                      : "text-[color:var(--ink)]/70 hover:bg-[color:var(--ink)]/5 hover:text-[color:var(--ink)]"
                   }`}
                 >
-                  {it.label}
-                </span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+                  <span className="text-[10px] tabular-nums opacity-50 w-5">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="whitespace-nowrap">{it.label}</span>
+                  {on && (
+                    <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" />
+                  )}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </nav>
   );
 }
