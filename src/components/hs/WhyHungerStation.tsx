@@ -124,20 +124,16 @@ export function WhyHungerStation() {
         <div className="mt-20 md:mt-24 grid gap-12 md:gap-10 md:grid-cols-3">
           {PILLARS.map((p) => (
             <div key={p.title} className="flex flex-col items-center text-center px-2">
-              <p.icon
-                className="h-8 w-8 text-ink"
-                strokeWidth={1.5}
-                aria-hidden
-              />
-              <h3 className="mt-5 font-display text-2xl md:text-3xl text-foreground">
+              <h3 className="font-display text-3xl md:text-4xl text-foreground text-balance max-w-[14ch]">
                 {p.title}
               </h3>
-              <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xs">
+              <p className="mt-5 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xs">
                 {p.body}
               </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
