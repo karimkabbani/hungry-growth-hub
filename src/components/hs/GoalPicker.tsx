@@ -58,10 +58,7 @@ export function GoalPicker() {
                   {active && <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)]" />}
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    Goal · 0{i + 1}
-                  </div>
-                  <h3 className="mt-2 font-display text-2xl md:text-3xl text-foreground">{GOAL_META[g].label}</h3>
+                  <h3 className="font-display text-2xl md:text-3xl text-foreground">{GOAL_META[g].label}</h3>
                   <p className="mt-3 text-sm text-muted-foreground">
                     {COPY[g]}
                   </p>
