@@ -402,12 +402,11 @@ const OPS_FLAGSHIP: ProductCardData = {
     "Your command center. Menus, pricing, hours and performance — managed from one place, across every branch.",
   body: "A single web dashboard for every HungerStation operation. Update menus and pricing, monitor live orders, manage promos, pull performance reports, and assign role-based access to your team — across one or many branches.",
   benefits: ["Multi-branch ready", "Real-time edits", "Role-based access", "Live analytics"],
-  steps: [
-    { t: "[Step 1]", d: "[NEEDS CONTENT — to be drafted]" },
-    { t: "[Step 2]", d: "[NEEDS CONTENT — to be drafted]" },
-    { t: "[Step 3]", d: "[NEEDS CONTENT — to be drafted]" },
-  ],
   testimonial: null,
+  economics: [
+    { label: "Cost", value: "Included with HungerStation" },
+    { label: "Setup", value: "Self-serve" },
+  ],
 };
 
 const OPS_SECONDARY: ProductCardData[] = [
@@ -415,14 +414,12 @@ const OPS_SECONDARY: ProductCardData[] = [
     name: "Order Management Suite",
     subhead:
       "The restaurant-side order flow — from incoming ticket to dispatcher handover. Built for high-volume kitchens.",
-    body: null,
     benefits: ["Tablet + printer kit", "Dispatcher integration", "Handover tracking"],
   },
   {
     name: "POS Integrations",
     subhead:
       "Already on Deliverect, FeedUs, UrbanPiper, Grubtech, or POSist? Plug in directly and receive HungerStation orders in your existing flow.",
-    body: null,
     benefits: ["Native sync", "No double-entry", "Live menu push"],
   },
 ];
