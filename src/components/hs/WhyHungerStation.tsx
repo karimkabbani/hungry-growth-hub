@@ -34,10 +34,7 @@ export function WhyHungerStation() {
         {/* Header */}
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              00 — Credentials
-            </span>
-            <h2 className="mt-3 font-display text-5xl md:text-7xl text-balance max-w-[14ch]">
+            <h2 className="font-display text-5xl md:text-7xl text-balance max-w-[14ch]">
               Why HungerStation
             </h2>
           </div>
