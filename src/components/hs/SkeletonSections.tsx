@@ -136,16 +136,7 @@ function AovHero({ p, highlight }: { p: AovProduct; highlight?: boolean }) {
     >
       <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
         <div>
-          <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-blue text-white font-display text-xs">{p.n}</span>
-            Flagship · Loyalty
-            {p.tag && (
-              <span className="rounded-full bg-[color:var(--brand-yellow)] text-ink px-2.5 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
-                {p.tag}
-              </span>
-            )}
-          </div>
-          <h3 className="mt-6 font-display text-5xl md:text-7xl text-balance">{p.name}.</h3>
+          <h3 className="font-display text-5xl md:text-7xl text-balance">{p.name}.</h3>
           <p className="mt-4 max-w-lg text-lg text-muted-foreground">{p.tagline}</p>
 
           <div className="mt-8 flex flex-wrap gap-2">
