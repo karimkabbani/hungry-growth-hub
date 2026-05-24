@@ -687,12 +687,9 @@ export function OpsSection() {
 function OpsCard({ p }: { p: OpsProduct }) {
   return (
     <article className="group flex flex-col rounded-3xl border bg-card p-8 transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="flex items-start justify-between">
-        <span className="grid h-11 w-11 place-items-center rounded-2xl bg-ink text-cream">
-          <p.icon className="h-5 w-5" strokeWidth={1.8} />
-        </span>
-        <span className="font-display text-xs text-muted-foreground">{p.n}</span>
-      </div>
+      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-ink text-cream">
+        <p.icon className="h-5 w-5" strokeWidth={1.8} />
+      </span>
 
       <h3 className="mt-6 font-display text-2xl md:text-3xl text-foreground">{p.name}</h3>
       <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.tagline}</p>
