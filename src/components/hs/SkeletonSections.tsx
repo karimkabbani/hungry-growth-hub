@@ -260,6 +260,16 @@ export function AttractSection() {
         copy="The full ad stack across HungerStation — from sponsored placements to time-boxed flash deals — running where 9M+ Saudis already decide what to eat."
         highlight={highlight}
       />
+      <ProductIndex
+        names={[
+          "Sponsored Listing",
+          "Keyword Search",
+          "Display Ads",
+          "Awareness Banner",
+          "Offer Hour",
+          "Splash Screen",
+        ]}
+      />
       <div className="container-x pb-20 md:pb-28">
         {/* Stat band */}
         <div className="grid gap-6 rounded-3xl border bg-card p-8 md:grid-cols-3 md:p-10">
@@ -288,13 +298,21 @@ export function AttractSection() {
         </div>
 
         <div className="mt-12">
-          <ProductCard data={ATTRACT_FLAGSHIP} size="flagship" highlight={highlight} />
+          <ProductCard
+            data={ATTRACT_FLAGSHIP}
+            size="flagship"
+            highlight={highlight}
+            id={slugifyProduct("Sponsored Listing")}
+          />
         </div>
 
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {ATTRACT_SECONDARY.map((p) => (
-            <ProductCard key={p.name} data={p} size="secondary" />
-          ))}
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {ATTRACT_SECONDARY.map((p, i) => {
+            const slugNames = ["Keyword Search", "Display Ads", "Awareness Banner", "Offer Hour", "Splash Screen"];
+            return (
+              <ProductCard key={p.name} data={p} size="secondary" id={slugifyProduct(slugNames[i] ?? p.name)} />
+            );
+          })}
         </div>
 
         <div className="mt-12 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
