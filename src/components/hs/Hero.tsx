@@ -74,7 +74,7 @@ export function Hero() {
       </div>
 
       <div className="container-x relative z-10 grid grid-cols-2 gap-8 border-t border-cream/15 py-10 md:grid-cols-4">
-        <StatCounter value={9_000_000} suffix="M+" label="Customers" />
+        <StatCounter value={9_000_000} suffix="+" label="Customers" />
         <StatCounter value={100} suffix="+" label="Cities" />
         <StatCounter value={55_000} suffix="+" label="Restaurant Partners" />
         <StatCounter value={30_000} suffix="+" label="Brands" />
