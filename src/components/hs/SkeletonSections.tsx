@@ -292,30 +292,131 @@ function AdCard({ p, featured }: { p: AdProduct; featured?: boolean }) {
 
 
 export function FinancingSection() {
+  const STEPS = [
+    { icon: FileSearch, t: "We assess your sales history", d: "Mofawter looks at your HungerStation order history — no bank statements, no paperwork." },
+    { icon: Wallet, t: "You get paid in 48 hours", d: "A lump-sum payout lands in your account within two business days of approval." },
+    { icon: Repeat, t: "Repay as you sell", d: "We deduct a small % of each future order until the advance is repaid. No fixed installments." },
+  ];
+  const USE_CASES = [
+    { icon: Store, t: "Open a new branch" },
+    { icon: Flame, t: "Refresh your kitchen" },
+    { icon: Sparkles, t: "Fund a Ramadan campaign" },
+  ];
+
   return (
     <section id="financing" className="relative scroll-mt-24 border-t border-border">
-      <div className="container-x py-20 md:py-28 grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-magenta text-magenta-foreground px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-semibold">
-            New · Mofawter
+      <div className="container-x py-20 md:py-28">
+        {/* Header row */}
+        <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
+          <div>
+            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">05 — Vendor Financing</div>
+            <div className="mt-3 inline-flex items-center gap-2">
+              <span className="rounded-full bg-blue text-white px-2.5 py-0.5 text-[10px] uppercase tracking-[0.22em] font-semibold">New · Mofawter</span>
+            </div>
           </div>
-          <h2 className="mt-5 font-display text-5xl md:text-7xl text-balance">Cash today.<br />Repaid as you sell.</h2>
-          <p className="mt-5 max-w-lg text-lg text-muted-foreground">
-            Mofawter is fast cash advances against your future HungerStation sales — repaid automatically as a small % of each order. No collateral, no fixed installments.
-          </p>
-          <div className="mt-8 grid grid-cols-3 gap-6">
-            <div><div className="font-display text-3xl">48h</div><div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Approval</div></div>
-            <div><div className="font-display text-3xl">~10%</div><div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">of annual GMV</div></div>
-            <div><div className="font-display text-3xl">0</div><div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Fixed installments</div></div>
+          <div>
+            <h2 className="font-display text-5xl md:text-7xl text-balance">Cash today.<br />Repaid as you sell.</h2>
+            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+              Mofawter is HungerStation's vendor financing. Get an upfront payout, repay automatically from a small share of each order. No paperwork, no collateral, no fixed monthly payments.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Paid in 48 hours", "No collateral", "Repays from sales, not fixed installments"].map((b) => (
+                <span key={b} className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-4 py-2 text-sm">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" /> {b}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="relative">
-          <img src={rider} alt="HungerStation rider" loading="lazy" className="rounded-3xl w-full aspect-[4/5] object-cover" />
-          <div className="absolute -bottom-6 -left-6 bg-card border rounded-2xl p-5 max-w-[240px] shadow-xl">
-            <div className="h-1 w-8 rounded-full bg-[color:var(--brand-yellow)]" />
-            <div className="mt-3 font-display text-3xl text-foreground">SAR 180K</div>
-            <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-1">Example unlocked for a Riyadh fast-casual</div>
+
+        {/* Photo + headline content */}
+        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-stretch lg:gap-16">
+          <div className="relative">
+            <img src={rider} alt="HungerStation rider in Riyadh" loading="lazy" className="rounded-3xl w-full h-full aspect-[4/5] object-cover" />
+            <div className="absolute -bottom-6 -right-6 bg-card border rounded-2xl p-5 max-w-[260px] shadow-xl">
+              <div className="h-1 w-8 rounded-full bg-[color:var(--brand-yellow)]" />
+              <div className="mt-3 font-display text-3xl text-foreground">SAR 180K</div>
+              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-1">Example unlocked for a Riyadh fast-casual</div>
+            </div>
           </div>
+
+          <div className="flex flex-col gap-8">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">How it works</div>
+              <ol className="mt-5 grid gap-4">
+                {STEPS.map((s, i) => (
+                  <li key={s.t} className="flex gap-5 rounded-2xl border bg-card p-5">
+                    <div className="flex flex-col items-center">
+                      <div className="grid h-11 w-11 place-items-center rounded-xl bg-ink text-cream">
+                        <s.icon className="h-5 w-5" strokeWidth={1.8} />
+                      </div>
+                      <div className="mt-2 font-display text-xs text-muted-foreground">0{i + 1}</div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-display text-xl">{s.t}</div>
+                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Use case panel */}
+            <div className="rounded-3xl bg-ink text-cream p-7">
+              <div className="text-[10px] uppercase tracking-[0.22em] text-cream/50">Use it for</div>
+              <p className="mt-3 font-display text-2xl text-balance leading-tight">
+                Open a new branch, refresh your kitchen, fund a Ramadan campaign — Mofawter funds vendors for the moments that grow the business.
+              </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                {USE_CASES.map((u) => (
+                  <div key={u.t} className="flex items-center gap-3 rounded-2xl border border-cream/15 bg-cream/[0.04] p-4">
+                    <u.icon className="h-5 w-5 text-[color:var(--brand-yellow)]" strokeWidth={1.8} />
+                    <span className="text-sm">{u.t}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stat band */}
+        <div className="mt-16 grid gap-6 rounded-3xl border bg-card p-8 md:grid-cols-[1.5fr_1fr_auto] md:items-center md:p-10">
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">2025 to date</div>
+            <div className="mt-2 font-display text-4xl md:text-5xl text-balance">
+              SAR <span className="text-foreground">XXX</span>{" "}
+              <span className="text-muted-foreground">disbursed to Saudi vendors.</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-3">
+              <Banknote className="h-6 w-6 text-[color:var(--brand-yellow)]" strokeWidth={1.8} />
+              <div>
+                <div className="font-display text-xl">48h</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Avg payout</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <TrendingUp className="h-6 w-6 text-[color:var(--brand-yellow)]" strokeWidth={1.8} />
+              <div>
+                <div className="font-display text-xl">~10%</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">of annual GMV</div>
+              </div>
+            </div>
+            <div className="hidden lg:flex items-center gap-3">
+              <ShieldCheck className="h-6 w-6 text-[color:var(--brand-yellow)]" strokeWidth={1.8} />
+              <div>
+                <div className="font-display text-xl">0</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Collateral</div>
+              </div>
+            </div>
+          </div>
+          <a
+            href="#plan"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-hover transition whitespace-nowrap"
+          >
+            See my financing options →
+          </a>
         </div>
       </div>
     </section>
