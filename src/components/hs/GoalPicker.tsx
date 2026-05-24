@@ -1,20 +1,20 @@
-import { ShoppingBag, Users, TrendingUp, Settings, Banknote } from "lucide-react";
+import { Smartphone, TrendingUp, Megaphone, Wallet, LayoutGrid } from "lucide-react";
 import { GOAL_META, useHs, type Goal } from "@/lib/hs-context";
 
-const ICONS: Record<Goal, typeof ShoppingBag> = {
-  online: ShoppingBag,
+const ICONS: Record<Goal, typeof Smartphone> = {
+  online: Smartphone,
   aov: TrendingUp,
-  newcustomers: Users,
-  financing: Banknote,
-  ops: Settings,
+  newcustomers: Megaphone,
+  financing: Wallet,
+  ops: LayoutGrid,
 };
 
 const COPY: Record<Goal, string> = {
-  online: "Get listed, take orders, and ship across 100+ KSA cities.",
-  aov: "Push average ticket with HPlus, Super Saver and loyalty.",
-  newcustomers: "Run paid placements, search ads and FlashDeals to fill your funnel.",
-  financing: "Unlock upfront cash with Mofawter — repaid as you sell.",
-  ops: "Cut prep time and stockouts with POS-integrated tools.",
+  online: "Channels to put your restaurant in front of more customers — delivery, pickup, and dark kitchens.",
+  aov: "Promotions, discounts, and loyalty programs that drive bigger baskets and more orders per customer.",
+  newcustomers: "Paid placements across HungerStation — sponsored listings, search ads, display ads, and more.",
+  financing: "Capital to invest in your next branch, new equipment, or a campaign — repaid as you sell.",
+  ops: "The back-office stack — vendor portal, order management, POS integrations, and built-in tools.",
 };
 
 export function GoalPicker() {
@@ -30,16 +30,12 @@ export function GoalPicker() {
 
   return (
     <section id="goals" className="container-x relative py-24 md:py-32">
-      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <h2 className="font-display text-5xl md:text-7xl text-balance max-w-[14ch]">
-            What do you want to grow?
-          </h2>
-        </div>
-        <p className="max-w-sm text-base text-muted-foreground">
-          Pick a goal. We'll personalize the rest of this guide and build a plan for you at the end.
-        </p>
+      <div>
+        <h2 className="font-display text-5xl md:text-7xl text-balance max-w-[16ch]">
+          How HungerStation helps you grow.
+        </h2>
       </div>
+
 
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {(Object.keys(GOAL_META) as Goal[]).map((g, i) => {
@@ -58,7 +54,7 @@ export function GoalPicker() {
             >
               <div className="relative flex h-full flex-col gap-10">
                 <div className="flex items-center justify-between">
-                  <Icon className="h-7 w-7 text-foreground" strokeWidth={1.5} />
+                  <Icon className="h-8 w-8" strokeWidth={1.5} style={{ color: "#5A2D1D" }} />
                   {active && <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)]" />}
                 </div>
                 <div>
