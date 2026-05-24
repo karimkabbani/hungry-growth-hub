@@ -55,8 +55,8 @@ export function GoalPicker() {
               <div className="relative flex h-full flex-col gap-10">
                 <div className="flex items-center justify-between">
                   <Icon className="h-8 w-8" strokeWidth={1.5} style={{ color: "#5A2D1D" }} />
-                  {active && <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)]" />}
                 </div>
+
                 <div>
                   <h3 className="font-display text-2xl md:text-3xl text-foreground">{GOAL_META[g].label}</h3>
                   <p className="mt-3 text-sm text-muted-foreground">
