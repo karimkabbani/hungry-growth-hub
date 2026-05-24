@@ -189,13 +189,14 @@ function SecondaryProduct({
 }
 
 export function SectionHeader({
-  index,
+  icon: Icon,
   eyebrow,
   title,
   copy,
   highlight,
 }: {
-  index: string;
+  icon: LucideIcon;
+  index?: string;
   eyebrow: string;
   title: string;
   copy: string;
@@ -206,8 +207,11 @@ export function SectionHeader({
       <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
         <div>
           <div className="inline-flex items-center gap-2">
-            <span className={`h-2 w-2 rounded-full ${highlight ? "bg-magenta animate-pulse-ring" : "bg-foreground/30"}`} />
-            <span className={`text-sm font-semibold ${highlight ? "text-magenta" : "text-foreground"}`}>{eyebrow}</span>
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--brand-yellow)] text-ink">
+              <Icon className="h-3.5 w-3.5" strokeWidth={2} />
+            </span>
+            <span className="text-sm font-semibold text-foreground">{eyebrow}</span>
+            {highlight && <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)] animate-pulse-ring" />}
           </div>
         </div>
         <div>
