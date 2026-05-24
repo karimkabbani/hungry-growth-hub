@@ -205,8 +205,7 @@ export function SectionHeader({
     <div className="container-x py-20 md:py-28">
       <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
         <div>
-          <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{index} — Product Family</div>
-          <div className="mt-3 inline-flex items-center gap-2">
+          <div className="inline-flex items-center gap-2">
             <span className={`h-2 w-2 rounded-full ${highlight ? "bg-magenta animate-pulse-ring" : "bg-foreground/30"}`} />
             <span className={`text-sm font-semibold ${highlight ? "text-magenta" : "text-foreground"}`}>{eyebrow}</span>
           </div>

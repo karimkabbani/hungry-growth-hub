@@ -57,8 +57,7 @@ export function RoiCalculator() {
       <div className="container-x py-24 md:py-32">
         <div className="grid gap-4 md:grid-cols-[1fr_1.4fr] md:gap-16">
           <div>
-            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">07 — Run the numbers</div>
-            <h2 className="mt-3 font-display text-5xl md:text-7xl text-balance">See your growth potential.</h2>
+            <h2 className="font-display text-5xl md:text-7xl text-balance">See your growth potential.</h2>
           </div>
           <p className="self-end text-lg text-muted-foreground max-w-xl">
             Drag the sliders. We'll project the lift from HPlus delivery membership and Sponsored Listings using conservative HungerStation benchmarks.

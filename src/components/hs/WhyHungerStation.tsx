@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LayoutDashboard, Car, Quote, ChevronDown } from "lucide-react";
+import { Quote, ChevronDown } from "lucide-react";
 import phoneMenu from "@/assets/hs-phone-menu.gif";
 import {
   Collapsible,
@@ -7,39 +7,21 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-// Saudi Arabia silhouette — simplified outline
-const SaudiArabiaIcon = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 100 100"
-    className={className}
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinejoin="round"
-    strokeLinecap="round"
-    aria-hidden
-  >
-    <path d="M18 22 L34 20 L44 14 L52 16 L58 22 L70 24 L78 30 L82 40 L86 50 L84 60 L78 68 L74 78 L66 86 L58 88 L50 84 L44 78 L36 76 L28 72 L22 64 L18 54 L14 44 L12 34 Z" />
-  </svg>
-);
-
 const PILLARS = [
   {
-    icon: SaudiArabiaIcon,
     title: "Extensive Reach",
     body: "100+ cities, served 24/7. The largest delivery network in the Kingdom — your restaurant reaches customers anywhere, any time of day.",
   },
   {
-    icon: LayoutDashboard,
     title: "Built for Vendors",
     body: "Seamless integration with the POS and order-management systems you already use. Robust vendor support when you need it. Fast vendor payouts that keep your cash flow growing.",
   },
   {
-    icon: Car,
     title: "Cutting-Edge Fleet Management",
     body: "Flexible scheduling that puts riders where demand is — peak hours, peak coverage. Real-time tracking from kitchen to customer, so you and your customers always know where the order is.",
   },
 ];
+
 
 const quoteSerif = { fontFamily: "Georgia, 'Times New Roman', serif" } as const;
 
@@ -52,10 +34,7 @@ export function WhyHungerStation() {
         {/* Header */}
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              00 — Credentials
-            </span>
-            <h2 className="mt-3 font-display text-5xl md:text-7xl text-balance max-w-[14ch]">
+            <h2 className="font-display text-5xl md:text-7xl text-balance max-w-[14ch]">
               Why HungerStation
             </h2>
           </div>
@@ -142,20 +121,16 @@ export function WhyHungerStation() {
         <div className="mt-20 md:mt-24 grid gap-12 md:gap-10 md:grid-cols-3">
           {PILLARS.map((p) => (
             <div key={p.title} className="flex flex-col items-center text-center px-2">
-              <p.icon
-                className="h-8 w-8 text-ink"
-                strokeWidth={1.5}
-                aria-hidden
-              />
-              <h3 className="mt-5 font-display text-2xl md:text-3xl text-foreground">
+              <h3 className="font-display text-3xl md:text-4xl text-foreground text-balance max-w-[14ch]">
                 {p.title}
               </h3>
-              <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xs">
+              <p className="mt-5 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xs">
                 {p.body}
               </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

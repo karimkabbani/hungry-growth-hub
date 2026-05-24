@@ -37,8 +37,7 @@ export function VendorStories() {
       <div className="container-x py-24 md:py-32">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Vendor stories</div>
-            <h2 className="mt-3 font-display text-5xl md:text-7xl text-balance max-w-[16ch]">
+            <h2 className="font-display text-5xl md:text-7xl text-balance max-w-[16ch]">
               Built by Saudi restaurants.
             </h2>
           </div>
