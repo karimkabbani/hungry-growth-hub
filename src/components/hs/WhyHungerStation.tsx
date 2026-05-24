@@ -64,8 +64,10 @@ export function WhyHungerStation() {
           </p>
         </div>
 
-        {/* CEO editorial pull-quote — collapsible */}
-        <figure className="mt-16 md:mt-20 relative mx-auto max-w-3xl text-center">
+        {/* CEO editorial pull-quote + product UI */}
+        <div className="mt-16 md:mt-20 grid gap-12 md:gap-10 md:grid-cols-5 items-center">
+          <figure className="md:col-span-3 relative text-center md:text-left">
+
           <Quote
             className="mx-auto h-16 w-16 md:h-20 md:w-20 text-[color:var(--brand-yellow)]"
             strokeWidth={1}
