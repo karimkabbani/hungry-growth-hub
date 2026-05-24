@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const ITEMS = [
   { id: "goals", label: "Overview" },
   { id: "grow-online", label: "Grow Online" },
-  { id: "order-value", label: "Order Value" },
+  { id: "order-value", label: "Order Value & Volume" },
   { id: "attract", label: "Attract Customers" },
   { id: "financing", label: "Fund Your Growth" },
   { id: "ops", label: "Optimize Ops" },
