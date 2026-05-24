@@ -37,8 +37,77 @@ function isOn(goal: Goal | null, target: Goal) {
   return goal === target;
 }
 
+type AovProduct = {
+  n: string;
+  name: string;
+  tagline: string;
+  benefits: string[];
+  pricing: string;
+  lift: string;
+  liftLabel: string;
+  story: string;
+  tag?: string;
+};
+
+const AOV_HERO: AovProduct = {
+  n: "01",
+  name: "RDF / HPlus",
+  tagline: "Free-delivery membership that locks in your best customers.",
+  benefits: ["3× order frequency", "+27% basket size", "Lower CAC per repeat"],
+  pricing: "Revenue share · no upfront",
+  lift: "+312%",
+  liftLabel: "orders from members vs non-members",
+  story: "A leading Riyadh Arabic QSR saw +47% monthly order frequency in the first 90 days after enabling HPlus.",
+  tag: "Q2 priority",
+};
+
+const AOV_PRODUCTS: AovProduct[] = [
+  {
+    n: "02",
+    name: "Super Saver",
+    tagline: "Smart price drops on selected items to drive volume.",
+    benefits: ["+18% units per order", "Margin-safe items only", "Auto-pricing engine"],
+    pricing: "Discount funded 50/50",
+    lift: "+22%",
+    liftLabel: "AOV uplift (avg)",
+    story: "A Jeddah burger chain lifted weekday AOV by 19% after enabling Super Saver on its top 10 SKUs.",
+  },
+  {
+    n: "03",
+    name: "Full Menu Discounts",
+    tagline: "Site-wide promo banners across the app.",
+    benefits: ["Maximum reach", "Tier-based discounting", "Great for new launches"],
+    pricing: "Vendor-funded discount",
+    lift: "+34%",
+    liftLabel: "weekend orders (avg)",
+    story: "A Dammam shawarma group ran a 20%-off menu weekend and saw +34% weekend orders MoM.",
+  },
+  {
+    n: "04",
+    name: "Meal for One",
+    tagline: "Curated single-portion bundles for solo diners.",
+    benefits: ["+SAR 12 AOV", "Targets lunch crowd", "Pre-built bundles"],
+    pricing: "Bundle pricing · no fee",
+    lift: "+15%",
+    liftLabel: "weekday lunch AOV",
+    story: "A Khobar café added 4 Meal-for-One bundles and lifted weekday lunch AOV by 15% in 6 weeks.",
+  },
+  {
+    n: "05",
+    name: "HRewards",
+    tagline: "Stamp-card loyalty. Repeat customers get rewards on us.",
+    benefits: ["+2.1× repeat rate", "HungerStation-funded", "Zero setup"],
+    pricing: "Funded by HungerStation",
+    lift: "+2.1×",
+    liftLabel: "60-day repeat rate",
+    story: "A Riyadh dessert brand doubled its 60-day repeat rate after joining HRewards in its first month.",
+  },
+];
+
 export function OrderValueSection() {
   const { goal } = useHs();
+  const highlight = isOn(goal, "aov");
+
   return (
     <section id="order-value" className="relative scroll-mt-24 border-t border-border">
       <SectionHeader
@@ -46,22 +115,141 @@ export function OrderValueSection() {
         eyebrow="Increase Order Value"
         title="Make every order worth more."
         copy="Loyalty, bundles, and smart discounts that lift average ticket without giving away margin."
-        highlight={isOn(goal, "aov")}
+        highlight={highlight}
       />
-      <ProductGrid
-        highlight={isOn(goal, "aov")}
-        items={[
-          { name: "RDF / HPlus", pitch: "Free delivery membership. Members order 3× more often.", tag: "Most popular" },
-          { name: "Super Saver", pitch: "Smart price drops on selected items to drive volume." },
-          { name: "Full Menu Discounts", pitch: "Site-wide promo banners across the app." },
-          { name: "Meal for One", pitch: "Curated single-portion bundles for solo diners." },
-          { name: "HRewards", pitch: "Stamp-card loyalty. Repeat customers get rewards on us." },
-        ]}
-      />
-      <div className="container-x mt-10">
-        <img src={foodSpread} alt="Saudi food spread" loading="lazy" className="rounded-3xl w-full aspect-[16/7] object-cover" />
+
+      <div className="container-x">
+        <AovHero p={AOV_HERO} highlight={highlight} />
+
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {AOV_PRODUCTS.map((p) => (
+            <AovCard key={p.name} p={p} />
+          ))}
+        </div>
+
+        <div className="mt-12">
+          <img src={foodSpread} alt="Saudi food spread" loading="lazy" className="rounded-3xl w-full aspect-[16/7] object-cover" />
+        </div>
       </div>
     </section>
+  );
+}
+
+function AovHero({ p, highlight }: { p: AovProduct; highlight?: boolean }) {
+  return (
+    <article
+      className={`relative overflow-hidden rounded-[2rem] border bg-card p-8 md:p-14 transition-all duration-500 ${
+        highlight ? "ring-1 ring-[color:var(--brand-yellow)] shadow-xl" : "shadow-sm"
+      }`}
+    >
+      <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
+        <div>
+          <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-blue text-white font-display text-xs">{p.n}</span>
+            Flagship · Loyalty
+            {p.tag && (
+              <span className="rounded-full bg-[color:var(--brand-yellow)] text-ink px-2.5 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
+                {p.tag}
+              </span>
+            )}
+          </div>
+          <h3 className="mt-6 font-display text-5xl md:text-7xl text-balance">{p.name}.</h3>
+          <p className="mt-4 max-w-lg text-lg text-muted-foreground">{p.tagline}</p>
+
+          <div className="mt-8 flex flex-wrap gap-2">
+            {p.benefits.map((b) => (
+              <span key={b} className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-4 py-2 text-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" /> {b}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-4 rounded-2xl bg-ink p-6 text-cream sm:grid-cols-[1fr_1fr_auto] sm:items-center">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.22em] text-cream/50">Pricing</div>
+              <div className="font-display text-lg mt-1">{p.pricing}</div>
+            </div>
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.22em] text-cream/50">Expected lift</div>
+              <div className="font-display text-lg mt-1 text-[color:var(--brand-yellow)]">{p.lift}</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-cream/60 mt-0.5">{p.liftLabel}</div>
+            </div>
+            <a
+              href="#plan"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-hover transition whitespace-nowrap"
+            >
+              Talk to my AM →
+            </a>
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-between gap-6">
+          <div className="rounded-3xl border bg-background/40 p-6">
+            <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">In practice</div>
+            <p className="mt-3 font-display text-2xl text-balance leading-tight">"{p.story}"</p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-2xl border bg-card p-5">
+              <div className="font-display text-4xl text-foreground">{p.lift}</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-2">{p.liftLabel}</div>
+            </div>
+            <div className="rounded-2xl border bg-card p-5">
+              <div className="font-display text-4xl text-foreground">+27%</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-2">basket size lift</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function AovCard({ p }: { p: AovProduct }) {
+  return (
+    <article className="group flex flex-col rounded-3xl border bg-card p-8 transition hover:-translate-y-1 hover:shadow-xl">
+      <div className="flex items-start justify-between">
+        <span className="font-display text-xs text-muted-foreground">{p.n}</span>
+        {p.tag && (
+          <span className="rounded-full bg-[color:var(--brand-yellow)] text-ink px-2.5 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
+            {p.tag}
+          </span>
+        )}
+      </div>
+
+      <h3 className="mt-5 font-display text-3xl md:text-4xl text-balance">{p.name}</h3>
+      <p className="mt-3 text-muted-foreground">{p.tagline}</p>
+
+      <div className="mt-6 flex flex-wrap gap-2">
+        {p.benefits.map((b) => (
+          <span key={b} className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-3 py-1 text-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" /> {b}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-6 grid gap-3 rounded-2xl border bg-background/40 p-5 sm:grid-cols-2">
+        <div>
+          <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Pricing</div>
+          <div className="font-display text-base mt-1">{p.pricing}</div>
+        </div>
+        <div>
+          <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Expected lift</div>
+          <div className="font-display text-base mt-1 text-foreground">{p.lift}</div>
+          <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-0.5">{p.liftLabel}</div>
+        </div>
+      </div>
+
+      <div className="mt-6 border-l-2 border-[color:var(--brand-yellow)] pl-4">
+        <p className="text-sm text-muted-foreground italic leading-relaxed">"{p.story}"</p>
+      </div>
+
+      <a
+        href="#plan"
+        className="mt-7 inline-flex items-center gap-2 self-start rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-hover transition"
+      >
+        Talk to my AM →
+      </a>
+    </article>
   );
 }
 
