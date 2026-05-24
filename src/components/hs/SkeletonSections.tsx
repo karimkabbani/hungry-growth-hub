@@ -112,9 +112,9 @@ export function OrderValueSection() {
     <section id="order-value" className="relative scroll-mt-24 border-t border-border">
       <SectionHeader
         index="03"
-        eyebrow="Increase Order Value"
-        title="Make every order worth more."
-        copy="Loyalty, bundles, and smart discounts that lift average ticket without giving away margin."
+        eyebrow="Increase Order Value & Volume"
+        title="More orders. Bigger baskets."
+        copy="Tools that grow how often customers order — and how much they spend per order."
         highlight={highlight}
       />
 
