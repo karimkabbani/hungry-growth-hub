@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-kitchen.jpg";
+import hsLogo from "@/assets/hungerstation-logo.png";
 import { StatCounter } from "./StatCounter";
 
 export function Hero() {
@@ -25,10 +26,13 @@ export function Hero() {
       </div>
 
       <header className="container-x relative z-10 flex items-center justify-between py-6">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-yellow text-ink font-display text-xl">H</span>
-          <span className="font-display text-xl tracking-tight">HungerStation</span>
-          <span className="ml-2 hidden md:inline rounded-full border border-white/20 px-2 py-0.5 text-[10px] uppercase tracking-widest">For Restaurants</span>
+        <a href="#top" className="flex items-center gap-3">
+          <img
+            src={hsLogo}
+            alt="HungerStation"
+            className="h-8 md:h-10 w-auto"
+          />
+          <span className="ml-1 hidden md:inline rounded-full border border-white/20 px-2 py-0.5 text-[10px] uppercase tracking-widest">For Restaurants</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-cream/70">
           <a href="#grow-online" className="hover:text-cream">Products</a>

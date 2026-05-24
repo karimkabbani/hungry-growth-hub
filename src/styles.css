@@ -49,36 +49,37 @@
   --radius: 1rem;
 
   /* HungerStation V4 brand tokens
-     70% neutral · 20% blue · 10% yellow accent */
-  --brand-yellow: #FFC400;            /* Yellow/500 — accents only */
-  --brand-yellow-soft: #FEFDC8;       /* Yellow/100 */
+     Official: Cream surface · HS Brown ink · HS Yellow accent · Blue CTA */
+  --brand-yellow: #FCE413;            /* HS Yellow — accents only */
+  --brand-yellow-soft: #FEF7A8;       /* HS Yellow tint */
   --brand-blue: #0076FF;              /* Blue/600 — primary interactive */
   --brand-blue-hover: #0057FF;        /* Blue/700 */
-  --ink: #1D2539;                     /* Blue-Gray/900 — primary text & dark surfaces */
-  --blue-gray-600: #4B5675;           /* Blue-Gray/600 — secondary text */
-  --cream: #FFFFFF;                   /* white — cards / elevated surfaces */
-  --magenta: #0076FF;                 /* repurposed: alias to blue */
-  --magenta-foreground: #FFFFFF;
+  --ink: #5A2D1D;                     /* HS Brown — primary text & dark surfaces */
+  --blue-gray-600: #8B5A47;           /* HS Brown lighter — secondary text */
+  --cream: #FFF8E7;                   /* HS Cream — surfaces */
+  --magenta: #FCE413;                 /* repurposed: alias to yellow accent */
+  --magenta-foreground: #5A2D1D;
 
-  --background: #FAFAFA;              /* Gray/100 */
-  --foreground: #1D2539;
+  --background: #FFF8E7;              /* Cream */
+  --foreground: #5A2D1D;              /* HS Brown */
   --card: #FFFFFF;
-  --card-foreground: #1D2539;
+  --card-foreground: #5A2D1D;
   --popover: #FFFFFF;
-  --popover-foreground: #1D2539;
+  --popover-foreground: #5A2D1D;
   --primary: #0076FF;
   --primary-foreground: #FFFFFF;
-  --secondary: #F5F5F5;               /* Gray/200 */
-  --secondary-foreground: #1D2539;
-  --muted: #F5F5F5;
-  --muted-foreground: #4B5675;        /* Blue-Gray/600 */
-  --accent: #FEFDC8;                  /* Yellow/100 soft */
-  --accent-foreground: #1D2539;
+  --secondary: #FBF1D6;               /* Cream darker */
+  --secondary-foreground: #5A2D1D;
+  --muted: #FBF1D6;
+  --muted-foreground: #8B5A47;        /* HS Brown lighter */
+  --accent: #FEF7A8;                  /* HS Yellow soft */
+  --accent-foreground: #5A2D1D;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: #ECEEF3;                  /* hairline ~ Gray/200 */
-  --input: #ECEEF3;
-  --ring: #FFC400;                    /* focus ring = yellow */
+  --border: #EFE3C6;                  /* hairline on cream */
+  --input: #EFE3C6;
+  --ring: #FCE413;                    /* focus ring = HS yellow */
+
 }
 
 .dark {
