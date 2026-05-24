@@ -32,16 +32,21 @@ function isOn(goal: Goal | null, target: Goal) {
 const AOV_FLAGSHIP: ProductCardData = {
   name: "RDF / HPlus",
   subhead: "Free-delivery membership that locks in your best customers.",
-  body: null,
+  body: "An always-on membership. Customers pay a flat monthly fee for unlimited free delivery on participating restaurants — driving higher order frequency and basket size for partner brands.",
+  stats: [
+    { value: "3×", label: "order frequency" },
+    { value: "+27%", label: "basket size" },
+    { value: "+312%", label: "monthly orders (case)" },
+  ],
   benefits: ["3× order frequency", "+27% basket size", "Lower CAC per repeat"],
   testimonial: {
     quote:
       "A leading Riyadh Arabic QSR saw +47% monthly order frequency in the first 90 days after enabling HPlus.",
   },
   economics: [
-    { label: "Pricing", value: "Revenue share", note: "no upfront" },
-    { label: "Expected lift", value: "+312%", note: "orders vs non-members" },
-    { label: "Payout cadence", value: "[Payout cadence]" },
+    { label: "Pricing model", value: "Vendor-funded discount" },
+    { label: "Minimum spend", value: "[NEEDS Sherif]" },
+    { label: "Expected lift", value: "[NEEDS Sherif]" },
   ],
 };
 
@@ -49,57 +54,56 @@ const AOV_SECONDARY: ProductCardData[] = [
   {
     name: "Super Saver",
     subhead: "Smart price drops on selected items to drive volume.",
-    body: null,
+    stats: [{ value: "+18%", label: "units per order" }],
     benefits: ["+18% units per order", "Margin-safe items only", "Auto-pricing engine"],
     testimonial: {
       quote: "A Jeddah burger chain lifted weekday AOV by 19% after enabling Super Saver on its top 10 SKUs.",
     },
     economics: [
-      { label: "Pricing", value: "Discount funded 50/50" },
-      { label: "Expected lift", value: "+22%", note: "AOV uplift" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Discount funded 50/50" },
+      { label: "Expected lift", value: "+22% AOV" },
     ],
   },
   {
     name: "Full Menu Discounts",
     subhead: "Site-wide promo banners across the app.",
-    body: null,
+    stats: [{ value: "+34%", label: "weekend orders MoM (case)" }],
     benefits: ["Maximum reach", "Tier-based discounting", "Great for new launches"],
     testimonial: {
       quote: "A Dammam shawarma group ran a 20%-off menu weekend and saw +34% weekend orders MoM.",
     },
     economics: [
-      { label: "Pricing", value: "Vendor-funded" },
-      { label: "Expected lift", value: "+34%", note: "weekend orders" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Vendor-funded" },
+      { label: "Expected lift", value: "+34% weekend orders" },
     ],
   },
   {
     name: "Meal for One",
     subhead: "Curated single-portion bundles for solo diners.",
-    body: null,
+    stats: [{ value: "+SAR 12", label: "AOV uplift" }],
     benefits: ["+SAR 12 AOV", "Targets lunch crowd", "Pre-built bundles"],
     testimonial: {
       quote: "A Khobar café added 4 Meal-for-One bundles and lifted weekday lunch AOV by 15% in 6 weeks.",
     },
     economics: [
-      { label: "Pricing", value: "Bundle pricing", note: "no fee" },
-      { label: "Expected lift", value: "+15%", note: "weekday lunch AOV" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Bundle pricing" },
+      { label: "Expected lift", value: "+15% lunch AOV" },
     ],
   },
   {
     name: "HRewards",
     subhead: "Stamp-card loyalty. Repeat customers get rewards on us.",
-    body: null,
+    stats: [
+      { value: "+2.1×", label: "60-day repeat rate" },
+      { value: "0", label: "vendor cost" },
+    ],
     benefits: ["+2.1× repeat rate", "HungerStation-funded", "Zero setup"],
     testimonial: {
       quote: "A Riyadh dessert brand doubled its 60-day repeat rate after joining HRewards in its first month.",
     },
     economics: [
-      { label: "Pricing", value: "Funded by HungerStation" },
-      { label: "Expected lift", value: "+2.1×", note: "60-day repeat" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Funded by HungerStation" },
+      { label: "Vendor cost", value: "SAR 0" },
     ],
   },
 ];
@@ -147,18 +151,22 @@ export function OrderValueSection() {
 const ATTRACT_FLAGSHIP: ProductCardData = {
   name: "Sponsored Listing",
   subhead: "Bid your way to the top of the home feed.",
-  body: null,
+  body: "A pay-per-click ad product. Your restaurant appears in premium home-feed slots on every relevant session, with live bid control, budget caps, and ROAS reporting through the ads portal.",
+  stats: [
+    { value: "+3×", label: "impressions" },
+    { value: "5×", label: "avg ROAS" },
+  ],
   benefits: ["+3× impressions", "Pay only per click", "Live bid control"],
   steps: [
-    { t: "Set a daily budget", d: "Choose cities, dayparts, and a max CPC in the ads portal." },
-    { t: "We auction in real time", d: "Your listing competes for premium home-feed slots on every session." },
-    { t: "Track ROAS live", d: "See spend, orders and incremental GMV update by the hour." },
+    { t: "Set a daily budget", d: "Cities, dayparts, max CPC in the ads portal." },
+    { t: "We auction in real time", d: "Compete for premium home-feed slots." },
+    { t: "Track ROAS live", d: "Spend, orders and GMV update hourly." },
   ],
   testimonial: null,
   economics: [
-    { label: "Pricing", value: "CPC", note: "from SAR 1.20" },
-    { label: "Expected return", value: "5× ROAS", note: "avg" },
-    { label: "Payout cadence", value: "[Payout cadence]" },
+    { label: "Pricing model", value: "CPC (cost per click)" },
+    { label: "Min daily budget", value: "[NEEDS Sherif]" },
+    { label: "Expected ROAS", value: "[NEEDS Sherif]" },
   ],
 };
 
@@ -166,81 +174,74 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
   {
     name: "Keyword Search",
     subhead: "Own the searches that already want you.",
-    body: null,
+    stats: [{ value: "5×", label: "avg ROAS" }],
     benefits: ["Intent-rich traffic", "Cuisine & brand keywords", "Beat the chains"],
     steps: [
-      { t: "Pick your keywords", d: "Bid on cuisines, dishes, or competitor brand names relevant to your menu." },
-      { t: "Appear above organic", d: "Sponsored result sits in the #1 slot on every matching search." },
-      { t: "Refine weekly", d: "Your AM tunes keyword mix from a weekly performance report." },
+      { t: "Pick keywords", d: "Bid on cuisines, dishes, competitor brands." },
+      { t: "Appear above organic", d: "Sponsored result in the #1 slot." },
+      { t: "Refine weekly", d: "AM tunes mix from a weekly report." },
     ],
     economics: [
-      { label: "Pricing", value: "CPC", note: "from SAR 1.50" },
-      { label: "Expected return", value: "5× ROAS", note: "avg" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "CPC" },
+      { label: "Min CPC", value: "SAR 1.50" },
     ],
   },
   {
     name: "Display Ads",
     subhead: "Premium banners in the discovery tab.",
-    body: null,
     benefits: ["Full-color creative", "Category targeting", "Brand recall lift"],
     steps: [
-      { t: "Send creative", d: "Upload a banner — or have our studio design it for you." },
-      { t: "Pick a slot", d: "Discovery, cuisine pages, or city-specific placements." },
-      { t: "[Step 3]", d: "[NEEDS CONTENT — to be drafted]" },
+      { t: "Send creative", d: "Upload a banner — or our studio designs it." },
+      { t: "Pick a slot", d: "Discovery, cuisine pages, or city placements." },
+      { t: "Go live", d: "[NEEDS CONTENT — to be drafted]" },
     ],
     economics: [
-      { label: "Pricing", value: "CPM", note: "weekly buys" },
-      { label: "Expected return", value: "5× ROAS", note: "avg" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "CPM (weekly buys)" },
+      { label: "Min spend", value: "[NEEDS Sherif]" },
     ],
   },
   {
     name: "Awareness Banner",
     subhead: "Full-bleed hero banner for launches.",
-    body: null,
     benefits: ["Massive reach", "Launch-day spike", "Premium placement"],
     steps: [
-      { t: "Book a window", d: "Reserve a day or weekend with your account manager." },
-      { t: "Go wide", d: "Hero banner served to every active user in your selected cities." },
-      { t: "[Step 3]", d: "[NEEDS CONTENT — to be drafted]" },
+      { t: "Book a window", d: "Reserve a day/weekend with your AM." },
+      { t: "Go wide", d: "Served to every active user in your cities." },
+      { t: "Report", d: "[NEEDS CONTENT — to be drafted]" },
     ],
     economics: [
-      { label: "Pricing", value: "Flat fee", note: "per day" },
-      { label: "Expected return", value: "5× ROAS", note: "avg" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Flat fee per day" },
+      { label: "Booking", value: "Via AM" },
     ],
   },
   {
     name: "Offer Hour / FlashDeals",
     subhead: "Time-boxed offers that spike orders.",
-    body: null,
+    stats: [{ value: "+62%", label: "off-peak orders" }],
     benefits: ["Fill dead hours", "+62% off-peak orders", "Urgency built in"],
     steps: [
-      { t: "Pick the hour", d: "Choose the off-peak window you want to fill (e.g. 3–5pm)." },
-      { t: "Set the offer", d: "Discount, free item, or bundle — visible across the app." },
-      { t: "[Step 3]", d: "[NEEDS CONTENT — to be drafted]" },
+      { t: "Pick the hour", d: "Choose an off-peak window (e.g. 3–5pm)." },
+      { t: "Set the offer", d: "Discount, free item, or bundle." },
+      { t: "Spike & repeat", d: "[NEEDS CONTENT — to be drafted]" },
     ],
     economics: [
-      { label: "Pricing", value: "Commission on uplift" },
-      { label: "Expected return", value: "5× ROAS", note: "avg" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Commission on uplift" },
+      { label: "Min duration", value: "1 hour" },
     ],
   },
   {
     name: "Splash Screen",
     subhead: "First impression — app-open takeover.",
-    body: null,
+    stats: [{ value: "100%", label: "share of voice" }],
     benefits: ["100% share of voice", "Highest recall", "1-tap to your store"],
     steps: [
-      { t: "Reserve the day", d: "Limited to one brand per city per day. Booked via AM." },
-      { t: "Own the open", d: "Your creative is the first thing every user sees that day." },
-      { t: "[Step 3]", d: "[NEEDS CONTENT — to be drafted]" },
+      { t: "Reserve the day", d: "1 brand per city per day. Booked via AM." },
+      { t: "Own the open", d: "First thing every user sees that day." },
+      { t: "Report", d: "[NEEDS CONTENT — to be drafted]" },
     ],
     economics: [
-      { label: "Pricing", value: "Flat fee", note: "per day" },
-      { label: "Expected return", value: "5× ROAS", note: "avg" },
-      { label: "Payout cadence", value: "[Payout cadence]" },
+      { label: "Pricing model", value: "Flat fee per day" },
+      { label: "Availability", value: "1 brand / city / day" },
     ],
   },
 ];
@@ -359,10 +360,14 @@ const MOFAWTER: ProductCardData = {
   testimonial: {
     quote: "Example: SAR 180K unlocked for a Riyadh fast-casual to refresh its kitchen.",
   },
+  stats: [
+    { value: "48h", label: "to payout" },
+    { value: "0", label: "collateral required" },
+  ],
   economics: [
-    { label: "Avg payout", value: "48h", note: "from approval" },
-    { label: "Limit", value: "~10%", note: "of annual GMV" },
-    { label: "Collateral", value: "0", note: "none required" },
+    { label: "Advance size", value: "Up to [PLACEHOLDER]" },
+    { label: "Repayment", value: "% of daily sales" },
+    { label: "Term length", value: "Until repaid" },
   ],
 };
 
@@ -397,12 +402,11 @@ const OPS_FLAGSHIP: ProductCardData = {
     "Your command center. Menus, pricing, hours and performance — managed from one place, across every branch.",
   body: "A single web dashboard for every HungerStation operation. Update menus and pricing, monitor live orders, manage promos, pull performance reports, and assign role-based access to your team — across one or many branches.",
   benefits: ["Multi-branch ready", "Real-time edits", "Role-based access", "Live analytics"],
-  steps: [
-    { t: "[Step 1]", d: "[NEEDS CONTENT — to be drafted]" },
-    { t: "[Step 2]", d: "[NEEDS CONTENT — to be drafted]" },
-    { t: "[Step 3]", d: "[NEEDS CONTENT — to be drafted]" },
-  ],
   testimonial: null,
+  economics: [
+    { label: "Cost", value: "Included with HungerStation" },
+    { label: "Setup", value: "Self-serve" },
+  ],
 };
 
 const OPS_SECONDARY: ProductCardData[] = [
@@ -410,14 +414,12 @@ const OPS_SECONDARY: ProductCardData[] = [
     name: "Order Management Suite",
     subhead:
       "The restaurant-side order flow — from incoming ticket to dispatcher handover. Built for high-volume kitchens.",
-    body: null,
     benefits: ["Tablet + printer kit", "Dispatcher integration", "Handover tracking"],
   },
   {
     name: "POS Integrations",
     subhead:
       "Already on Deliverect, FeedUs, UrbanPiper, Grubtech, or POSist? Plug in directly and receive HungerStation orders in your existing flow.",
-    body: null,
     benefits: ["Native sync", "No double-entry", "Live menu push"],
   },
 ];
