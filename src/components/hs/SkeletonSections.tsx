@@ -627,40 +627,180 @@ export function FinancingSection() {
   );
 }
 
+type OpsProduct = {
+  n: string;
+  name: string;
+  tagline: string;
+  benefits: string[];
+  icon: typeof LayoutDashboard;
+  extra?: { label: string; items: string[] };
+  partners?: string[];
+  tag?: string;
+};
+
+const OPS_PRODUCTS: OpsProduct[] = [
+  {
+    n: "01",
+    name: "Vendor Portal",
+    tagline: "Your command center. Menus, pricing, hours and performance — managed from one place, across every branch.",
+    benefits: ["Multi-branch ready", "Real-time edits", "Role-based access"],
+    icon: LayoutDashboard,
+    extra: {
+      label: "What you can do in the Vendor Portal",
+      items: [
+        "Menu management",
+        "Order tracking",
+        "Analytics",
+        "Payment management",
+        "Promo setup",
+        "Performance reports",
+      ],
+    },
+  },
+  {
+    n: "02",
+    name: "Order Management Suite",
+    tagline: "The restaurant-side order flow — from incoming ticket to dispatcher handover. Built for high-volume kitchens.",
+    benefits: ["Tablet + printer kit", "Dispatcher integration", "Handover tracking"],
+    icon: Tablet,
+  },
+  {
+    n: "03",
+    name: "POS Integrations",
+    tagline: "Already on Deliverect, FeedUs, UrbanPiper, Grubtech, or POSist? Plug in directly and receive HungerStation orders in your existing flow.",
+    benefits: ["Native sync", "No double-entry", "Live menu push"],
+    icon: Plug,
+    partners: ["Deliverect", "FeedUs", "UrbanPiper", "Grubtech", "POSist"],
+  },
+];
+
+const PLATFORM_MODULES = [
+  { icon: Boxes, name: "Stock & Inventory", desc: "Track ingredient and item availability in real-time." },
+  { icon: Headphones, name: "Call Center Panel", desc: "HungerStation customer service routes issues directly to your team." },
+  { icon: MegaphoneAlt, name: "Marketing Tool", desc: "Run targeted promos from the vendor portal." },
+  { icon: Smartphone, name: "Cockpit App", desc: "Mobile control center for managers on the go." },
+  { icon: Heart, name: "Loyalty", desc: "HRewards integration for customer retention." },
+  { icon: CalendarDays, name: "Table Reservation", desc: "Manage in-restaurant bookings alongside delivery." },
+  { icon: Globe, name: "Online / Web Ordering", desc: "White-label ordering for your own channels." },
+  { icon: MessageSquare, name: "Feedback Management", desc: "Customer ratings and reviews dashboard." },
+  { icon: BarChart3, name: "Performance Reports", desc: "Daily, weekly, and monthly analytics." },
+];
+
 export function OpsSection() {
   const { goal } = useHs();
+  const highlight = isOn(goal, "ops");
   return (
     <section id="ops" className="relative scroll-mt-24 border-t border-border">
       <SectionHeader
         index="06"
         eyebrow="Optimize Operations"
         title="Run a tighter kitchen."
-        copy="The back-office stack: a vendor portal, an order management suite, and POS integrations with the partners you already use."
-        highlight={isOn(goal, "ops")}
+        copy="The back-office stack — vendor portal, order management, POS integrations, and a built-in platform of tools that come with HungerStation."
+        highlight={highlight}
       />
-      <ProductGrid
-        highlight={isOn(goal, "ops")}
-        items={[
-          { name: "Vendor Portal", pitch: "Menus, hours, pricing, performance. All in one place." },
-          { name: "Order Management Suite", pitch: "Tablet + printer setup that scales to multi-branch." },
-          { name: "POS Integrations", pitch: "Native sync with Deliverect, FeedUs, UrbanPiper, Grubtech, POSist." },
-        ]}
-      />
-      <div className="container-x mt-12 overflow-hidden">
-        <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">Integrated with</div>
-        <div className="flex gap-12 items-center text-2xl font-display text-foreground/40">
-          <span>Deliverect</span>
-          <span>·</span>
-          <span>FeedUs</span>
-          <span>·</span>
-          <span>UrbanPiper</span>
-          <span>·</span>
-          <span>Grubtech</span>
-          <span>·</span>
-          <span>POSist</span>
+
+      <div className="container-x">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {OPS_PRODUCTS.map((p) => (
+            <OpsCard key={p.name} p={p} />
+          ))}
+        </div>
+
+        {/* Built-in platform tools */}
+        <div className="mt-20">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                Built-in platform tools
+              </div>
+              <h3 className="mt-3 font-display text-4xl md:text-5xl text-balance max-w-[18ch]">
+                Tools that come with the platform.
+              </h3>
+            </div>
+            <p className="max-w-sm text-sm text-muted-foreground">
+              Nine modules included by default — no extra licensing, no separate logins.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {PLATFORM_MODULES.map((m) => (
+              <div
+                key={m.name}
+                className="group flex gap-4 rounded-2xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-ink text-cream">
+                  <m.icon className="h-4.5 w-4.5" strokeWidth={1.8} />
+                </span>
+                <div>
+                  <div className="font-display text-lg text-foreground leading-tight">{m.name}</div>
+                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{m.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className="h-20" />
     </section>
   );
 }
+
+function OpsCard({ p }: { p: OpsProduct }) {
+  return (
+    <article className="group flex flex-col rounded-3xl border bg-card p-8 transition hover:-translate-y-1 hover:shadow-xl">
+      <div className="flex items-start justify-between">
+        <span className="grid h-11 w-11 place-items-center rounded-2xl bg-ink text-cream">
+          <p.icon className="h-5 w-5" strokeWidth={1.8} />
+        </span>
+        <span className="font-display text-xs text-muted-foreground">{p.n}</span>
+      </div>
+
+      <h3 className="mt-6 font-display text-2xl md:text-3xl text-foreground">{p.name}</h3>
+      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.tagline}</p>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        {p.benefits.map((b) => (
+          <span key={b} className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-3 py-1 text-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" /> {b}
+          </span>
+        ))}
+      </div>
+
+      {p.extra && (
+        <div className="mt-6 rounded-2xl border bg-background/40 p-5">
+          <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{p.extra.label}</div>
+          <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2">
+            {p.extra.items.map((i) => (
+              <li key={i} className="flex items-start gap-2 text-xs text-foreground">
+                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[color:var(--brand-yellow)]" />
+                {i}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {p.partners && (
+        <div className="mt-6 rounded-2xl border bg-background/40 p-5">
+          <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Integrated partners</div>
+          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-display text-base text-foreground/70">
+            {p.partners.map((partner, i) => (
+              <span key={partner} className="flex items-center gap-3">
+                {i > 0 && <span className="text-foreground/25">·</span>}
+                {partner}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <a
+        href="#plan"
+        className="mt-7 inline-flex items-center gap-2 self-start rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-hover transition"
+      >
+        Talk to my AM →
+      </a>
+    </article>
+  );
+}
+
