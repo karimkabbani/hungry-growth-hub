@@ -9,43 +9,40 @@ const DELIVERY: ProductCardData = {
   name: "Delivery Service.",
   subhead:
     "Boost sales across 100+ cities. Our riders handle the last mile, you focus on the food.",
-  body: "A managed end-to-end delivery channel. We bring the customers, the riders, the live tracking and the support — you bring the kitchen.",
+  stats: [
+    { value: "+10×", label: "orders potential" },
+    { value: "30 min", label: "avg delivery time" },
+    { value: "100+", label: "cities live" },
+  ],
   image: <PhoneMockup />,
   benefits: ["+10× orders potential", "30-min avg delivery", "Insured riders", "Live order dashboard"],
   steps: [
-    { t: "Customer orders.", d: "Browse, pick, pay — all in the HungerStation app." },
-    { t: "You prep.", d: "Receive the order in the Vendor Portal or your POS. Make the food." },
-    { t: "We deliver.", d: "Our riders handle the last mile. Real-time tracking from kitchen to customer." },
+    { t: "Customer orders.", d: "Browse, pick, pay in the HungerStation app." },
+    { t: "You prep.", d: "Receive the order in the Vendor Portal or your POS." },
+    { t: "We deliver.", d: "Our riders handle the last mile, live-tracked." },
   ],
   testimonial: {
     quote: "[Vendor quote about reaching new customers across KSA — 2 sentences.]",
     author: "Ahmed Al-Saud",
     role: "Owner · Bayt Mansaf · Riyadh",
     avatar: vendor,
-    stats: [
-      { n: "+312%", l: "Orders" },
-      { n: "4.9★", l: "Rating" },
-      { n: "7", l: "Branches" },
-    ],
   },
   economics: [
     { label: "Commission", value: "From 18%", note: "Tiered by volume" },
     { label: "Setup fee", value: "SAR 0", note: "Onboarded in 7 days" },
-    { label: "Payouts", value: "Weekly", note: "Net of commission" },
+    { label: "Payouts", value: "Weekly" },
   ],
 };
 
 const SELF_PICKUP: ProductCardData = {
   name: "Self Pick-Up",
   subhead: "Let customers grab orders without paying delivery.",
-  body: null,
   benefits: ["Zero delivery cost", "Higher margin per order", "Great for cafés & QSR"],
 };
 
 const KITCHENS: ProductCardData = {
   name: "HungerStation Kitchens",
   subhead: "Cloud kitchens in high-demand zones, fully managed by us.",
-  body: null,
   benefits: ["No real estate risk", "Open new neighborhoods fast", "Shared utilities"],
 };
 
