@@ -504,31 +504,22 @@ export function FinancingSection() {
 
   return (
     <section id="financing" className="relative scroll-mt-24 border-t border-border">
-      <div className="container-x py-20 md:py-28">
-        {/* Header row */}
-        <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
-          <div>
-            <div className="inline-flex items-center gap-2 flex-wrap">
-              <span className={`h-2 w-2 rounded-full ${highlight ? "bg-[color:var(--brand-yellow)] animate-pulse-ring" : "bg-foreground/30"}`} />
-              <span className={`text-sm font-semibold ${highlight ? "text-foreground" : "text-foreground"}`}>Fund Your Growth</span>
-              <span className="rounded-full bg-blue text-white px-2.5 py-0.5 text-[10px] uppercase tracking-[0.22em] font-semibold">Flagship · Mofawter</span>
-            </div>
-          </div>
-          <div>
-            <h2 className="font-display text-5xl md:text-7xl text-balance">Fund Your Growth.</h2>
-            <p className="mt-3 font-display text-2xl md:text-3xl text-muted-foreground text-balance">Financial tools built for Saudi restaurants.</p>
-            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              Mofawter is HungerStation's vendor financing. Get an upfront payout, repay automatically from a small share of each order. No paperwork, no collateral, no fixed monthly payments.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["Paid in 48 hours", "No collateral", "Repays from sales, not fixed installments"].map((b) => (
-                <span key={b} className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-4 py-2 text-sm">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" /> {b}
-                </span>
-              ))}
-            </div>
-          </div>
+      <SectionHeader
+        icon={Wallet}
+        eyebrow="Fund Your Growth"
+        title="Fund Your Growth."
+        copy="Mofawter is HungerStation's vendor financing. Get an upfront payout, repay automatically from a small share of each order. No paperwork, no collateral, no fixed monthly payments."
+        highlight={highlight}
+      />
+      <div className="container-x pb-20 md:pb-28">
+        <div className="flex flex-wrap gap-2">
+          {["Paid in 48 hours", "No collateral", "Repays from sales, not fixed installments"].map((b) => (
+            <span key={b} className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-4 py-2 text-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" /> {b}
+            </span>
+          ))}
         </div>
+
 
 
         {/* Photo + headline content */}
