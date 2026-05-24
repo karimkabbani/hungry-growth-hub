@@ -690,7 +690,7 @@ export function OpsSection() {
   return (
     <section id="ops" className="relative scroll-mt-24 border-t border-border">
       <SectionHeader
-        index="06"
+        icon={LayoutDashboard}
         eyebrow="Optimize Operations"
         title="Run a tighter kitchen."
         copy="The back-office stack — vendor portal, order management, POS integrations, and a built-in platform of tools that come with HungerStation."
