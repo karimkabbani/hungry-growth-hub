@@ -729,7 +729,7 @@ export function OpsSection() {
                 className="group flex gap-4 rounded-2xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-md"
               >
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-ink text-cream">
-                  <m.icon className="h-4.5 w-4.5" strokeWidth={1.8} />
+                  <m.icon className="h-4 w-4" strokeWidth={1.8} />
                 </span>
                 <div>
                   <div className="font-display text-lg text-foreground leading-tight">{m.name}</div>
