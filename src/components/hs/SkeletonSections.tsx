@@ -14,15 +14,7 @@ function ProductGrid({ items, highlight }: { items: { name: string; pitch: strin
             highlight ? "ring-2 ring-yellow/40" : ""
           }`}
         >
-          <div className="flex items-start justify-between">
-            <span className="font-display text-xs text-muted-foreground">0{i + 1}</span>
-            {p.tag && (
-              <span className="rounded-full bg-magenta/10 text-magenta px-2 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
-                {p.tag}
-              </span>
-            )}
-          </div>
-          <h4 className="mt-4 font-display text-2xl md:text-3xl">{p.name}</h4>
+          <h4 className="font-display text-2xl md:text-3xl">{p.name}</h4>
           <p className="mt-2 text-sm text-muted-foreground">{p.pitch}</p>
           <div className="mt-6 text-sm font-semibold underline-offset-4 decoration-yellow decoration-4 group-hover:underline">
             Learn more →
