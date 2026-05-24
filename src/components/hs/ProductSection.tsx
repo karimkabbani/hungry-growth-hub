@@ -98,7 +98,7 @@ export function GrowOnlineSection() {
                 <div className="h-1 w-10 rounded-full bg-[color:var(--brand-yellow)]" />
                 <Quote className="h-5 w-5 mt-4 text-muted-foreground" />
                 <p className="mt-3 font-display text-xl leading-tight text-balance text-foreground">
-                  "We went from one branch to seven in 18 months. HungerStation is half our revenue."
+                  "[Vendor quote about reaching new customers across KSA — 2 sentences.]"
                 </p>
                 <div className="mt-6 flex items-center gap-4">
                   <img src={vendor} alt="Vendor portrait" loading="lazy" className="h-12 w-12 rounded-full object-cover" />
