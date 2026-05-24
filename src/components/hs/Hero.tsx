@@ -55,7 +55,7 @@ export function Hero() {
             <span className="h-1.5 w-1.5 rounded-full bg-yellow" /> Product Guide · 2025
           </span>
           <h1 className="font-display text-balance text-[15vw] md:text-[8.5vw] lg:text-[7.5rem] leading-[0.9] max-w-[14ch]">
-            Where Saudi<br />restaurants <span className="accent-underline">grow.</span>
+            Where Saudi<br />partners <span className="accent-underline">grow.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg md:text-xl text-cream/70">
             Saudi Arabia's largest food delivery platform — and a lot more. <span className="text-cream font-semibold">13 years</span> building it, <span className="text-cream font-semibold">9 million customers</span> using it, <span className="text-cream font-semibold">55,000 restaurants</span> growing on it.
