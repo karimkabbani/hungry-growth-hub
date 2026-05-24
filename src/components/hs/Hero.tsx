@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-kitchen.jpg";
+import hsLogo from "@/assets/hungerstation-logo.png";
 import { StatCounter } from "./StatCounter";
 
 export function Hero() {
