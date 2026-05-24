@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LayoutDashboard, Car, Quote, ChevronDown } from "lucide-react";
+import { Quote, ChevronDown } from "lucide-react";
 import phoneMenu from "@/assets/hs-phone-menu.gif";
 import {
   Collapsible,
@@ -7,39 +7,21 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-// Saudi Arabia silhouette — simplified outline
-const SaudiArabiaIcon = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 100 100"
-    className={className}
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinejoin="round"
-    strokeLinecap="round"
-    aria-hidden
-  >
-    <path d="M18 22 L34 20 L44 14 L52 16 L58 22 L70 24 L78 30 L82 40 L86 50 L84 60 L78 68 L74 78 L66 86 L58 88 L50 84 L44 78 L36 76 L28 72 L22 64 L18 54 L14 44 L12 34 Z" />
-  </svg>
-);
-
 const PILLARS = [
   {
-    icon: SaudiArabiaIcon,
     title: "Extensive Reach",
     body: "100+ cities, served 24/7. The largest delivery network in the Kingdom — your restaurant reaches customers anywhere, any time of day.",
   },
   {
-    icon: LayoutDashboard,
     title: "Built for Vendors",
     body: "Seamless integration with the POS and order-management systems you already use. Robust vendor support when you need it. Fast vendor payouts that keep your cash flow growing.",
   },
   {
-    icon: Car,
     title: "Cutting-Edge Fleet Management",
     body: "Flexible scheduling that puts riders where demand is — peak hours, peak coverage. Real-time tracking from kitchen to customer, so you and your customers always know where the order is.",
   },
 ];
+
 
 const quoteSerif = { fontFamily: "Georgia, 'Times New Roman', serif" } as const;
 
