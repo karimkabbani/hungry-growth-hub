@@ -1,4 +1,4 @@
-import { Zap, Truck, ShieldCheck, BarChart3, Quote } from "lucide-react";
+import { Zap, Truck, ShieldCheck, BarChart3, Quote, Smartphone, type LucideIcon } from "lucide-react";
 import { PhoneMockup } from "./PhoneMockup";
 import { useHs, GOAL_META } from "@/lib/hs-context";
 import vendor from "@/assets/vendor-portrait.jpg";
@@ -23,7 +23,7 @@ export function GrowOnlineSection() {
   return (
     <section id="grow-online" className="relative scroll-mt-24 border-t border-border">
       <SectionHeader
-        index="02"
+        icon={Smartphone}
         eyebrow="Grow Online"
         title="Take orders across Saudi Arabia."
         copy="Delivery Service, Self Pick-Up and HungerStation Kitchens. Three ways to meet customers wherever — and however — they want to eat."
@@ -189,13 +189,14 @@ function SecondaryProduct({
 }
 
 export function SectionHeader({
-  index,
+  icon: Icon,
   eyebrow,
   title,
   copy,
   highlight,
 }: {
-  index: string;
+  icon: LucideIcon;
+  index?: string;
   eyebrow: string;
   title: string;
   copy: string;
@@ -206,8 +207,11 @@ export function SectionHeader({
       <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
         <div>
           <div className="inline-flex items-center gap-2">
-            <span className={`h-2 w-2 rounded-full ${highlight ? "bg-magenta animate-pulse-ring" : "bg-foreground/30"}`} />
-            <span className={`text-sm font-semibold ${highlight ? "text-magenta" : "text-foreground"}`}>{eyebrow}</span>
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--brand-yellow)] text-ink">
+              <Icon className="h-3.5 w-3.5" strokeWidth={2} />
+            </span>
+            <span className="text-sm font-semibold text-foreground">{eyebrow}</span>
+            {highlight && <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)] animate-pulse-ring" />}
           </div>
         </div>
         <div>

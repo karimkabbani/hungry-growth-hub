@@ -111,7 +111,7 @@ export function OrderValueSection() {
   return (
     <section id="order-value" className="relative scroll-mt-24 border-t border-border">
       <SectionHeader
-        index="03"
+        icon={TrendingUp}
         eyebrow="Increase Order Value & Volume"
         title="More orders. Bigger baskets."
         copy="Tools that grow how often customers order — and how much they spend per order."
@@ -353,30 +353,15 @@ export function AttractSection() {
   const highlight = isOn(goal, "newcustomers");
   return (
     <section id="attract" className="relative scroll-mt-24 border-t border-border bg-background text-foreground">
-      <div className="container-x py-20 md:py-28">
-        <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
-          <div>
-            <div className="inline-flex items-center gap-2">
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--brand-yellow)] text-ink">
-                <Megaphone className="h-3.5 w-3.5" strokeWidth={2} />
-              </span>
-              <span className="text-sm font-semibold text-foreground">Attract New Customers</span>
-              {highlight && <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)] animate-pulse-ring" />}
-            </div>
-          </div>
-          <div>
-            <h2 className="font-display text-5xl md:text-7xl text-balance">
-              Be the first thing{" "}
-              <span className="relative inline-block">
-                they tap.
-                <span className="absolute left-0 right-0 -bottom-1 h-2 bg-[color:var(--brand-yellow)] -z-10 rounded-full" aria-hidden />
-              </span>
-            </h2>
-            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              The full ad stack across HungerStation — from sponsored placements to time-boxed flash deals — running where 9M+ Saudis already decide what to eat.
-            </p>
-          </div>
-        </div>
+      <SectionHeader
+        icon={Megaphone}
+        eyebrow="Attract New Customers"
+        title="Be the first thing they tap."
+        copy="The full ad stack across HungerStation — from sponsored placements to time-boxed flash deals — running where 9M+ Saudis already decide what to eat."
+        highlight={highlight}
+      />
+      <div className="container-x pb-20 md:pb-28">
+
 
         {/* Stat band */}
         <div className="mt-14 grid gap-6 rounded-3xl border bg-card p-8 md:grid-cols-3 md:p-10">
@@ -504,31 +489,22 @@ export function FinancingSection() {
 
   return (
     <section id="financing" className="relative scroll-mt-24 border-t border-border">
-      <div className="container-x py-20 md:py-28">
-        {/* Header row */}
-        <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
-          <div>
-            <div className="inline-flex items-center gap-2 flex-wrap">
-              <span className={`h-2 w-2 rounded-full ${highlight ? "bg-[color:var(--brand-yellow)] animate-pulse-ring" : "bg-foreground/30"}`} />
-              <span className={`text-sm font-semibold ${highlight ? "text-foreground" : "text-foreground"}`}>Fund Your Growth</span>
-              <span className="rounded-full bg-blue text-white px-2.5 py-0.5 text-[10px] uppercase tracking-[0.22em] font-semibold">Flagship · Mofawter</span>
-            </div>
-          </div>
-          <div>
-            <h2 className="font-display text-5xl md:text-7xl text-balance">Fund Your Growth.</h2>
-            <p className="mt-3 font-display text-2xl md:text-3xl text-muted-foreground text-balance">Financial tools built for Saudi restaurants.</p>
-            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              Mofawter is HungerStation's vendor financing. Get an upfront payout, repay automatically from a small share of each order. No paperwork, no collateral, no fixed monthly payments.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["Paid in 48 hours", "No collateral", "Repays from sales, not fixed installments"].map((b) => (
-                <span key={b} className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-4 py-2 text-sm">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" /> {b}
-                </span>
-              ))}
-            </div>
-          </div>
+      <SectionHeader
+        icon={Wallet}
+        eyebrow="Fund Your Growth"
+        title="Fund Your Growth."
+        copy="Mofawter is HungerStation's vendor financing. Get an upfront payout, repay automatically from a small share of each order. No paperwork, no collateral, no fixed monthly payments."
+        highlight={highlight}
+      />
+      <div className="container-x pb-20 md:pb-28">
+        <div className="flex flex-wrap gap-2">
+          {["Paid in 48 hours", "No collateral", "Repays from sales, not fixed installments"].map((b) => (
+            <span key={b} className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-4 py-2 text-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" /> {b}
+            </span>
+          ))}
         </div>
+
 
 
         {/* Photo + headline content */}
@@ -690,7 +666,7 @@ export function OpsSection() {
   return (
     <section id="ops" className="relative scroll-mt-24 border-t border-border">
       <SectionHeader
-        index="06"
+        icon={LayoutDashboard}
         eyebrow="Optimize Operations"
         title="Run a tighter kitchen."
         copy="The back-office stack — vendor portal, order management, POS integrations, and a built-in platform of tools that come with HungerStation."
