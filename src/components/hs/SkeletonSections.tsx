@@ -388,16 +388,7 @@ function AdCard({ p, featured }: { p: AdProduct; featured?: boolean }) {
         featured ? "md:p-10" : ""
       }`}
     >
-      <div className="flex items-start justify-between">
-        <span className="font-display text-xs text-muted-foreground">{p.n}</span>
-        {p.tag && (
-          <span className="rounded-full bg-[color:var(--brand-yellow)] text-ink px-2.5 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
-            {p.tag}
-          </span>
-        )}
-      </div>
-
-      <h3 className={`mt-5 font-display text-balance text-foreground ${featured ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl"}`}>
+      <h3 className={`font-display text-balance text-foreground ${featured ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl"}`}>
         {p.name}
       </h3>
       <p className="mt-3 max-w-md text-muted-foreground">{p.tagline}</p>
