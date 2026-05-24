@@ -1,6 +1,6 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 
-export type Goal = "online" | "newcustomers" | "aov" | "ops";
+export type Goal = "online" | "aov" | "newcustomers" | "financing" | "ops";
 
 export const GOAL_META: Record<Goal, { label: string; sectionId: string; products: string[] }> = {
   online: {
@@ -9,7 +9,7 @@ export const GOAL_META: Record<Goal, { label: string; sectionId: string; product
     products: ["Delivery Service", "Self Pick-Up", "HungerStation Kitchens"],
   },
   aov: {
-    label: "Increase Order Value",
+    label: "Increase Order Value & Volume",
     sectionId: "order-value",
     products: ["RDF / HPlus", "Super Saver", "Full Menu Discounts", "Meal for One", "HRewards"],
   },
@@ -17,6 +17,11 @@ export const GOAL_META: Record<Goal, { label: string; sectionId: string; product
     label: "Attract New Customers",
     sectionId: "attract",
     products: ["Sponsored Listing", "Keyword Search", "Display Ads", "FlashDeals", "Splash Screen"],
+  },
+  financing: {
+    label: "Fund Your Growth",
+    sectionId: "financing",
+    products: ["Mofawter"],
   },
   ops: {
     label: "Optimize Operations",
