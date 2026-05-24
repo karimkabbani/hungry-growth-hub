@@ -118,12 +118,21 @@ export function OrderValueSection() {
         highlight={highlight}
       />
 
+      <ProductIndex
+        names={["RDF / HPlus", "Super Saver", "Full Menu Discounts", "Meal for One", "HRewards"]}
+      />
+
       <div className="container-x pb-20 md:pb-28">
-        <ProductCard data={AOV_FLAGSHIP} size="flagship" highlight={highlight} />
+        <ProductCard
+          data={AOV_FLAGSHIP}
+          size="flagship"
+          highlight={highlight}
+          id={slugifyProduct(AOV_FLAGSHIP.name)}
+        />
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {AOV_SECONDARY.map((p) => (
-            <ProductCard key={p.name} data={p} size="secondary" />
+            <ProductCard key={p.name} data={p} size="secondary" id={slugifyProduct(p.name)} />
           ))}
         </div>
       </div>
