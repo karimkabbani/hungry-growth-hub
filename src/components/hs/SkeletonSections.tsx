@@ -1,6 +1,6 @@
 import { SectionHeader } from "./ProductSection";
 import { useHs, type Goal } from "@/lib/hs-context";
-import { Banknote, ShieldCheck, TrendingUp, FileSearch, Wallet, Repeat, Store, Flame, Sparkles, Megaphone } from "lucide-react";
+import { Banknote, ShieldCheck, TrendingUp, FileSearch, Wallet, Repeat, Store, Flame, Sparkles, Megaphone, LayoutDashboard, Tablet, Plug, Boxes, Headphones, Megaphone as MegaphoneAlt, Smartphone, Heart, CalendarDays, Globe, MessageSquare, BarChart3 } from "lucide-react";
 import foodSpread from "@/assets/food-spread.jpg";
 import rider from "@/assets/delivery-rider.jpg";
 
