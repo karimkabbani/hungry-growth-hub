@@ -45,7 +45,7 @@ export function GrowOnlineSection() {
               </div>
               <h3 className="mt-6 font-display text-5xl md:text-7xl text-balance">Delivery Service.</h3>
               <p className="mt-4 max-w-lg text-lg text-muted-foreground">
-                List once, sell across 100+ cities. Our riders handle the last mile while you focus on the food.
+                Boost sales across 100+ cities. Our riders handle the last mile while you focus on the food.
               </p>
 
               <div className="mt-12 grid gap-6">
