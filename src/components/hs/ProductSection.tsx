@@ -164,11 +164,7 @@ function SecondaryProduct({
 }) {
   return (
     <article className="group rounded-3xl border bg-card p-8 transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-        <span className="grid h-7 w-7 place-items-center rounded-full bg-ink text-cream font-display">{n}</span>
-        Product
-      </div>
-      <h3 className="mt-6 font-display text-3xl md:text-4xl">{name}</h3>
+      <h3 className="font-display text-3xl md:text-4xl">{name}</h3>
       <p className="mt-2 text-muted-foreground">{pitch}</p>
       <ul className="mt-6 space-y-2">
         {benefits.map((b) => (
