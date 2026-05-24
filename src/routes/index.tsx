@@ -38,6 +38,7 @@ function Index() {
       <main id="top" className="relative">
         <Hero />
         <SideNav />
+        <WhyHungerStation />
         <GoalPicker />
         <GrowOnlineSection />
         <OrderValueSection />
