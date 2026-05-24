@@ -508,8 +508,7 @@ export function FinancingSection() {
         {/* Header row */}
         <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
           <div>
-            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">05 — Product Family</div>
-            <div className="mt-3 inline-flex items-center gap-2">
+            <div className="inline-flex items-center gap-2 flex-wrap">
               <span className={`h-2 w-2 rounded-full ${highlight ? "bg-[color:var(--brand-yellow)] animate-pulse-ring" : "bg-foreground/30"}`} />
               <span className={`text-sm font-semibold ${highlight ? "text-foreground" : "text-foreground"}`}>Fund Your Growth</span>
               <span className="rounded-full bg-blue text-white px-2.5 py-0.5 text-[10px] uppercase tracking-[0.22em] font-semibold">Flagship · Mofawter</span>
