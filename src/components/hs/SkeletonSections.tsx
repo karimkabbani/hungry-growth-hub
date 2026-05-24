@@ -352,40 +352,49 @@ export function AttractSection() {
   const { goal } = useHs();
   const highlight = isOn(goal, "newcustomers");
   return (
-    <section id="attract" className="relative scroll-mt-24 border-t border-cream/10 bg-ink text-cream">
+    <section id="attract" className="relative scroll-mt-24 border-t border-border bg-background text-foreground">
       <div className="container-x py-20 md:py-28">
         <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
           <div>
-            <div className="text-xs uppercase tracking-[0.22em] text-cream/50">04 — Product Family</div>
+            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">04 — Product Family</div>
             <div className="mt-3 inline-flex items-center gap-2">
-              <span className={`h-2 w-2 rounded-full ${highlight ? "bg-[color:var(--brand-yellow)] animate-pulse-ring" : "bg-cream/30"}`} />
-              <span className={`text-sm font-semibold ${highlight ? "text-[color:var(--brand-yellow)]" : "text-cream"}`}>Attract New Customers</span>
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--brand-yellow)] text-ink">
+                <Megaphone className="h-3.5 w-3.5" strokeWidth={2} />
+              </span>
+              <span className="text-sm font-semibold text-foreground">Attract New Customers</span>
+              {highlight && <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)] animate-pulse-ring" />}
             </div>
           </div>
           <div>
-            <h2 className="font-display text-5xl md:text-7xl text-balance">Be the first thing they tap.</h2>
-            <p className="mt-5 max-w-xl text-lg text-cream/70">
+            <h2 className="font-display text-5xl md:text-7xl text-balance">
+              Be the first thing{" "}
+              <span className="relative inline-block">
+                they tap.
+                <span className="absolute left-0 right-0 -bottom-1 h-2 bg-[color:var(--brand-yellow)] -z-10 rounded-full" aria-hidden />
+              </span>
+            </h2>
+            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
               The full ad stack across HungerStation — from sponsored placements to time-boxed flash deals — running where 9M+ Saudis already decide what to eat.
             </p>
           </div>
         </div>
 
         {/* Stat band */}
-        <div className="mt-14 grid gap-6 rounded-3xl border border-cream/15 bg-cream/[0.04] p-8 md:grid-cols-3 md:p-10">
+        <div className="mt-14 grid gap-6 rounded-3xl border bg-card p-8 md:grid-cols-3 md:p-10">
           <div className="md:col-span-2">
-            <div className="font-display text-5xl md:text-6xl">
+            <div className="font-display text-5xl md:text-6xl text-foreground">
               30K<span className="text-[color:var(--brand-yellow)]">+</span>{" "}
-              <span className="text-cream/70 text-3xl md:text-4xl font-display">brands advertise on HungerStation.</span>
+              <span className="text-muted-foreground text-3xl md:text-4xl font-display">brands advertise on HungerStation.</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-6 md:border-l md:border-cream/15 md:pl-10">
+          <div className="grid grid-cols-2 gap-6 md:border-l md:border-border md:pl-10">
             <div>
-              <div className="font-display text-3xl">5×</div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-cream/60 mt-1">Avg ROAS</div>
+              <div className="font-display text-3xl text-foreground">5×</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">Avg ROAS</div>
             </div>
             <div>
-              <div className="font-display text-3xl">9M+</div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-cream/60 mt-1">Reachable users</div>
+              <div className="font-display text-3xl text-foreground">9M+</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">Reachable users</div>
             </div>
           </div>
         </div>
@@ -404,10 +413,10 @@ export function AttractSection() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-cream/60">
+        <div className="mt-12 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
           Booking channels:
-          <span className="rounded-full border border-cream/20 px-3 py-1">Via Account Manager</span>
-          <span className="rounded-full border border-cream/20 px-3 py-1">Self-Booking Portal</span>
+          <span className="rounded-full border px-3 py-1">Via Account Manager</span>
+          <span className="rounded-full border px-3 py-1">Self-Booking Portal</span>
         </div>
       </div>
     </section>
@@ -417,12 +426,12 @@ export function AttractSection() {
 function AdCard({ p, featured }: { p: AdProduct; featured?: boolean }) {
   return (
     <article
-      className={`group relative flex flex-col rounded-3xl border border-cream/15 bg-cream/[0.04] p-8 transition hover:bg-cream/[0.07] ${
+      className={`group relative flex flex-col rounded-3xl border bg-card p-8 transition hover:-translate-y-1 hover:shadow-xl ${
         featured ? "md:p-10" : ""
       }`}
     >
       <div className="flex items-start justify-between">
-        <span className="font-display text-xs text-cream/50">{p.n}</span>
+        <span className="font-display text-xs text-muted-foreground">{p.n}</span>
         {p.tag && (
           <span className="rounded-full bg-[color:var(--brand-yellow)] text-ink px-2.5 py-0.5 text-[10px] uppercase tracking-widest font-semibold">
             {p.tag}
@@ -430,35 +439,35 @@ function AdCard({ p, featured }: { p: AdProduct; featured?: boolean }) {
         )}
       </div>
 
-      <h3 className={`mt-5 font-display text-balance ${featured ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl"}`}>
+      <h3 className={`mt-5 font-display text-balance text-foreground ${featured ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl"}`}>
         {p.name}
       </h3>
-      <p className="mt-3 max-w-md text-cream/70">{p.tagline}</p>
+      <p className="mt-3 max-w-md text-muted-foreground">{p.tagline}</p>
 
       <div className="mt-6 flex flex-wrap gap-2">
         {p.benefits.map((b) => (
-          <span key={b} className="rounded-full border border-cream/20 bg-cream/5 px-3 py-1 text-xs text-cream/90">
-            {b}
+          <span key={b} className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-3 py-1 text-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-yellow)]" /> {b}
           </span>
         ))}
       </div>
 
       <div className="mt-8">
-        <div className="text-[10px] uppercase tracking-[0.22em] text-cream/50">How it works</div>
+        <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">How it works</div>
         <ol className={`mt-4 grid gap-3 ${featured ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
           {p.steps.map((s, i) => (
-            <li key={s.t} className="rounded-2xl border border-cream/10 bg-ink/40 p-4">
-              <div className="grid h-7 w-7 place-items-center rounded-full bg-cream/10 font-display text-xs text-cream">
+            <li key={s.t} className="rounded-2xl border bg-background/40 p-4">
+              <div className="grid h-7 w-7 place-items-center rounded-full bg-ink text-cream font-display text-xs">
                 {i + 1}
               </div>
-              <div className="mt-3 font-semibold text-sm text-cream">{s.t}</div>
-              <p className="mt-1 text-xs text-cream/65 leading-relaxed">{s.d}</p>
+              <div className="mt-3 font-semibold text-sm text-foreground">{s.t}</div>
+              <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{s.d}</p>
             </li>
           ))}
         </ol>
       </div>
 
-      <div className="mt-8 grid gap-4 rounded-2xl bg-ink/60 border border-cream/10 p-5 sm:grid-cols-[1fr_1fr_auto] sm:items-center">
+      <div className="mt-8 grid gap-4 rounded-2xl bg-ink text-cream p-5 sm:grid-cols-[1fr_1fr_auto] sm:items-center">
         <div>
           <div className="text-[10px] uppercase tracking-[0.22em] text-cream/50">Pricing</div>
           <div className="font-display text-lg mt-1">{p.pricing}</div>
@@ -477,6 +486,7 @@ function AdCard({ p, featured }: { p: AdProduct; featured?: boolean }) {
     </article>
   );
 }
+
 
 
 export function FinancingSection() {
