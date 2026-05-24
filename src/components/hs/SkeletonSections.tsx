@@ -353,30 +353,15 @@ export function AttractSection() {
   const highlight = isOn(goal, "newcustomers");
   return (
     <section id="attract" className="relative scroll-mt-24 border-t border-border bg-background text-foreground">
-      <div className="container-x py-20 md:py-28">
-        <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
-          <div>
-            <div className="inline-flex items-center gap-2">
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--brand-yellow)] text-ink">
-                <Megaphone className="h-3.5 w-3.5" strokeWidth={2} />
-              </span>
-              <span className="text-sm font-semibold text-foreground">Attract New Customers</span>
-              {highlight && <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)] animate-pulse-ring" />}
-            </div>
-          </div>
-          <div>
-            <h2 className="font-display text-5xl md:text-7xl text-balance">
-              Be the first thing{" "}
-              <span className="relative inline-block">
-                they tap.
-                <span className="absolute left-0 right-0 -bottom-1 h-2 bg-[color:var(--brand-yellow)] -z-10 rounded-full" aria-hidden />
-              </span>
-            </h2>
-            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              The full ad stack across HungerStation — from sponsored placements to time-boxed flash deals — running where 9M+ Saudis already decide what to eat.
-            </p>
-          </div>
-        </div>
+      <SectionHeader
+        icon={Megaphone}
+        eyebrow="Attract New Customers"
+        title="Be the first thing they tap."
+        copy="The full ad stack across HungerStation — from sponsored placements to time-boxed flash deals — running where 9M+ Saudis already decide what to eat."
+        highlight={highlight}
+      />
+      <div className="container-x pb-20 md:pb-28">
+
 
         {/* Stat band */}
         <div className="mt-14 grid gap-6 rounded-3xl border bg-card p-8 md:grid-cols-3 md:p-10">
