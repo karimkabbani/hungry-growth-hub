@@ -5,7 +5,7 @@ const ITEMS = [
   { id: "grow-online", label: "Grow Online" },
   { id: "order-value", label: "Order Value" },
   { id: "attract", label: "Attract Customers" },
-  { id: "financing", label: "Vendor Financing" },
+  { id: "financing", label: "Fund Your Growth" },
   { id: "ops", label: "Optimize Ops" },
   { id: "roi", label: "ROI Calculator" },
   { id: "plan", label: "Your Plan" },
