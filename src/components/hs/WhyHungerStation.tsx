@@ -18,7 +18,7 @@ const PILLARS = [
   },
   {
     title: "Cutting-Edge Fleet Management",
-    body: "Flexible scheduling that puts riders where demand is — peak hours, peak coverage. Real-time tracking from kitchen to customer, so you and your customers always know where the order is.",
+    body: "The largest fleet in Saudi Arabia. Flexible scheduling that puts riders where demand is — peak hours, peak coverage. Real-time tracking from kitchen to customer, so you and your customers always know where the order is.",
   },
 ];
 
