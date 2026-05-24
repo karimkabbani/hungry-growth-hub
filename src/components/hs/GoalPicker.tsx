@@ -1,17 +1,19 @@
-import { ShoppingBag, Users, TrendingUp, Settings } from "lucide-react";
+import { ShoppingBag, Users, TrendingUp, Settings, Banknote } from "lucide-react";
 import { GOAL_META, useHs, type Goal } from "@/lib/hs-context";
 
 const ICONS: Record<Goal, typeof ShoppingBag> = {
   online: ShoppingBag,
-  newcustomers: Users,
   aov: TrendingUp,
+  newcustomers: Users,
+  financing: Banknote,
   ops: Settings,
 };
 
 const COPY: Record<Goal, string> = {
   online: "Get listed, take orders, and ship across 100+ KSA cities.",
-  newcustomers: "Run paid placements, search ads and FlashDeals to fill your funnel.",
   aov: "Push average ticket with HPlus, Super Saver and loyalty.",
+  newcustomers: "Run paid placements, search ads and FlashDeals to fill your funnel.",
+  financing: "Unlock upfront cash with Mofawter — repaid as you sell.",
   ops: "Cut prep time and stockouts with POS-integrated tools.",
 };
 
@@ -40,7 +42,7 @@ export function GoalPicker() {
         </p>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {(Object.keys(GOAL_META) as Goal[]).map((g, i) => {
           const Icon = ICONS[g];
           const active = goal === g;

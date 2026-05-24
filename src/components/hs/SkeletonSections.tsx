@@ -480,6 +480,8 @@ function AdCard({ p, featured }: { p: AdProduct; featured?: boolean }) {
 
 
 export function FinancingSection() {
+  const { goal } = useHs();
+  const highlight = isOn(goal, "financing");
   const STEPS = [
     { icon: FileSearch, t: "We assess your sales history", d: "Mofawter looks at your HungerStation order history — no bank statements, no paperwork." },
     { icon: Wallet, t: "You get paid in 48 hours", d: "A lump-sum payout lands in your account within two business days of approval." },
@@ -497,13 +499,16 @@ export function FinancingSection() {
         {/* Header row */}
         <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
           <div>
-            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">05 — Vendor Financing</div>
+            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">05 — Product Family</div>
             <div className="mt-3 inline-flex items-center gap-2">
-              <span className="rounded-full bg-blue text-white px-2.5 py-0.5 text-[10px] uppercase tracking-[0.22em] font-semibold">New · Mofawter</span>
+              <span className={`h-2 w-2 rounded-full ${highlight ? "bg-[color:var(--brand-yellow)] animate-pulse-ring" : "bg-foreground/30"}`} />
+              <span className={`text-sm font-semibold ${highlight ? "text-foreground" : "text-foreground"}`}>Fund Your Growth</span>
+              <span className="rounded-full bg-blue text-white px-2.5 py-0.5 text-[10px] uppercase tracking-[0.22em] font-semibold">Flagship · Mofawter</span>
             </div>
           </div>
           <div>
-            <h2 className="font-display text-5xl md:text-7xl text-balance">Cash today.<br />Repaid as you sell.</h2>
+            <h2 className="font-display text-5xl md:text-7xl text-balance">Fund Your Growth.</h2>
+            <p className="mt-3 font-display text-2xl md:text-3xl text-muted-foreground text-balance">Financial tools built for Saudi restaurants.</p>
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
               Mofawter is HungerStation's vendor financing. Get an upfront payout, repay automatically from a small share of each order. No paperwork, no collateral, no fixed monthly payments.
             </p>
@@ -516,6 +521,7 @@ export function FinancingSection() {
             </div>
           </div>
         </div>
+
 
         {/* Photo + headline content */}
         <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-stretch lg:gap-16">
