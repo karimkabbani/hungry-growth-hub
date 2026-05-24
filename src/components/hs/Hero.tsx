@@ -33,7 +33,7 @@ export function Hero() {
             alt="HungerStation"
             className="h-8 md:h-10 w-auto"
           />
-          <span className="ml-1 hidden md:inline rounded-full border border-white/20 px-2 py-0.5 text-[10px] uppercase tracking-widest">For Restaurants</span>
+          
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-cream/70">
           <a href="#grow-online" className="hover:text-cream">Products</a>
