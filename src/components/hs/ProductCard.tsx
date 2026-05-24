@@ -31,10 +31,12 @@ export function ProductCard({
   data,
   size = "flagship",
   highlight,
+  id,
 }: {
   data: ProductCardData;
   size?: CardSize;
   highlight?: boolean;
+  id?: string;
 }) {
   const isFlag = size === "flagship";
   const benefits = data.benefits && data.benefits.length ? data.benefits : null;
@@ -44,7 +46,8 @@ export function ProductCard({
 
   return (
     <article
-      className={`relative overflow-hidden rounded-[2rem] border bg-card transition-all duration-500 ${
+      id={id}
+      className={`relative scroll-mt-28 overflow-hidden rounded-[2rem] border bg-card transition-all duration-500 ${
         isFlag ? "p-8 md:p-14" : "p-6 md:p-8"
       } ${highlight ? "ring-1 ring-[color:var(--brand-yellow)] shadow-xl" : "shadow-sm"}`}
     >
