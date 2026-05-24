@@ -450,13 +450,21 @@ export function OpsSection() {
         copy="The back-office stack — vendor portal, order management, POS integrations, and a built-in platform of tools that come with HungerStation."
         highlight={highlight}
       />
+      <ProductIndex
+        names={["Vendor Portal", "Order Management Suite", "POS Integrations"]}
+      />
 
       <div className="container-x">
-        <ProductCard data={OPS_FLAGSHIP} size="flagship" highlight={highlight} />
+        <ProductCard
+          data={OPS_FLAGSHIP}
+          size="flagship"
+          highlight={highlight}
+          id={slugifyProduct("Vendor Portal")}
+        />
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {OPS_SECONDARY.map((p) => (
-            <ProductCard key={p.name} data={p} size="secondary" />
+            <ProductCard key={p.name} data={p} size="secondary" id={slugifyProduct(p.name)} />
           ))}
         </div>
 
