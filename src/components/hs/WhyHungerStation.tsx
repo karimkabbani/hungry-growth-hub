@@ -1,5 +1,4 @@
 import { MapPin, Handshake, Bike, Quote } from "lucide-react";
-import ceoPortrait from "@/assets/ceo-portrait.jpg";
 
 const PILLARS = [
   {
