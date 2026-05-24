@@ -30,16 +30,12 @@ export function GoalPicker() {
 
   return (
     <section id="goals" className="container-x relative py-24 md:py-32">
-      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <h2 className="font-display text-5xl md:text-7xl text-balance max-w-[14ch]">
-            What do you want to grow?
-          </h2>
-        </div>
-        <p className="max-w-sm text-base text-muted-foreground">
-          Pick a goal. We'll personalize the rest of this guide and build a plan for you at the end.
-        </p>
+      <div>
+        <h2 className="font-display text-5xl md:text-7xl text-balance max-w-[16ch]">
+          How HungerStation helps you grow.
+        </h2>
       </div>
+
 
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {(Object.keys(GOAL_META) as Goal[]).map((g, i) => {
