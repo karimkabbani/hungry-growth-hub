@@ -1,4 +1,4 @@
-import { Zap, Truck, ShieldCheck, BarChart3, Quote } from "lucide-react";
+import { Zap, Truck, ShieldCheck, BarChart3, Quote, Smartphone, type LucideIcon } from "lucide-react";
 import { PhoneMockup } from "./PhoneMockup";
 import { useHs, GOAL_META } from "@/lib/hs-context";
 import vendor from "@/assets/vendor-portrait.jpg";
