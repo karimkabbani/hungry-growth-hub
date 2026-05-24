@@ -1,5 +1,4 @@
 import { MapPin, Handshake, Bike, Quote } from "lucide-react";
-import ceoPortrait from "@/assets/ceo-portrait.jpg";
 
 const PILLARS = [
   {
@@ -41,41 +40,31 @@ export function WhyHungerStation() {
           </p>
         </div>
 
-        {/* CEO quote */}
-        <article className="mt-14 grid gap-0 overflow-hidden rounded-[2rem] border bg-card shadow-sm md:grid-cols-[1fr_1.6fr]">
-          <div className="relative bg-muted">
-            <img
-              src={ceoPortrait}
-              alt="Ali Aldamanhori, CEO of HungerStation"
-              loading="lazy"
-              width={896}
-              height={1120}
-              className="h-full w-full object-cover aspect-[4/5] md:aspect-auto"
-            />
-          </div>
-          <div className="relative p-8 md:p-14 flex flex-col justify-center">
-            <Quote
-              className="absolute top-6 left-6 md:top-10 md:left-10 h-16 w-16 md:h-24 md:w-24 text-[color:var(--brand-yellow)]/30"
-              strokeWidth={1}
-              aria-hidden
-            />
-            <p
-              className="relative font-display italic text-2xl md:text-3xl lg:text-4xl leading-snug text-balance text-foreground"
-              style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
-            >
-              [CEO note from Ali Aldamanhori — 3 to 4 sentences about HungerStation's commitment to Saudi restaurants and growth.]
-            </p>
-            <div className="mt-8 flex items-center gap-4">
-              <span className="h-px w-10 bg-foreground/40" aria-hidden />
-              <div>
-                <div className="font-semibold text-sm text-foreground">Ali Aldamanhori</div>
-                <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
-                  CEO, HungerStation
-                </div>
+        {/* CEO quote — editorial pull-quote, no portrait */}
+        <figure className="mt-16 md:mt-20 relative mx-auto max-w-4xl text-center">
+          <Quote
+            className="mx-auto h-20 w-20 md:h-28 md:w-28 text-[color:var(--brand-yellow)]"
+            strokeWidth={1}
+            aria-hidden
+          />
+          <blockquote
+            className="mt-6 font-display text-3xl md:text-5xl lg:text-6xl leading-[1.15] text-balance text-foreground italic"
+            style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+          >
+            [CEO note from Ali Aldamanhori — 3 to 4 sentences about HungerStation's commitment to Saudi restaurants and growth.]
+          </blockquote>
+          <figcaption className="mt-10 flex items-center justify-center gap-4">
+            <span className="h-px w-10 bg-foreground/40" aria-hidden />
+            <div className="text-left">
+              <div className="font-semibold text-sm text-foreground">Ali Aldamanhori</div>
+              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
+                CEO, HungerStation
               </div>
             </div>
-          </div>
-        </article>
+            <span className="h-px w-10 bg-foreground/40" aria-hidden />
+          </figcaption>
+        </figure>
+
 
         {/* Three pillars */}
         <div className="mt-12 grid gap-6 md:grid-cols-3">
