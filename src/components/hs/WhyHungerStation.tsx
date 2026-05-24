@@ -56,7 +56,7 @@ export function WhyHungerStation() {
           <figcaption className="mt-10 flex items-center justify-center gap-4">
             <span className="h-px w-10 bg-foreground/40" aria-hidden />
             <div className="text-left">
-              <div className="font-semibold text-sm text-foreground">Ali Aldamanhori</div>
+              <div className="font-semibold text-sm text-foreground">ENG. Ali Aldamanhori</div>
               <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
                 CEO, HungerStation
               </div>
