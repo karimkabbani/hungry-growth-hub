@@ -77,8 +77,7 @@ export function BuildYourPlan() {
       <div className="container-x py-24 md:py-32">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
           <div>
-            <div className="text-xs uppercase tracking-[0.22em] text-cream/60">08 — Build your plan</div>
-            <h2 className="mt-3 font-display text-5xl md:text-7xl text-balance">
+            <h2 className="font-display text-5xl md:text-7xl text-balance">
               Your HungerStation<br /><span className="accent-underline">growth stack.</span>
             </h2>
             <p className="mt-5 max-w-lg text-lg text-cream/70">
