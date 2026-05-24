@@ -52,7 +52,7 @@ export function Hero() {
       <div className="container-x relative z-10 grid min-h-[80vh] grid-cols-1 items-center gap-10 pb-24 pt-12 md:grid-cols-12">
         <div className="md:col-span-7 flex flex-col justify-center">
           <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-3 py-1 text-xs uppercase tracking-[0.22em] text-cream/80 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-yellow" /> Product Guide · 2025
+            <span className="h-1.5 w-1.5 rounded-full bg-yellow" /> Product guide for Restaurants
           </span>
           <h1 className="font-display text-balance text-[15vw] md:text-[8.5vw] lg:text-[7.5rem] leading-[0.9] max-w-[14ch]">
             Where Saudi<br />partners <span className="accent-underline">grow.</span>
