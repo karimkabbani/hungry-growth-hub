@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HsProvider } from "@/lib/hs-context";
 import { Hero } from "@/components/hs/Hero";
+import { WhyHungerStation } from "@/components/hs/WhyHungerStation";
 import { GoalPicker } from "@/components/hs/GoalPicker";
 import { SideNav } from "@/components/hs/SideNav";
 import { GrowOnlineSection } from "@/components/hs/ProductSection";
@@ -37,6 +38,7 @@ function Index() {
       <main id="top" className="relative">
         <Hero />
         <SideNav />
+        <WhyHungerStation />
         <GoalPicker />
         <GrowOnlineSection />
         <OrderValueSection />

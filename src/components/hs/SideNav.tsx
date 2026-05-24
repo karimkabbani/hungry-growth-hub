@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const ITEMS = [
+  { id: "why", label: "Why HungerStation" },
   { id: "goals", label: "Overview" },
   { id: "grow-online", label: "Grow Online" },
   { id: "order-value", label: "Order Value & Volume" },
