@@ -1,26 +1,43 @@
 import { useState } from "react";
-import { Globe, HeartHandshake, Bike, Quote, ChevronDown } from "lucide-react";
+import { LayoutDashboard, Car, Quote, ChevronDown } from "lucide-react";
+import phoneMenu from "@/assets/hs-phone-menu.gif";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
+// Saudi Arabia silhouette — simplified outline
+const SaudiArabiaIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 100 100"
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinejoin="round"
+    strokeLinecap="round"
+    aria-hidden
+  >
+    <path d="M18 22 L34 20 L44 14 L52 16 L58 22 L70 24 L78 30 L82 40 L86 50 L84 60 L78 68 L74 78 L66 86 L58 88 L50 84 L44 78 L36 76 L28 72 L22 64 L18 54 L14 44 L12 34 Z" />
+  </svg>
+);
+
 const PILLARS = [
   {
-    icon: Globe,
+    icon: SaudiArabiaIcon,
     title: "Extensive Reach",
     body: "100+ cities, served 24/7. The largest delivery network in the Kingdom — your restaurant reaches customers anywhere, any time of day.",
   },
   {
-    icon: HeartHandshake,
+    icon: LayoutDashboard,
     title: "Built for Vendors",
-    body: "Fast payouts. 24/7 vendor support. Native app integration. Products shaped by feedback from the restaurants that use them.",
+    body: "Seamless integration with the POS and order-management systems you already use. Robust vendor support when you need it. Fast vendor payouts that keep your cash flow growing.",
   },
   {
-    icon: Bike,
-    title: "World-Class Logistics",
-    body: "AI-driven dispatch. Real-time tracking. Flexible scheduling for peak hours. Orders arrive on time, and you stay in control.",
+    icon: Car,
+    title: "Cutting-Edge Fleet Management",
+    body: "Flexible scheduling that puts riders where demand is — peak hours, peak coverage. Real-time tracking from kitchen to customer, so you and your customers always know where the order is.",
   },
 ];
 
@@ -47,11 +64,13 @@ export function WhyHungerStation() {
           </p>
         </div>
 
-        {/* CEO editorial pull-quote — collapsible */}
-        <figure className="mt-16 md:mt-20 relative mx-auto max-w-3xl text-center">
-          <Quote
-            className="mx-auto h-16 w-16 md:h-20 md:w-20 text-[color:var(--brand-yellow)]"
-            strokeWidth={1}
+        {/* CEO editorial pull-quote + product UI */}
+        <div className="mt-16 md:mt-20 grid gap-12 md:gap-10 md:grid-cols-5 items-center">
+          <figure className="md:col-span-3 relative text-center md:text-left">
+
+            <Quote
+              className="mx-auto md:mx-0 h-16 w-16 md:h-20 md:w-20 text-[color:var(--brand-yellow)]"
+              strokeWidth={1}
             aria-hidden
           />
 
@@ -64,16 +83,15 @@ export function WhyHungerStation() {
             </p>
           </blockquote>
 
-          <figcaption className="mt-10 flex items-center justify-center gap-4">
-            <span className="h-px w-10 bg-foreground/40" aria-hidden />
-            <div className="text-left">
-              <div className="font-semibold text-sm text-foreground">— ENG. Ali Aldamanhori</div>
-              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
-                CEO, HungerStation
+            <figcaption className="mt-10 flex items-center justify-center md:justify-start gap-4">
+              <span className="h-px w-10 bg-foreground/40" aria-hidden />
+              <div className="text-left">
+                <div className="font-semibold text-sm text-foreground">— ENG. Ali Aldamanhori</div>
+                <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
+                  CEO, HungerStation
+                </div>
               </div>
-            </div>
-            <span className="h-px w-10 bg-foreground/40" aria-hidden />
-          </figcaption>
+            </figcaption>
 
           <Collapsible open={open} onOpenChange={setOpen}>
             <CollapsibleContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
@@ -109,7 +127,16 @@ export function WhyHungerStation() {
               </button>
             </CollapsibleTrigger>
           </Collapsible>
-        </figure>
+          </figure>
+
+          <div className="md:col-span-2 flex justify-center md:justify-end">
+            <img
+              src={phoneMenu}
+              alt="HungerStation restaurant menu — bestsellers and SAR pricing"
+              className="w-full max-w-[320px] md:max-w-[380px] h-auto drop-shadow-2xl"
+            />
+          </div>
+        </div>
 
         {/* Three pillars */}
         <div className="mt-20 md:mt-24 grid gap-12 md:gap-10 md:grid-cols-3">
