@@ -1,4 +1,10 @@
-import { Globe, HeartHandshake, Bike, Quote } from "lucide-react";
+import { useState } from "react";
+import { Globe, HeartHandshake, Bike, Quote, ChevronDown } from "lucide-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const PILLARS = [
   {
@@ -18,13 +24,11 @@ const PILLARS = [
   },
 ];
 
-const CEO_PARAGRAPHS = [
-  "At HungerStation, our mission is rooted in partnership. From day one, we've believed that when our restaurant partners succeed, so do we.",
-  "More than 13 years ago, we launched with a simple idea: make ordering food easier and more convenient for everyone in Saudi Arabia. Today, we're the largest platform of our kind in the Kingdom — connecting 55,000 partners to millions of customers across 100+ cities.",
-  "Our promise is to keep pushing forward — with speed, humility, and high standards — so we can build the future of delivery, together.",
-];
+const quoteSerif = { fontFamily: "Georgia, 'Times New Roman', serif" } as const;
 
 export function WhyHungerStation() {
+  const [open, setOpen] = useState(false);
+
   return (
     <section id="why" className="relative scroll-mt-24 border-t border-border">
       <div className="container-x py-24 md:py-32">
@@ -43,21 +47,23 @@ export function WhyHungerStation() {
           </p>
         </div>
 
-        {/* CEO editorial pull-quote — three paragraphs, no portrait */}
+        {/* CEO editorial pull-quote — collapsible */}
         <figure className="mt-16 md:mt-20 relative mx-auto max-w-3xl text-center">
           <Quote
             className="mx-auto h-16 w-16 md:h-20 md:w-20 text-[color:var(--brand-yellow)]"
             strokeWidth={1}
             aria-hidden
           />
+
           <blockquote
-            className="mt-6 space-y-6 font-display text-xl md:text-2xl lg:text-3xl leading-[1.45] text-balance text-foreground italic"
-            style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+            className="mt-6 font-display text-xl md:text-2xl lg:text-3xl leading-[1.45] text-balance text-foreground italic"
+            style={quoteSerif}
           >
-            {CEO_PARAGRAPHS.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+            <p>
+              Our mission is rooted in partnership. From day one, we've believed that when our restaurant partners succeed, so do we.
+            </p>
           </blockquote>
+
           <figcaption className="mt-10 flex items-center justify-center gap-4">
             <span className="h-px w-10 bg-foreground/40" aria-hidden />
             <div className="text-left">
@@ -68,6 +74,41 @@ export function WhyHungerStation() {
             </div>
             <span className="h-px w-10 bg-foreground/40" aria-hidden />
           </figcaption>
+
+          <Collapsible open={open} onOpenChange={setOpen}>
+            <CollapsibleContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+              <div
+                className="mt-10 space-y-6 text-left md:text-center font-display text-lg md:text-xl lg:text-2xl leading-[1.55] text-foreground/90 italic"
+                style={quoteSerif}
+              >
+                <p>
+                  More than 13 years ago, HungerStation launched with a simple idea: to make ordering food easier and more convenient for everyone in Saudi Arabia. Today, we're proud to be the <strong className="font-semibold not-italic text-foreground">largest platform of our kind in the Kingdom</strong> — connecting over <strong className="font-semibold not-italic text-foreground">55,000 partners</strong> to <strong className="font-semibold not-italic text-foreground">millions of customers</strong> across more than <strong className="font-semibold not-italic text-foreground">100 cities</strong>.
+                </p>
+                <p>
+                  This growth has been driven by <strong className="font-semibold not-italic text-foreground">shared ambition</strong>, <strong className="font-semibold not-italic text-foreground">relentless execution</strong>, and <strong className="font-semibold not-italic text-foreground">the trust we've built together</strong>. And as the industry evolves, so do we — investing in the tools, data, and infrastructure that help you serve more customers, operate more efficiently, and grow with confidence.
+                </p>
+                <p>
+                  Whether it's our AI-driven logistics, real-time insights, or new initiatives like the <strong className="font-semibold not-italic text-foreground">HungerStation Innovation Hub</strong>, we're committed to helping you stay ahead — because your success is our success.
+                </p>
+                <p>
+                  We know how challenging this space can be. But we also know how rewarding it is when everything comes together. Our promise is to keep pushing forward — with <strong className="font-semibold not-italic text-foreground">speed</strong>, <strong className="font-semibold not-italic text-foreground">humility</strong>, and <strong className="font-semibold not-italic text-foreground">high standards</strong> — so we can build the future of delivery, together.
+                </p>
+              </div>
+            </CollapsibleContent>
+
+            <CollapsibleTrigger asChild>
+              <button
+                type="button"
+                className="mt-8 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {open ? "Show less" : "Read the full note"}
+                <ChevronDown
+                  className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+                  aria-hidden
+                />
+              </button>
+            </CollapsibleTrigger>
+          </Collapsible>
         </figure>
 
         {/* Three pillars */}
