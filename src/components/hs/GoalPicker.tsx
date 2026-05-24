@@ -1,20 +1,20 @@
-import { ShoppingBag, Users, TrendingUp, Settings, Banknote } from "lucide-react";
+import { Smartphone, TrendingUp, Megaphone, Wallet, LayoutGrid } from "lucide-react";
 import { GOAL_META, useHs, type Goal } from "@/lib/hs-context";
 
-const ICONS: Record<Goal, typeof ShoppingBag> = {
-  online: ShoppingBag,
+const ICONS: Record<Goal, typeof Smartphone> = {
+  online: Smartphone,
   aov: TrendingUp,
-  newcustomers: Users,
-  financing: Banknote,
-  ops: Settings,
+  newcustomers: Megaphone,
+  financing: Wallet,
+  ops: LayoutGrid,
 };
 
 const COPY: Record<Goal, string> = {
-  online: "Get listed, take orders, and ship across 100+ KSA cities.",
-  aov: "Push average ticket with HPlus, Super Saver and loyalty.",
-  newcustomers: "Run paid placements, search ads and FlashDeals to fill your funnel.",
-  financing: "Unlock upfront cash with Mofawter — repaid as you sell.",
-  ops: "Cut prep time and stockouts with POS-integrated tools.",
+  online: "Channels to put your restaurant in front of more customers — delivery, pickup, and dark kitchens.",
+  aov: "Promotions, discounts, and loyalty programs that drive bigger baskets and more orders per customer.",
+  newcustomers: "Paid placements across HungerStation — sponsored listings, search ads, display ads, and more.",
+  financing: "Capital to invest in your next branch, new equipment, or a campaign — repaid as you sell.",
+  ops: "The back-office stack — vendor portal, order management, POS integrations, and built-in tools.",
 };
 
 export function GoalPicker() {
