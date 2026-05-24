@@ -11,9 +11,9 @@ const BENEFITS = [
 ];
 
 const STEPS = [
-  { n: "01", t: "Customer orders", d: "Order placed via the HungerStation app, routed to your POS in seconds." },
-  { n: "02", t: "You prep", d: "Notification rings, you confirm, and the kitchen starts cooking." },
-  { n: "03", t: "We deliver", d: "Our rider network picks up and delivers within 30 minutes on average." },
+  { n: "01", t: "Customer orders.", d: "Browse, pick, pay — all in the HungerStation app." },
+  { n: "02", t: "You prep.", d: "Receive the order in the Vendor Portal or your POS. Make the food." },
+  { n: "03", t: "We deliver.", d: "Our riders handle the last mile. Real-time tracking from kitchen to customer." },
 ];
 
 export function GrowOnlineSection() {
@@ -26,7 +26,7 @@ export function GrowOnlineSection() {
         icon={Smartphone}
         eyebrow="Grow Online"
         title="Take orders across Saudi Arabia."
-        copy="Delivery Service, Self Pick-Up and HungerStation Kitchens. Three ways to meet customers wherever — and however — they want to eat."
+        copy="Delivery, pickup, and dark kitchens. Three ways to put your restaurant in front of customers wherever — and however — they want to eat."
         highlight={highlight}
       />
 
@@ -45,7 +45,7 @@ export function GrowOnlineSection() {
               </div>
               <h3 className="mt-6 font-display text-5xl md:text-7xl text-balance">Delivery Service.</h3>
               <p className="mt-4 max-w-lg text-lg text-muted-foreground">
-                Boost sales across 100+ cities. Our riders handle the last mile while you focus on the food.
+                Boost sales across 100+ cities. Our riders handle the last mile, you focus on the food.
               </p>
 
               <div className="mt-12 grid gap-6">
