@@ -25,6 +25,10 @@ export type ProductCardData = {
   benefits?: string[];
   /** Steps / capabilities / features (3 items). Omit entirely if N/A. */
   steps?: { t: string; d: string }[];
+  /** Small italic reassurance line above the steps. */
+  stepsNote?: string;
+  /** Optional subordinate callout block (e.g. "You're in Control"). */
+  callout?: { title: string; body: string } | null;
   testimonial?: Testimonial | null;
   /** 2-4 unit economics rows. Missing → placeholders. */
   economics?: EconomicsItem[];
