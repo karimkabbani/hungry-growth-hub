@@ -92,7 +92,7 @@ export function ProductFamilyLayout({
         </aside>
 
         {/* Right panel */}
-        <div key={current.name} className="min-w-0 animate-[fade-in_150ms_ease-out]">
+        <div key={current.name} className="min-w-0 transition-opacity duration-150 opacity-100">
           <ProductCard
             data={current}
             size="flagship"
