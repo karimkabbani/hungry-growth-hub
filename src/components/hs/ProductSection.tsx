@@ -4,6 +4,7 @@ import { useHs } from "@/lib/hs-context";
 import vendor from "@/assets/vendor-portrait.jpg";
 import { type ProductCardData } from "./ProductCard";
 import { ProductFamilyLayout } from "./ProductFamilyLayout";
+import dineInImage from "@/assets/dine-in-checkout.jpg";
 
 const DELIVERY: ProductCardData = {
   name: "Delivery Service.",
