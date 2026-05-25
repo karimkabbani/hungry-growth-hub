@@ -121,6 +121,9 @@ export function ProductCard({
       {steps && (
         <div className={isFlag ? "mt-8" : "mt-6"}>
           <Eyebrow>How it works</Eyebrow>
+          {data.stepsNote && (
+            <p className="mt-2 text-xs italic text-muted-foreground">{data.stepsNote}</p>
+          )}
           <ol className="mt-3 grid gap-2 sm:grid-cols-3">
             {steps.map((s, i) => (
               <li
@@ -139,6 +142,16 @@ export function ProductCard({
               </li>
             ))}
           </ol>
+        </div>
+      )}
+
+      {/* 7b. Optional subordinate callout */}
+      {data.callout && (
+        <div className={isFlag ? "mt-6" : "mt-4"}>
+          <div className="rounded-2xl border-l-2 border-[color:var(--brand-yellow)] bg-background/40 px-5 py-4">
+            <div className="font-display text-base md:text-lg">{data.callout.title}</div>
+            <p className="mt-1 text-sm text-muted-foreground">{data.callout.body}</p>
+          </div>
         </div>
       )}
 
