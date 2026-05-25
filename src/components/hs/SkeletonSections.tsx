@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import rider from "@/assets/delivery-rider.jpg";
 import { ProductCard, type ProductCardData } from "./ProductCard";
-import { ProductIndex, slugifyProduct } from "./ProductIndex";
+import { ProductFamilyLayout } from "./ProductFamilyLayout";
 
 function isOn(goal: Goal | null, target: Goal) {
   return goal === target;
