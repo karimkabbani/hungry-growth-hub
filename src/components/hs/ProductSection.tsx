@@ -2,8 +2,8 @@ import { Smartphone, type LucideIcon } from "lucide-react";
 import { PhoneMockup } from "./PhoneMockup";
 import { useHs } from "@/lib/hs-context";
 import vendor from "@/assets/vendor-portrait.jpg";
-import { ProductCard, type ProductCardData } from "./ProductCard";
-import { ProductIndex, slugifyProduct } from "./ProductIndex";
+import { type ProductCardData } from "./ProductCard";
+import { ProductFamilyLayout } from "./ProductFamilyLayout";
 
 const DELIVERY: ProductCardData = {
   name: "Delivery Service.",
