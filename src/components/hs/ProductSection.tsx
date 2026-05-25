@@ -60,21 +60,11 @@ export function GrowOnlineSection() {
         highlight={highlight}
       />
 
-      <ProductIndex names={["Delivery Service", "Self Pick-Up", "HSK"]} />
-
-      <div className="container-x">
-        <ProductCard
-          data={DELIVERY}
-          size="flagship"
-          highlight={highlight}
-          id={slugifyProduct("Delivery Service")}
-        />
-
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <ProductCard data={SELF_PICKUP} size="secondary" id={slugifyProduct("Self Pick-Up")} />
-          <ProductCard data={KITCHENS} size="secondary" id={slugifyProduct("HSK")} />
-        </div>
-      </div>
+      <ProductFamilyLayout
+        sectionId="grow-online"
+        products={[DELIVERY, SELF_PICKUP, KITCHENS]}
+        highlight={highlight}
+      />
     </section>
   );
 }
