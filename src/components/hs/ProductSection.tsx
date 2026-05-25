@@ -56,6 +56,14 @@ const DINEIN: ProductCardData = {
     { value: "9M+", label: "deciding where to eat in the app" },
   ],
   body: "Eat-in ordering, built into the HungerStation app. Customers browse your menu, place an order before they arrive, and show up ready to be served — confirmed order, committed spend.",
+  image: (
+    <img
+      src={dineInImage}
+      alt="HungerStation Dine-In checkout screen showing Pick-up Options with Dine In selected"
+      loading="lazy"
+      className="w-full max-w-xs mx-auto rounded-2xl"
+    />
+  ),
   benefits: [
     "No rider fee — guest comes to you",
     "Visible to \"where-to-eat\" deciders",
