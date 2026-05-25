@@ -34,10 +34,53 @@ const DELIVERY: ProductCardData = {
   ],
 };
 
-const SELF_PICKUP: ProductCardData = {
-  name: "Self Pick-Up",
+const PICKUP: ProductCardData = {
+  name: "Pick-Up",
   subhead: "Let customers grab orders without paying delivery.",
-  benefits: ["Zero delivery cost", "Higher margin per order", "Great for cafés & QSR"],
+  body: "Customers order in the HungerStation app and pick up at your restaurant — at the counter, or curbside (In-Car). No rider, no delivery fee, just a confirmed order waiting for them.",
+  benefits: [
+    "Zero delivery cost",
+    "Counter or curbside (In-Car) pickup",
+    "Higher margin per order",
+    "Great for cafés & QSR",
+  ],
+};
+
+const DINEIN: ProductCardData = {
+  name: "Dine-In",
+  subhead: "Bring more guests through your doors.",
+  stats: [
+    { value: "0", label: "rider fee" },
+    { value: "Pre-paid", label: "committed spend" },
+    { value: "9M+", label: "deciding where to eat in the app" },
+  ],
+  body: "Eat-in ordering, built into the HungerStation app. Customers browse your menu, place an order before they arrive, and show up ready to be served — confirmed order, committed spend.",
+  benefits: [
+    "No rider fee — guest comes to you",
+    "Visible to \"where-to-eat\" deciders",
+    "Pre-ordered = committed spend",
+    "App-driven loyalty — reviews and repeats",
+  ],
+  stepsNote: "Zero changes to how your kitchen runs.",
+  steps: [
+    { t: "Customer orders eat-in.", d: "Browses your menu in the HungerStation app and places an order before arriving." },
+    { t: "Order arrives labeled \"Dine In.\"", d: "Hits your existing system — staff knows it's for a table, not a bag. No new devices." },
+    { t: "Guest arrives ready.", d: "They collect from the counter, or you serve them — your choice." },
+  ],
+  callout: {
+    title: "You're in Control.",
+    body: "Toggle Dine-In on or off per branch from the vendor portal. Turning it off doesn't affect Pick-Up. No risk to your existing operations.",
+  },
+  testimonial: {
+    quote: "[Vendor testimonial — NEEDS Omar]",
+    author: "[Vendor name, brand, city]",
+  },
+  economics: [
+    { label: "Rider fee", value: "0", note: "Guest comes to you" },
+    { label: "Commission", value: "[TBD with Sales]" },
+    { label: "Setup", value: "SAR 0" },
+    { label: "Per-branch toggle", value: "Yes" },
+  ],
 };
 
 const KITCHENS: ProductCardData = {
