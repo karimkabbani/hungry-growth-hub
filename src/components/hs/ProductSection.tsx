@@ -105,7 +105,7 @@ export function GrowOnlineSection() {
 
       <ProductFamilyLayout
         sectionId="grow-online"
-        products={[DELIVERY, SELF_PICKUP, KITCHENS]}
+        products={[DELIVERY, PICKUP, DINEIN, KITCHENS]}
         highlight={highlight}
       />
     </section>
