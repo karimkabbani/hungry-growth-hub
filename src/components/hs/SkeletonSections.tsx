@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import rider from "@/assets/delivery-rider.jpg";
 import { ProductCard, type ProductCardData } from "./ProductCard";
-import { ProductIndex, slugifyProduct } from "./ProductIndex";
+import { ProductFamilyLayout } from "./ProductFamilyLayout";
 
 function isOn(goal: Goal | null, target: Goal) {
   return goal === target;
@@ -122,24 +122,11 @@ export function OrderValueSection() {
         highlight={highlight}
       />
 
-      <ProductIndex
-        names={["RDF / HPlus", "Super Saver", "Full Menu Discounts", "Meal for One", "HRewards"]}
+      <ProductFamilyLayout
+        sectionId="order-value"
+        products={[AOV_FLAGSHIP, ...AOV_SECONDARY]}
+        highlight={highlight}
       />
-
-      <div className="container-x pb-20 md:pb-28">
-        <ProductCard
-          data={AOV_FLAGSHIP}
-          size="flagship"
-          highlight={highlight}
-          id={slugifyProduct(AOV_FLAGSHIP.name)}
-        />
-
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {AOV_SECONDARY.map((p) => (
-            <ProductCard key={p.name} data={p} size="secondary" id={slugifyProduct(p.name)} />
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
@@ -261,17 +248,7 @@ export function AttractSection() {
         copy="The full ad stack across HungerStation — from sponsored placements to time-boxed flash deals — running where 9M+ Saudis already decide what to eat."
         highlight={highlight}
       />
-      <ProductIndex
-        names={[
-          "Sponsored Listing",
-          "Keyword Search",
-          "Display Ads",
-          "Awareness Banner",
-          "Offer Hour",
-          "Splash Screen",
-        ]}
-      />
-      <div className="container-x pb-20 md:pb-28">
+      <div className="container-x">
         {/* Stat band */}
         <div className="grid gap-6 rounded-3xl border bg-card p-8 md:grid-cols-3 md:p-10">
           <div className="md:col-span-2">
@@ -297,26 +274,18 @@ export function AttractSection() {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-12">
-          <ProductCard
-            data={ATTRACT_FLAGSHIP}
-            size="flagship"
-            highlight={highlight}
-            id={slugifyProduct("Sponsored Listing")}
-          />
-        </div>
+      <div className="mt-10">
+        <ProductFamilyLayout
+          sectionId="attract"
+          products={[ATTRACT_FLAGSHIP, ...ATTRACT_SECONDARY]}
+          highlight={highlight}
+        />
+      </div>
 
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ATTRACT_SECONDARY.map((p, i) => {
-            const slugNames = ["Keyword Search", "Display Ads", "Awareness Banner", "Offer Hour", "Splash Screen"];
-            return (
-              <ProductCard key={p.name} data={p} size="secondary" id={slugifyProduct(slugNames[i] ?? p.name)} />
-            );
-          })}
-        </div>
-
-        <div className="mt-12 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+      <div className="container-x pb-20 md:pb-28">
+        <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
           Booking channels:
           <span className="rounded-full border px-3 py-1">Via Account Manager</span>
           <span className="rounded-full border px-3 py-1">Self-Booking Portal</span>
@@ -452,26 +421,15 @@ export function OpsSection() {
         copy="The back-office stack — vendor portal, order management, POS integrations, and a built-in platform of tools that come with HungerStation."
         highlight={highlight}
       />
-      <ProductIndex
-        names={["Vendor Portal", "Order Management Suite", "POS Integrations"]}
+      <ProductFamilyLayout
+        sectionId="ops"
+        products={[OPS_FLAGSHIP, ...OPS_SECONDARY]}
+        highlight={highlight}
       />
 
       <div className="container-x">
-        <ProductCard
-          data={OPS_FLAGSHIP}
-          size="flagship"
-          highlight={highlight}
-          id={slugifyProduct("Vendor Portal")}
-        />
-
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {OPS_SECONDARY.map((p) => (
-            <ProductCard key={p.name} data={p} size="secondary" id={slugifyProduct(p.name)} />
-          ))}
-        </div>
-
         {/* Built-in platform tools — 9-module mini grid */}
-        <div className="mt-20">
+        <div className="mt-4">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
