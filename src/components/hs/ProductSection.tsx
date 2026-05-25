@@ -84,24 +84,18 @@ export function SectionHeader({
   highlight?: boolean;
 }) {
   return (
-    <div className="container-x py-20 md:py-28">
-      <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
-        <div>
-          <div className="inline-flex items-center gap-2">
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--brand-yellow)] text-ink">
-              <Icon className="h-3.5 w-3.5" strokeWidth={2} />
-            </span>
-            <span className="text-sm font-semibold text-foreground">{eyebrow}</span>
-            {highlight && (
-              <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)] animate-pulse-ring" />
-            )}
-          </div>
-        </div>
-        <div>
-          <h2 className="font-display text-5xl md:text-7xl text-balance">{title}</h2>
-          <p className="mt-5 max-w-xl text-lg text-muted-foreground">{copy}</p>
-        </div>
+    <div className="container-x pt-20 md:pt-28 pb-16 md:pb-20">
+      <div className="inline-flex items-center gap-2">
+        <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--brand-yellow)] text-ink">
+          <Icon className="h-3.5 w-3.5" strokeWidth={2} />
+        </span>
+        <span className="text-sm font-semibold text-foreground">{eyebrow}</span>
+        {highlight && (
+          <span className="h-2 w-2 rounded-full bg-[color:var(--brand-yellow)] animate-pulse-ring" />
+        )}
       </div>
+      <h2 className="mt-3 font-display text-5xl md:text-7xl text-balance">{title}</h2>
+      <p className="mt-2 max-w-2xl text-lg text-muted-foreground">{copy}</p>
     </div>
   );
 }
