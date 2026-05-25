@@ -248,41 +248,11 @@ export function AttractSection() {
         copy="The full ad stack across HungerStation — from sponsored placements to time-boxed flash deals — running where 9M+ Saudis already decide what to eat."
         highlight={highlight}
       />
-      <div className="container-x">
-        {/* Stat band */}
-        <div className="grid gap-6 rounded-3xl border bg-card p-8 md:grid-cols-3 md:p-10">
-          <div className="md:col-span-2">
-            <div className="font-display text-5xl md:text-6xl text-foreground">
-              30K<span className="text-[color:var(--brand-yellow)]">+</span>{" "}
-              <span className="text-muted-foreground text-3xl md:text-4xl font-display">
-                brands advertise on HungerStation.
-              </span>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-6 md:border-l md:border-border md:pl-10">
-            <div>
-              <div className="font-display text-3xl text-foreground">5×</div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">
-                Avg ROAS
-              </div>
-            </div>
-            <div>
-              <div className="font-display text-3xl text-foreground">9M+</div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">
-                Reachable users
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-10">
-        <ProductFamilyLayout
-          sectionId="attract"
-          products={[ATTRACT_FLAGSHIP, ...ATTRACT_SECONDARY]}
-          highlight={highlight}
-        />
-      </div>
+      <ProductFamilyLayout
+        sectionId="attract"
+        products={[ATTRACT_FLAGSHIP, ...ATTRACT_SECONDARY]}
+        highlight={highlight}
+      />
 
       <div className="container-x pb-20 md:pb-28">
         <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
