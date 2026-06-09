@@ -156,6 +156,7 @@ const ATTRACT_FLAGSHIP: ProductCardData = {
     { label: "Min daily budget", value: "[NEEDS Sherif]" },
     { label: "Expected ROAS", value: "[NEEDS Sherif]" },
   ],
+  scenarioKey: "sponsored",
 };
 
 const ATTRACT_SECONDARY: ProductCardData[] = [
