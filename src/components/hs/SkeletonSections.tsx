@@ -178,6 +178,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "CPC" },
       { label: "Min CPC", value: "SAR 1.50" },
     ],
+    scenarioKey: "keyword",
   },
   {
     name: "Display Ads",
@@ -192,6 +193,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "CPM (weekly buys)" },
       { label: "Min spend", value: "[NEEDS Sherif]" },
     ],
+    scenarioKey: "display",
   },
   {
     name: "Awareness Banner",
@@ -206,6 +208,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Flat fee per day" },
       { label: "Booking", value: "Via AM" },
     ],
+    scenarioKey: "awareness",
   },
   {
     name: "Offer Hour / FlashDeals",
@@ -221,6 +224,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Commission on uplift" },
       { label: "Min duration", value: "1 hour" },
     ],
+    scenarioKey: "offer-hour",
   },
   {
     name: "Splash Screen",
@@ -236,6 +240,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Flat fee per day" },
       { label: "Availability", value: "1 brand / city / day" },
     ],
+    scenarioKey: "splash",
   },
 ];
 
