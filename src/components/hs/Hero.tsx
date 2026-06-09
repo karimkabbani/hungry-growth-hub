@@ -43,7 +43,7 @@ export function Hero() {
         </nav>
         <a
           href="#plan"
-          className="rounded-full bg-blue px-4 py-2 text-sm font-semibold text-white hover:bg-blue-hover transition"
+          className="btn-hs-yellow rounded-full px-4 py-2 text-sm font-semibold"
         >
           Talk to Sales
         </a>
@@ -64,7 +64,7 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap gap-3">
             <a
               href="#goals"
-              className="group inline-flex items-center gap-2 rounded-full bg-blue px-6 py-3.5 text-sm font-semibold text-white hover:bg-blue-hover transition"
+              className="btn-hs-yellow group inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold"
             >
               See How It Works
               <span className="transition group-hover:translate-x-0.5">→</span>
