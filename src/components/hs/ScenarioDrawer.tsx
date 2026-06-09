@@ -12,27 +12,101 @@ const AOV: Record<(typeof CUISINES)[number], number> = {
   "Cloud Kitchen": 65,
 };
 
-type ScenarioMode = "calc-hplus" | "calc-sponsored" | "calc-mofawter" | "am-only";
+type ScenarioMode =
+  | "calc-hplus"
+  | "calc-sponsored"
+  | "calc-mofawter"
+  | "calc-orders"
+  | "calc-ads"
+  | "am-only";
 
-const SCENARIO_CONFIG: Record<
-  ScenarioProduct,
-  { title: string; mode: ScenarioMode; amCopy?: string }
-> = {
+type ScenarioConfig = {
+  title: string;
+  mode: ScenarioMode;
+  amCopy?: string;
+  orderMultiplier?: number;
+  roas?: number;
+  outputLabels?: { orders: string; gmv: string };
+};
+
+const SCENARIO_CONFIG: Record<ScenarioProduct, ScenarioConfig> = {
   hplus: { title: "RDF / HPlus — illustrative scenario", mode: "calc-hplus" },
   sponsored: { title: "Sponsored Listing — illustrative scenario", mode: "calc-sponsored" },
   mofawter: { title: "Mofawter — illustrative scenario", mode: "calc-mofawter" },
+
   delivery: {
-    title: "Delivery Service — talk to your AM",
-    mode: "am-only",
-    amCopy:
-      "Your AM can model expected order volume, customer reach, and unit economics for your category and location. Typical scenarios cover NCR (new customer reach), basket size, commission tiering, and the lift from cross-product bundles.",
+    title: "Delivery Service — illustrative scenario",
+    mode: "calc-orders",
+    orderMultiplier: 0.35,
+    outputLabels: {
+      orders: "Incremental orders / month (NCR + reach)",
+      gmv: "Annual GMV uplift",
+    },
   },
   pickup: {
-    title: "Pick-Up — talk to your AM",
-    mode: "am-only",
-    amCopy:
-      "Your AM can model the lift from enabling Pick-Up alongside Delivery. Typical scenarios cover commission savings on pickup orders, incremental pickup volume from existing customers, and customer mix shifts by daypart.",
+    title: "Pick-Up — illustrative scenario",
+    mode: "calc-orders",
+    orderMultiplier: 0.12,
+    outputLabels: {
+      orders: "Incremental pickup orders / month",
+      gmv: "Annual GMV from pickup channel",
+    },
   },
+  "super-saver": {
+    title: "Super Saver — illustrative scenario",
+    mode: "calc-orders",
+    orderMultiplier: 0.2,
+    outputLabels: {
+      orders: "Incremental basket-lift orders / month",
+      gmv: "Annual GMV from basket size lift",
+    },
+  },
+  "full-menu": {
+    title: "Full Menu Discounts — illustrative scenario",
+    mode: "calc-orders",
+    orderMultiplier: 0.18,
+    outputLabels: {
+      orders: "Incremental orders / month (net of discount)",
+      gmv: "Annual net GMV uplift",
+    },
+  },
+  "meal-for-one": {
+    title: "Meal for One — illustrative scenario",
+    mode: "calc-orders",
+    orderMultiplier: 0.08,
+    outputLabels: {
+      orders: "Incremental solo-diner orders / month",
+      gmv: "Annual GMV from new segment",
+    },
+  },
+  hrewards: {
+    title: "HRewards — illustrative scenario",
+    mode: "calc-orders",
+    orderMultiplier: 0.15,
+    outputLabels: {
+      orders: "Incremental repeat orders / month",
+      gmv: "Annual GMV from retention lift",
+    },
+  },
+  keyword: {
+    title: "Keyword Search — illustrative scenario",
+    mode: "calc-ads",
+    roas: 3,
+    outputLabels: {
+      orders: "Keyword-driven orders / month",
+      gmv: "Annual GMV from keyword campaigns",
+    },
+  },
+  display: {
+    title: "Display Ads — illustrative scenario",
+    mode: "calc-ads",
+    roas: 2.5,
+    outputLabels: {
+      orders: "Display-driven orders / month",
+      gmv: "Annual GMV from display campaigns",
+    },
+  },
+
   "dine-in": {
     title: "Dine-In — talk to your AM",
     mode: "am-only",
@@ -44,42 +118,6 @@ const SCENARIO_CONFIG: Record<
     mode: "am-only",
     amCopy:
       "HSK economics depend on your menu, location, and current delivery brand strength. Your AM can model startup costs, expected order volumes per kitchen, and breakeven timelines for your specific concept.",
-  },
-  "super-saver": {
-    title: "Super Saver — talk to your AM",
-    mode: "am-only",
-    amCopy:
-      "Your AM can model expected basket size lift and discount margin impact based on your menu and current pricing. Typical scenarios cover incremental orders, AOV change, and net contribution after discount cost.",
-  },
-  "full-menu": {
-    title: "Full Menu Discounts — talk to your AM",
-    mode: "am-only",
-    amCopy:
-      "Your AM can model the lift from menu-wide promotions across customer cohorts. Scenarios cover frequency uplift, basket impact, and net contribution per discount level.",
-  },
-  "meal-for-one": {
-    title: "Meal for One — talk to your AM",
-    mode: "am-only",
-    amCopy:
-      "Your AM can model how single-portion offers expand your reachable customer base. Scenarios cover incremental solo-diner orders, repeat rate, and unit economics at single-meal price points.",
-  },
-  hrewards: {
-    title: "HRewards — talk to your AM",
-    mode: "am-only",
-    amCopy:
-      "Your AM can model loyalty-driven retention and frequency lift for your brand. Scenarios cover repeat order rate, customer LTV, and the cashback cost relative to incremental GMV.",
-  },
-  keyword: {
-    title: "Keyword Search — talk to your AM",
-    mode: "am-only",
-    amCopy:
-      "Your AM can model ROAS expectations on keyword campaigns specific to your category. Scenarios cover CPC ranges, click-through rates, and order conversion for the search terms vendors in your space typically bid on.",
-  },
-  display: {
-    title: "Display Ads — talk to your AM",
-    mode: "am-only",
-    amCopy:
-      "Your AM can model display ad performance based on your brand recognition and category competition. Scenarios cover reach, frequency, and incremental orders from awareness campaigns.",
   },
   awareness: {
     title: "Awareness Banner — talk to your AM",
@@ -147,7 +185,7 @@ function ordersRange(central: number) {
   return `+${niceRound(lo)} – ${niceRound(hi)}`;
 }
 
-function Disclaimer() {
+function Disclaimer({ showDirectional }: { showDirectional: boolean }) {
   return (
     <div
       className="flex gap-3 rounded-xl border-l-4 px-4 py-3"
@@ -157,11 +195,19 @@ function Disclaimer() {
       }}
     >
       <Info className="h-4 w-4 mt-0.5 shrink-0 text-[color:var(--ink)]" />
-      <p className="text-xs leading-relaxed text-foreground">
-        <strong>Illustrative scenario — not a commitment.</strong> Actuals depend
-        on market, category, operations, and execution. Talk to your Account
-        Manager for personalized projections.
-      </p>
+      <div className="text-xs leading-relaxed text-foreground space-y-1.5">
+        <p>
+          <strong>Illustrative scenario — not a commitment.</strong> Actuals depend
+          on market, category, operations, and execution. Talk to your Account
+          Manager for personalized projections.
+        </p>
+        {showDirectional && (
+          <p className="italic">
+            Multipliers shown are directional industry estimates, not
+            HS-validated benchmarks.
+          </p>
+        )}
+      </div>
     </div>
   );
 }
@@ -185,6 +231,14 @@ export function ScenarioDrawer() {
   const gmvSponsoredAnnual = sponsoredOrders * aov * 12;
   const mofawterCapacity = Math.round(orders * aov * 12 * 0.1);
 
+  // Generic orders calc
+  const genericOrdersCentral = Math.round(orders * (config.orderMultiplier ?? 0));
+  const genericOrdersGmvAnnual = genericOrdersCentral * aov * 12;
+
+  // Generic ads calc
+  const adOrdersCentral = Math.round((adSpend * (config.roas ?? 0)) / Math.max(1, aov));
+  const adGmvAnnual = adSpend * (config.roas ?? 0) * 12;
+
   const handleCta = () => {
     markEngaged(`scenario-cta-${product}`);
     closeScenario();
@@ -194,6 +248,8 @@ export function ScenarioDrawer() {
   };
 
   const isCalc = config.mode !== "am-only";
+  const isGenericCalc = config.mode === "calc-orders" || config.mode === "calc-ads";
+  const showAdsSlider = config.mode === "calc-sponsored" || config.mode === "calc-ads";
 
   return (
     <Sheet open={scenarioOpen} onOpenChange={(o) => !o && closeScenario()}>
@@ -220,7 +276,7 @@ export function ScenarioDrawer() {
         </div>
 
         <div className="flex-1 px-6 py-6 space-y-7">
-          <Disclaimer />
+          <Disclaimer showDirectional={isGenericCalc} />
 
           {isCalc ? (
             <>
@@ -271,7 +327,7 @@ export function ScenarioDrawer() {
                   </div>
                 </div>
 
-                {config.mode === "calc-sponsored" && (
+                {showAdsSlider && (
                   <Field
                     label="Current monthly ad spend (SAR)"
                     value={`SAR ${adSpend.toLocaleString()}`}
@@ -333,26 +389,79 @@ export function ScenarioDrawer() {
                     />
                   </div>
                 )}
+
+                {config.mode === "calc-orders" && (
+                  <div className="mt-4 space-y-5">
+                    <Output
+                      label={config.outputLabels?.orders ?? "Incremental orders / month"}
+                      value={`${ordersRange(genericOrdersCentral)} orders`}
+                    />
+                    <Output
+                      label={config.outputLabels?.gmv ?? "Annual GMV uplift"}
+                      value={sarRange(genericOrdersGmvAnnual)}
+                    />
+                  </div>
+                )}
+
+                {config.mode === "calc-ads" && (
+                  <div className="mt-4 space-y-5">
+                    <Output
+                      label={config.outputLabels?.orders ?? "Ad-driven orders / month"}
+                      value={`${ordersRange(adOrdersCentral)} orders`}
+                    />
+                    <Output
+                      label={config.outputLabels?.gmv ?? "Annual GMV from ads"}
+                      value={sarRange(adGmvAnnual)}
+                    />
+                  </div>
+                )}
               </div>
 
-              {/* How we calculate this — expanded */}
+              {/* How we calculate this */}
               <div>
                 <h4 className="font-display text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                   How we calculate this
                 </h4>
                 <div className="mt-2 space-y-2 text-xs leading-relaxed text-muted-foreground">
-                  <p>
-                    Central estimates use HungerStation benchmarks: HPlus order uplift
-                    assumes <strong>+200% over 12 months</strong>; Sponsored Listings
-                    assume <strong>5× ROAS</strong>; Mofawter capacity is{" "}
-                    <strong>10% of annualized GMV</strong>. We then show a band of
-                    ±40% around that central estimate.
-                  </p>
-                  <p>
-                    These are reference benchmarks across many partners. Your
-                    category, location, ops maturity, and marketing execution can
-                    shift outcomes meaningfully.
-                  </p>
+                  {isGenericCalc ? (
+                    <>
+                      <p>
+                        This product's central estimate uses a{" "}
+                        <strong>
+                          {config.mode === "calc-ads"
+                            ? `${config.roas}× ROAS`
+                            : `${Math.round((config.orderMultiplier ?? 0) * 100)}% directional multiplier`}
+                        </strong>{" "}
+                        {config.mode === "calc-ads"
+                          ? "on your monthly ad spend"
+                          : "on your current order base"}
+                        , with a ±40% range around it. This is a placeholder
+                        based on industry data, <strong>not an HS-validated
+                        benchmark</strong>. Your AM has access to validated
+                        HS multipliers for your specific category and location.
+                      </p>
+                      <p>
+                        These are reference ranges. Your category, location, ops
+                        maturity, and marketing execution can shift outcomes
+                        meaningfully.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p>
+                        Central estimates use HungerStation benchmarks: HPlus order uplift
+                        assumes <strong>+200% over 12 months</strong>; Sponsored Listings
+                        assume <strong>5× ROAS</strong>; Mofawter capacity is{" "}
+                        <strong>10% of annualized GMV</strong>. We then show a band of
+                        ±40% around that central estimate.
+                      </p>
+                      <p>
+                        These are reference benchmarks across many partners. Your
+                        category, location, ops maturity, and marketing execution can
+                        shift outcomes meaningfully.
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             </>
