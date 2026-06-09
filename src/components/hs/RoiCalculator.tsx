@@ -155,7 +155,7 @@ export function RoiCalculator() {
                 <a
                   href="#plan"
                   onClick={() => markEngaged("roi-cta")}
-                  className="rounded-2xl bg-blue text-white p-5 flex flex-col justify-between hover:bg-blue-hover transition"
+                  className="btn-hs-yellow rounded-2xl p-5 flex flex-col justify-between"
                 >
                   <div className="text-xs uppercase tracking-[0.22em] opacity-80">Next step</div>
                   <div className="mt-6 font-display text-2xl">Talk to sales →</div>
