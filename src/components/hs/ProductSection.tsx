@@ -46,6 +46,7 @@ const PICKUP: ProductCardData = {
     "Higher margin per order",
     "Great for cafés & QSR",
   ],
+  scenarioKey: "pickup",
 };
 
 const DINEIN: ProductCardData = {
