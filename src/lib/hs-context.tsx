@@ -1,7 +1,26 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 
 export type Goal = "online" | "aov" | "newcustomers" | "financing" | "ops";
-export type ScenarioProduct = "hplus" | "sponsored" | "mofawter";
+export type ScenarioProduct =
+  | "hplus"
+  | "sponsored"
+  | "mofawter"
+  | "delivery"
+  | "pickup"
+  | "dine-in"
+  | "hsk"
+  | "super-saver"
+  | "full-menu"
+  | "meal-for-one"
+  | "hrewards"
+  | "keyword"
+  | "display"
+  | "awareness"
+  | "offer-hour"
+  | "splash"
+  | "vendor-portal"
+  | "oms"
+  | "pos-integrations";
 
 export const GOAL_META: Record<Goal, { label: string; sectionId: string; products: string[] }> = {
   online: {
