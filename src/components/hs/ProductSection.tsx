@@ -1,50 +1,68 @@
 import { Smartphone, type LucideIcon } from "lucide-react";
 import { PhoneMockup } from "./PhoneMockup";
 import { useHs } from "@/lib/hs-context";
-import vendor from "@/assets/vendor-portrait.jpg";
 import { type ProductCardData } from "./ProductCard";
 import { ProductFamilyLayout } from "./ProductFamilyLayout";
 import dineInImage from "@/assets/dine-in-checkout.jpg";
 
+// Source: Jan 2025 deck, page 9 (Delivery Service) + Why HS pillars
 const DELIVERY: ProductCardData = {
   name: "Delivery Service.",
   subhead:
-    "Boost sales across 100+ cities. Our riders handle the last mile, you focus on the food.",
+    "Your 24/7 delivery partner across 100+ cities. Our riders handle the last mile, you focus on the food.",
   stats: [
-    { value: "+10×", label: "orders potential" },
-    { value: "30 min", label: "avg delivery time" },
-    { value: "100+", label: "cities live" },
+    { value: "100+", label: "cities served 24/7" },
+    { value: "[TBD]", label: "avg delivery time · NEEDS Sherif" },
+    { value: "Largest", label: "fleet in KSA" },
   ],
   image: <PhoneMockup />,
-  benefits: ["+10× orders potential", "30-min avg delivery", "Insured riders", "Live order dashboard"],
+  benefits: [
+    "100+ cities, served 24/7",
+    "Largest fleet in Saudi Arabia",
+    "Insured riders, live tracking",
+    "Onboard in days",
+  ],
   steps: [
-    { t: "Customer orders.", d: "Browse, pick, pay in the HungerStation app." },
-    { t: "You prep.", d: "Receive the order in the Vendor Portal or your POS." },
-    { t: "We deliver.", d: "Our riders handle the last mile, live-tracked." },
+    { t: "Sign up.", d: "Register on the HungerStation Vendor Portal." },
+    { t: "Receive orders.", d: "Customers browse, pick, and pay in the app. Orders land in your Portal or POS." },
+    { t: "We deliver.", d: "Orders are assigned to nearby riders. Customers and you track in real time." },
   ],
   testimonial: {
-    quote: "[Vendor quote about reaching new customers across KSA — 2 sentences.]",
-    author: "Ahmed Al-Saud",
-    role: "Owner · Bayt Mansaf · Riyadh",
-    avatar: vendor,
+    quote: "[Vendor testimonial — NEEDS Omar (real KSA partner with consent)]",
+    author: "[Vendor name, brand, city]",
   },
   economics: [
-    { label: "Commission", value: "From 18%", note: "Tiered by volume" },
-    { label: "Setup fee", value: "SAR 0", note: "Onboarded in 7 days" },
+    { label: "Commission", value: "[NEEDS Sherif]", note: "Tiered by volume" },
+    { label: "Setup fee", value: "[NEEDS Sherif]" },
     { label: "Payouts", value: "[TBD with Sales]" },
   ],
   scenarioKey: "delivery",
 };
 
+// Source: Jan 2025 deck, page 10 (Self Pick-Up) — adapted to Pick-Up rename + In-Car absorption
 const PICKUP: ProductCardData = {
   name: "Pick-Up",
-  subhead: "Let customers grab orders without paying delivery.",
-  body: "Customers order in the HungerStation app and pick up at your restaurant — at the counter, or curbside (In-Car). No rider, no delivery fee, just a confirmed order waiting for them.",
+  subhead: "Let customers grab orders directly from your restaurant — no delivery cost, more profile visibility.",
+  body: "Customers order in the HungerStation app and pick up at your restaurant — at the counter, or curbside (In-Car). No rider, no delivery fee, just a confirmed order waiting for them. Vendors use Pick-Up to boost profile, increase revenue, and run pickup-only promotional offers.",
   benefits: [
-    "Zero delivery cost",
     "Counter or curbside (In-Car) pickup",
-    "Higher margin per order",
-    "Great for cafés & QSR",
+    "No rider, no delivery cost",
+    "Pickup-only promotional offers available",
+    "Fresher handoff — food straight from kitchen to customer",
+  ],
+  steps: [
+    { t: "Customer orders pickup.", d: "Selects Pick-Up (counter or In-Car) in the HungerStation app." },
+    { t: "You prep.", d: "Order arrives labeled \"Take Away\" — no rider involved. Make the food." },
+    { t: "Customer picks up.", d: "At the counter, or you bring it curbside for In-Car orders — your choice." },
+  ],
+  testimonial: {
+    quote: "[Vendor testimonial — NEEDS Omar (real KSA partner running pickup)]",
+    author: "[Vendor name, brand, city]",
+  },
+  economics: [
+    { label: "Commission", value: "[NEEDS Sherif]", note: "Confirm delta vs Delivery commission" },
+    { label: "Setup fee", value: "[NEEDS Sherif]" },
+    { label: "Branch toggle", value: "Yes — enable/disable per branch" },
   ],
   scenarioKey: "pickup",
 };
@@ -95,10 +113,23 @@ const DINEIN: ProductCardData = {
   scenarioKey: "dine-in",
 };
 
+// Source: NONE. HSK content was dropped from the Jan 2025 deck.
+// All copy below is placeholder until HSK product team provides current positioning.
+// OPEN STRATEGIC DECISION: HSK in or out of the guide?
 const KITCHENS: ProductCardData = {
   name: "HungerStation Kitchens",
-  subhead: "Cloud kitchens in high-demand zones, fully managed by us.",
-  benefits: ["No real estate risk", "Open new neighborhoods fast", "Shared utilities"],
+  subhead: "[NEEDS Karim / handover — source current HSK positioning, or drop from guide]",
+  body: "[NEEDS HSK content — value prop, target vendor, economics, case studies]",
+  benefits: [
+    "[NEEDS HSK content]",
+    "[NEEDS HSK content]",
+    "[NEEDS HSK content]",
+  ],
+  economics: [
+    { label: "Setup", value: "[NEEDS HSK team]" },
+    { label: "Commission", value: "[NEEDS HSK team]" },
+    { label: "Lead time to launch", value: "[NEEDS HSK team]" },
+  ],
   scenarioKey: "hsk",
 };
 
