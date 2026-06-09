@@ -48,6 +48,7 @@ const AOV_FLAGSHIP: ProductCardData = {
     { label: "Minimum spend", value: "[NEEDS Sherif]" },
     { label: "Expected lift", value: "[NEEDS Sherif]" },
   ],
+  scenarioKey: "hplus",
 };
 
 const AOV_SECONDARY: ProductCardData[] = [
@@ -155,6 +156,7 @@ const ATTRACT_FLAGSHIP: ProductCardData = {
     { label: "Min daily budget", value: "[NEEDS Sherif]" },
     { label: "Expected ROAS", value: "[NEEDS Sherif]" },
   ],
+  scenarioKey: "sponsored",
 };
 
 const ATTRACT_SECONDARY: ProductCardData[] = [
@@ -308,6 +310,7 @@ const MOFAWTER: ProductCardData = {
     { label: "Repayment", value: "% of daily sales" },
     { label: "Term length", value: "Until repaid" },
   ],
+  scenarioKey: "mofawter",
 };
 
 export function FinancingSection() {

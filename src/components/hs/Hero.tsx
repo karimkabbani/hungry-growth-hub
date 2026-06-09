@@ -37,7 +37,6 @@ export function Hero() {
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-cream/70">
           <a href="#grow-online" className="hover:text-cream">Products</a>
-          <a href="#roi" className="hover:text-cream">ROI</a>
           <a href="#stories" className="hover:text-cream">Stories</a>
           <a href="#plan" className="hover:text-cream">Contact</a>
         </nav>

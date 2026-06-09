@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Quote } from "lucide-react";
+import { useHs, type ScenarioProduct } from "@/lib/hs-context";
 
 export type CardSize = "flagship" | "secondary";
 
@@ -32,6 +33,8 @@ export type ProductCardData = {
   testimonial?: Testimonial | null;
   /** 2-4 unit economics rows. Missing → placeholders. */
   economics?: EconomicsItem[];
+  /** If set, render a "See a sample scenario" link that opens the drawer for this product. */
+  scenarioKey?: ScenarioProduct;
 };
 
 const PLACEHOLDER_ITALIC = "italic text-muted-foreground/70";
@@ -165,9 +168,27 @@ export function ProductCard({
         <UnitEconomics economics={economics} />
       </div>
 
+      {/* 9b. Scenario link (only on products with scenarioKey) */}
+      {data.scenarioKey && <ScenarioLink productKey={data.scenarioKey} />}
+
       {/* 10. Dual CTA */}
       <DualCTA size={size} />
     </article>
+  );
+}
+
+function ScenarioLink({ productKey }: { productKey: ScenarioProduct }) {
+  const { openScenario } = useHs();
+  return (
+    <div className="mt-5">
+      <button
+        type="button"
+        onClick={() => openScenario(productKey)}
+        className="text-xs text-[color:var(--ink)]/80 underline-offset-4 hover:underline hover:text-[color:var(--ink)]"
+      >
+        See a sample scenario →
+      </button>
+    </div>
   );
 }
 
