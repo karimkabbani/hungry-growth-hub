@@ -33,6 +33,7 @@ const DELIVERY: ProductCardData = {
     { label: "Setup fee", value: "SAR 0", note: "Onboarded in 7 days" },
     { label: "Payouts", value: "[TBD with Sales]" },
   ],
+  scenarioKey: "delivery",
 };
 
 const PICKUP: ProductCardData = {
@@ -45,6 +46,7 @@ const PICKUP: ProductCardData = {
     "Higher margin per order",
     "Great for cafés & QSR",
   ],
+  scenarioKey: "pickup",
 };
 
 const DINEIN: ProductCardData = {
@@ -90,12 +92,14 @@ const DINEIN: ProductCardData = {
     { label: "Setup", value: "SAR 0" },
     { label: "Per-branch toggle", value: "Yes" },
   ],
+  scenarioKey: "dine-in",
 };
 
 const KITCHENS: ProductCardData = {
   name: "HungerStation Kitchens",
   subhead: "Cloud kitchens in high-demand zones, fully managed by us.",
   benefits: ["No real estate risk", "Open new neighborhoods fast", "Shared utilities"],
+  scenarioKey: "hsk",
 };
 
 export function GrowOnlineSection() {

@@ -64,6 +64,7 @@ const AOV_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Discount funded 50/50" },
       { label: "Expected lift", value: "+22% AOV" },
     ],
+    scenarioKey: "super-saver",
   },
   {
     name: "Full Menu Discounts",
@@ -77,6 +78,7 @@ const AOV_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Vendor-funded" },
       { label: "Expected lift", value: "+34% weekend orders" },
     ],
+    scenarioKey: "full-menu",
   },
   {
     name: "Meal for One",
@@ -90,6 +92,7 @@ const AOV_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Bundle pricing" },
       { label: "Expected lift", value: "+15% lunch AOV" },
     ],
+    scenarioKey: "meal-for-one",
   },
   {
     name: "HRewards",
@@ -106,6 +109,7 @@ const AOV_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Funded by HungerStation" },
       { label: "Vendor cost", value: "SAR 0" },
     ],
+    scenarioKey: "hrewards",
   },
 ];
 
@@ -174,6 +178,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "CPC" },
       { label: "Min CPC", value: "SAR 1.50" },
     ],
+    scenarioKey: "keyword",
   },
   {
     name: "Display Ads",
@@ -188,6 +193,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "CPM (weekly buys)" },
       { label: "Min spend", value: "[NEEDS Sherif]" },
     ],
+    scenarioKey: "display",
   },
   {
     name: "Awareness Banner",
@@ -202,6 +208,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Flat fee per day" },
       { label: "Booking", value: "Via AM" },
     ],
+    scenarioKey: "awareness",
   },
   {
     name: "Offer Hour / FlashDeals",
@@ -217,6 +224,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Commission on uplift" },
       { label: "Min duration", value: "1 hour" },
     ],
+    scenarioKey: "offer-hour",
   },
   {
     name: "Splash Screen",
@@ -232,6 +240,7 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Flat fee per day" },
       { label: "Availability", value: "1 brand / city / day" },
     ],
+    scenarioKey: "splash",
   },
 ];
 
@@ -349,6 +358,7 @@ const OPS_FLAGSHIP: ProductCardData = {
     { label: "Cost", value: "Included with HungerStation" },
     { label: "Setup", value: "Self-serve" },
   ],
+  scenarioKey: "vendor-portal",
 };
 
 const OPS_SECONDARY: ProductCardData[] = [
@@ -357,12 +367,14 @@ const OPS_SECONDARY: ProductCardData[] = [
     subhead:
       "The restaurant-side order flow — from incoming ticket to dispatcher handover. Built for high-volume kitchens.",
     benefits: ["Tablet + printer kit", "Dispatcher integration", "Handover tracking"],
+    scenarioKey: "oms",
   },
   {
     name: "POS Integrations",
     subhead:
       "Already on Deliverect, FeedUs, UrbanPiper, Grubtech, or POSist? Plug in directly and receive HungerStation orders in your existing flow.",
     benefits: ["Native sync", "No double-entry", "Live menu push"],
+    scenarioKey: "pos-integrations",
   },
 ];
 
