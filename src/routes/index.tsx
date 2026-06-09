@@ -45,10 +45,11 @@ function Index() {
         <AttractSection />
         <FinancingSection />
         <OpsSection />
-        <RoiCalculator />
         <VendorStories />
         <BuildYourPlan />
         <StickyCta />
+        <ScenarioDrawer />
+
       </main>
     </HsProvider>
   );
