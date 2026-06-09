@@ -92,6 +92,7 @@ const DINEIN: ProductCardData = {
     { label: "Setup", value: "SAR 0" },
     { label: "Per-branch toggle", value: "Yes" },
   ],
+  scenarioKey: "dine-in",
 };
 
 const KITCHENS: ProductCardData = {
