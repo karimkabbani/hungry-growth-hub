@@ -64,7 +64,7 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap gap-3">
             <a
               href="#goals"
-              className="group inline-flex items-center gap-2 rounded-full bg-blue px-6 py-3.5 text-sm font-semibold text-white hover:bg-blue-hover transition"
+              className="btn-hs-yellow group inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold"
             >
               See How It Works
               <span className="transition group-hover:translate-x-0.5">→</span>
