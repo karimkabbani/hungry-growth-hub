@@ -4,7 +4,7 @@ export type Goal = "online" | "aov" | "newcustomers" | "financing" | "ops";
 export type ScenarioProduct =
   | "hplus"
   | "sponsored"
-  | "mofawter"
+  | "vendor-financing"
   | "delivery"
   | "pickup"
   | "dine-in"
@@ -41,7 +41,7 @@ export const GOAL_META: Record<Goal, { label: string; sectionId: string; product
   financing: {
     label: "Fund Your Growth",
     sectionId: "financing",
-    products: ["Mofawter"],
+    products: ["Vendor Financing"],
   },
   ops: {
     label: "Optimize Operations",

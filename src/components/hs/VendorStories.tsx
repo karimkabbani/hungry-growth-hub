@@ -20,13 +20,13 @@ const STORIES = [
     ],
   },
   {
-    brand: "Najd Grills",
-    city: "Dammam",
-    quote: "Mofawter let us open the Khobar branch six months early.",
+    brand: "[Vendor 3 — NEEDS Omar]",
+    city: "[city]",
+    quote: "[Vendor case study — NEEDS Omar: real KSA partner with verified numbers + consent]",
     stats: [
-      { n: "SAR 240K", l: "advance" },
-      { n: "11 mo", l: "payback" },
-      { n: "+38%", l: "GMV" },
+      { n: "[NEEDS]", l: "[metric]" },
+      { n: "[NEEDS]", l: "[metric]" },
+      { n: "[NEEDS]", l: "[metric]" },
     ],
   },
 ];

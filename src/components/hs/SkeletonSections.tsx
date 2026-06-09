@@ -523,53 +523,57 @@ export function AttractSection() {
 }
 
 /* ============================================================
-   FUND YOUR GROWTH — Mofawter (single flagship)
+   FUND YOUR GROWTH — Vendor Financing (placeholder)
+   Note: Mofawter is a customer-facing postpaid (BNPL) payment
+   capability — it does NOT belong in this section. The product
+   here is "Vendor Financing", which is a separate offering for
+   vendors. No source content available yet — NEEDS owner.
    ============================================================ */
 
-// Source: NONE. Mofawter is NOT in the Jan 2025 deck. Content below is Lovable-generated
-// and pre-validation. Marked directional. NEEDS Raghad (Fintech) for verified content.
-// Higher legal sensitivity than other cards — handover person should treat with extra care.
-// Brief context: Q2 Top 3 priority #2 at SAR 120M target.
-const MOFAWTER: ProductCardData = {
-  name: "Mofawter",
-  subhead: "HungerStation vendor financing — upfront payout, repay automatically from a small share of each order.",
-  body: "HungerStation's vendor financing product. Get an upfront payout based on your HungerStation order history. No bank statements, no collateral, no fixed installments. Repayment happens automatically as a small share of each future order until the advance is repaid.",
+// Source: NONE. Vendor Financing content is not yet in the Jan 2025 deck or any other
+// available source. Placeholder card — NEEDS the Vendor Financing product owner
+// to provide product description, terms, eligibility, case studies, and imagery.
+// Brief context: Q2 Top 3 priority #2 at SAR 120M target (vendor financing).
+const VENDOR_FINANCING: ProductCardData = {
+  name: "Vendor Financing",
+  subhead: "[NEEDS owner — HungerStation vendor financing product: high-level description, target vendor, mechanism]",
+  body: "[NEEDS owner — product description, eligibility criteria, repayment mechanism, target vendor profile, regulatory framing]",
   image: (
     <img
       src={rider}
-      alt="HungerStation rider in Riyadh"
+      alt="HungerStation rider — placeholder until Vendor Financing imagery is available"
       loading="lazy"
       className="rounded-2xl w-full aspect-[4/5] object-cover"
     />
   ),
   stats: [
-    { value: "~48h", label: "to payout" },
-    { value: "0", label: "collateral required" },
-    { value: "% of sales", label: "auto-repayment" },
+    { value: "[NEEDS owner]", label: "advance size range" },
+    { value: "[NEEDS owner]", label: "time to disbursement" },
+    { value: "[NEEDS owner]", label: "repayment model" },
   ],
   statsStatus: "directional",
   benefits: [
-    "Paid in roughly 48 hours of approval",
-    "No collateral — assessed on HS order history",
-    "Repays automatically from each future order",
-    "No fixed monthly installments",
+    "[NEEDS owner — verified benefit 1]",
+    "[NEEDS owner — verified benefit 2]",
+    "[NEEDS owner — verified benefit 3]",
+    "[NEEDS owner — verified benefit 4]",
   ],
   steps: [
-    { t: "We assess your sales history.", d: "Mofawter reviews your HungerStation order history — no bank statements, no paperwork." },
-    { t: "You get paid (approx. 48h).", d: "A lump-sum advance lands in your account within ~2 business days of approval." },
-    { t: "Repay as you sell.", d: "A small % of each future order goes to repayment until the advance is fully repaid." },
+    { t: "[NEEDS owner — Step 1 title]", d: "[NEEDS owner — Step 1 detail]" },
+    { t: "[NEEDS owner — Step 2 title]", d: "[NEEDS owner — Step 2 detail]" },
+    { t: "[NEEDS owner — Step 3 title]", d: "[NEEDS owner — Step 3 detail]" },
   ],
   testimonial: {
-    quote: "[NEEDS Raghad/Omar — real Mofawter vendor case with verified advance size, repayment timeline, and use case]",
+    quote: "[NEEDS Omar — real Vendor Financing vendor case with verified advance size, repayment timeline, and use case]",
     author: "[Vendor name, brand, city]",
   },
   economics: [
-    { label: "Advance size", value: "[NEEDS Raghad]" },
-    { label: "Repayment model", value: "% of daily sales" },
-    { label: "Term length", value: "Until repaid" },
-    { label: "Eligibility", value: "[NEEDS Raghad]" },
+    { label: "Advance size", value: "[NEEDS owner]" },
+    { label: "Repayment model", value: "[NEEDS owner]" },
+    { label: "Term length", value: "[NEEDS owner]" },
+    { label: "Eligibility", value: "[NEEDS owner]" },
   ],
-  scenarioKey: "mofawter",
+  scenarioKey: "vendor-financing",
 };
 
 export function FinancingSection() {
@@ -582,11 +586,11 @@ export function FinancingSection() {
         icon={Wallet}
         eyebrow="Fund Your Growth"
         title="Fund Your Growth."
-        copy="Mofawter is HungerStation's vendor financing. Get an upfront payout, repay automatically from a small share of each order. No paperwork, no collateral, no fixed monthly payments."
+        copy="HungerStation's vendor financing product — designed to help partner restaurants invest in growth. [NEEDS owner: full product description.]"
         highlight={highlight}
       />
       <div className="container-x pb-20 md:pb-28">
-        <ProductCard data={MOFAWTER} size="flagship" highlight={highlight} />
+        <ProductCard data={VENDOR_FINANCING} size="flagship" highlight={highlight} />
       </div>
     </section>
   );

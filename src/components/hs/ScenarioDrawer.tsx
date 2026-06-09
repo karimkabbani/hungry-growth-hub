@@ -15,7 +15,7 @@ const AOV: Record<(typeof CUISINES)[number], number> = {
 type ScenarioMode =
   | "calc-hplus"
   | "calc-sponsored"
-  | "calc-mofawter"
+  | "calc-vendor-financing"
   | "calc-orders"
   | "calc-ads"
   | "am-only";
@@ -32,7 +32,7 @@ type ScenarioConfig = {
 const SCENARIO_CONFIG: Record<ScenarioProduct, ScenarioConfig> = {
   hplus: { title: "RDF / HPlus — illustrative scenario", mode: "calc-hplus" },
   sponsored: { title: "Sponsored Listing — illustrative scenario", mode: "calc-sponsored" },
-  mofawter: { title: "Mofawter — illustrative scenario", mode: "calc-mofawter" },
+  "vendor-financing": { title: "Vendor Financing — illustrative scenario", mode: "calc-vendor-financing" },
 
   delivery: {
     title: "Delivery Service — illustrative scenario",
@@ -229,7 +229,7 @@ export function ScenarioDrawer() {
   );
   const gmvUpliftAnnual = orderUplift * aov * 12;
   const gmvSponsoredAnnual = sponsoredOrders * aov * 12;
-  const mofawterCapacity = Math.round(orders * aov * 12 * 0.1);
+  const vendorFinancingCapacity = Math.round(orders * aov * 12 * 0.1);
 
   // Generic orders calc
   const genericOrdersCentral = Math.round(orders * (config.orderMultiplier ?? 0));
@@ -380,11 +380,11 @@ export function ScenarioDrawer() {
                   </div>
                 )}
 
-                {config.mode === "calc-mofawter" && (
+                {config.mode === "calc-vendor-financing" && (
                   <div className="mt-4">
                     <Output
-                      label="Mofawter capacity"
-                      value={sarRange(mofawterCapacity)}
+                      label="Estimated Vendor Financing capacity"
+                      value={sarRange(vendorFinancingCapacity)}
                       large
                     />
                   </div>
@@ -451,8 +451,9 @@ export function ScenarioDrawer() {
                       <p>
                         Central estimates use HungerStation benchmarks: HPlus order uplift
                         assumes <strong>+200% over 12 months</strong>; Sponsored Listings
-                        assume <strong>5× ROAS</strong>; Mofawter capacity is{" "}
-                        <strong>10% of annualized GMV</strong>. We then show a band of
+                        assume <strong>5× ROAS</strong>; Vendor Financing capacity is{" "}
+                        <strong>10% of annualized GMV</strong> (directional — pending
+                        confirmed product terms). We then show a band of
                         ±40% around that central estimate.
                       </p>
                       <p>
