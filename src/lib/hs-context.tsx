@@ -1,6 +1,7 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 
 export type Goal = "online" | "aov" | "newcustomers" | "financing" | "ops";
+export type ScenarioProduct = "hplus" | "sponsored" | "mofawter";
 
 export const GOAL_META: Record<Goal, { label: string; sectionId: string; products: string[] }> = {
   online: {
@@ -35,6 +36,10 @@ type Ctx = {
   setGoal: (g: Goal | null) => void;
   engaged: Set<string>;
   markEngaged: (id: string) => void;
+  scenarioOpen: boolean;
+  scenarioProduct: ScenarioProduct | null;
+  openScenario: (p: ScenarioProduct) => void;
+  closeScenario: () => void;
 };
 
 const HsContext = createContext<Ctx | null>(null);
@@ -42,6 +47,8 @@ const HsContext = createContext<Ctx | null>(null);
 export function HsProvider({ children }: { children: ReactNode }) {
   const [goal, setGoal] = useState<Goal | null>(null);
   const [engaged, setEngaged] = useState<Set<string>>(new Set());
+  const [scenarioOpen, setScenarioOpen] = useState(false);
+  const [scenarioProduct, setScenarioProduct] = useState<ScenarioProduct | null>(null);
 
   const value = useMemo<Ctx>(
     () => ({
@@ -55,8 +62,15 @@ export function HsProvider({ children }: { children: ReactNode }) {
           next.add(id);
           return next;
         }),
+      scenarioOpen,
+      scenarioProduct,
+      openScenario: (p) => {
+        setScenarioProduct(p);
+        setScenarioOpen(true);
+      },
+      closeScenario: () => setScenarioOpen(false),
     }),
-    [goal, engaged],
+    [goal, engaged, scenarioOpen, scenarioProduct],
   );
 
   return <HsContext.Provider value={value}>{children}</HsContext.Provider>;
