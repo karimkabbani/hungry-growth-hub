@@ -359,7 +359,7 @@ export function DualCTA({ size = "flagship" }: { size?: CardSize }) {
     <div className={`grid gap-3 sm:grid-cols-2 ${small ? "mt-6" : "mt-8"}`}>
       <a
         href="#plan"
-        className="flex flex-col items-start rounded-2xl bg-blue px-5 py-3 text-white hover:bg-blue-hover transition"
+        className="btn-hs-yellow flex flex-col items-start rounded-2xl px-5 py-3"
       >
         <span className="text-[10px] uppercase tracking-[0.18em] opacity-80">
           New to HungerStation?
