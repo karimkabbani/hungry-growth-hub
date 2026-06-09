@@ -108,6 +108,18 @@
   .text-balance { text-wrap: balance; }
   .container-x { padding-left: clamp(1rem, 4vw, 4rem); padding-right: clamp(1rem, 4vw, 4rem); }
 
+  /* HS primary CTA — yellow fill, brown text, 1px brown border, darker yellow hover */
+  .btn-hs-yellow {
+    background-color: var(--brand-yellow);
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    transition: background-color 150ms ease;
+  }
+  .btn-hs-yellow:hover {
+    background-color: color-mix(in oklab, var(--brand-yellow), black 10%);
+    color: var(--ink);
+  }
+
   /* yellow accent underline for stats and key emphasis */
   .accent-underline {
     background-image: linear-gradient(transparent 78%, var(--brand-yellow) 78%, var(--brand-yellow) 92%, transparent 92%);
