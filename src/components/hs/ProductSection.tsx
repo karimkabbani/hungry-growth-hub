@@ -33,6 +33,7 @@ const DELIVERY: ProductCardData = {
     { label: "Setup fee", value: "SAR 0", note: "Onboarded in 7 days" },
     { label: "Payouts", value: "[TBD with Sales]" },
   ],
+  scenarioKey: "delivery",
 };
 
 const PICKUP: ProductCardData = {
