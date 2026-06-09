@@ -48,6 +48,7 @@ const AOV_FLAGSHIP: ProductCardData = {
     { label: "Minimum spend", value: "[NEEDS Sherif]" },
     { label: "Expected lift", value: "[NEEDS Sherif]" },
   ],
+  scenarioKey: "hplus",
 };
 
 const AOV_SECONDARY: ProductCardData[] = [
