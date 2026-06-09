@@ -168,9 +168,27 @@ export function ProductCard({
         <UnitEconomics economics={economics} />
       </div>
 
+      {/* 9b. Scenario link (only on products with scenarioKey) */}
+      {data.scenarioKey && <ScenarioLink productKey={data.scenarioKey} />}
+
       {/* 10. Dual CTA */}
       <DualCTA size={size} />
     </article>
+  );
+}
+
+function ScenarioLink({ productKey }: { productKey: ScenarioProduct }) {
+  const { openScenario } = useHs();
+  return (
+    <div className="mt-5">
+      <button
+        type="button"
+        onClick={() => openScenario(productKey)}
+        className="text-xs text-[color:var(--ink)]/80 underline-offset-4 hover:underline hover:text-[color:var(--ink)]"
+      >
+        See a sample scenario →
+      </button>
+    </div>
   );
 }
 
