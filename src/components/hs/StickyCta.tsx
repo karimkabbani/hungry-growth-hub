@@ -15,7 +15,7 @@ export function StickyCta() {
   return (
     <a
       href="#plan"
-      className={`fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full bg-blue text-white px-5 py-3.5 text-sm font-semibold shadow-2xl shadow-black/20 transition-all hover:bg-blue-hover ${
+      className={`btn-hs-yellow fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold shadow-2xl shadow-black/20 transition-all ${
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
