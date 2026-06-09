@@ -64,6 +64,7 @@ const AOV_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Discount funded 50/50" },
       { label: "Expected lift", value: "+22% AOV" },
     ],
+    scenarioKey: "super-saver",
   },
   {
     name: "Full Menu Discounts",
@@ -77,6 +78,7 @@ const AOV_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Vendor-funded" },
       { label: "Expected lift", value: "+34% weekend orders" },
     ],
+    scenarioKey: "full-menu",
   },
   {
     name: "Meal for One",
@@ -90,6 +92,7 @@ const AOV_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Bundle pricing" },
       { label: "Expected lift", value: "+15% lunch AOV" },
     ],
+    scenarioKey: "meal-for-one",
   },
   {
     name: "HRewards",
@@ -106,6 +109,7 @@ const AOV_SECONDARY: ProductCardData[] = [
       { label: "Pricing model", value: "Funded by HungerStation" },
       { label: "Vendor cost", value: "SAR 0" },
     ],
+    scenarioKey: "hrewards",
   },
 ];
 
