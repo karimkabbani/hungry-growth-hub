@@ -43,7 +43,7 @@ export function Hero() {
         </nav>
         <a
           href="#plan"
-          className="rounded-full bg-blue px-4 py-2 text-sm font-semibold text-white hover:bg-blue-hover transition"
+          className="btn-hs-yellow rounded-full px-4 py-2 text-sm font-semibold"
         >
           Talk to Sales
         </a>
