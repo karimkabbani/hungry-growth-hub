@@ -11,7 +11,7 @@ import {
   FinancingSection,
   OpsSection,
 } from "@/components/hs/SkeletonSections";
-import { RoiCalculator } from "@/components/hs/RoiCalculator";
+import { ScenarioDrawer } from "@/components/hs/ScenarioDrawer";
 import { VendorStories } from "@/components/hs/VendorStories";
 import { BuildYourPlan } from "@/components/hs/BuildYourPlan";
 import { StickyCta } from "@/components/hs/StickyCta";
