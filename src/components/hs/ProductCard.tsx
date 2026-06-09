@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Quote } from "lucide-react";
+import { useHs, type ScenarioProduct } from "@/lib/hs-context";
 
 export type CardSize = "flagship" | "secondary";
 
@@ -32,6 +33,8 @@ export type ProductCardData = {
   testimonial?: Testimonial | null;
   /** 2-4 unit economics rows. Missing → placeholders. */
   economics?: EconomicsItem[];
+  /** If set, render a "See a sample scenario" link that opens the drawer for this product. */
+  scenarioKey?: ScenarioProduct;
 };
 
 const PLACEHOLDER_ITALIC = "italic text-muted-foreground/70";
