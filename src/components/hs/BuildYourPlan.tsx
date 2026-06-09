@@ -118,7 +118,7 @@ export function BuildYourPlan() {
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 rounded-full bg-blue text-white font-semibold py-3.5 hover:bg-blue-hover transition"
+                  className="btn-hs-yellow flex-1 rounded-full font-semibold py-3.5"
                 >
                   {submitted ? "✓ Submitted" : "Get started"}
                 </button>
