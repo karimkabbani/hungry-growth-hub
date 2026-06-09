@@ -310,6 +310,7 @@ const MOFAWTER: ProductCardData = {
     { label: "Repayment", value: "% of daily sales" },
     { label: "Term length", value: "Until repaid" },
   ],
+  scenarioKey: "mofawter",
 };
 
 export function FinancingSection() {
