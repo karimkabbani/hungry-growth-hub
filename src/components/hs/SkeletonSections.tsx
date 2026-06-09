@@ -358,6 +358,7 @@ const OPS_FLAGSHIP: ProductCardData = {
     { label: "Cost", value: "Included with HungerStation" },
     { label: "Setup", value: "Self-serve" },
   ],
+  scenarioKey: "vendor-portal",
 };
 
 const OPS_SECONDARY: ProductCardData[] = [
@@ -366,12 +367,14 @@ const OPS_SECONDARY: ProductCardData[] = [
     subhead:
       "The restaurant-side order flow — from incoming ticket to dispatcher handover. Built for high-volume kitchens.",
     benefits: ["Tablet + printer kit", "Dispatcher integration", "Handover tracking"],
+    scenarioKey: "oms",
   },
   {
     name: "POS Integrations",
     subhead:
       "Already on Deliverect, FeedUs, UrbanPiper, Grubtech, or POSist? Plug in directly and receive HungerStation orders in your existing flow.",
     benefits: ["Native sync", "No double-entry", "Live menu push"],
+    scenarioKey: "pos-integrations",
   },
 ];
 
