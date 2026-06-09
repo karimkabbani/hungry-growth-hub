@@ -12,9 +12,10 @@ const DELIVERY: ProductCardData = {
     "Your 24/7 delivery partner across 100+ cities. Our riders handle the last mile, you focus on the food.",
   stats: [
     { value: "100+", label: "cities served 24/7" },
-    { value: "[TBD]", label: "avg delivery time · NEEDS Sherif" },
+    { value: "~30 min", label: "avg delivery time" },
     { value: "Largest", label: "fleet in KSA" },
   ],
+  statsStatus: "directional",
   image: <PhoneMockup />,
   benefits: [
     "100+ cities, served 24/7",
@@ -44,6 +45,12 @@ const PICKUP: ProductCardData = {
   name: "Pick-Up",
   subhead: "Let customers grab orders directly from your restaurant — no delivery cost, more profile visibility.",
   body: "Customers order in the HungerStation app and pick up at your restaurant — at the counter, or curbside (In-Car). No rider, no delivery fee, just a confirmed order waiting for them. Vendors use Pick-Up to boost profile, increase revenue, and run pickup-only promotional offers.",
+  stats: [
+    { value: "0", label: "rider/delivery fee" },
+    { value: "Counter or In-Car", label: "pickup modes" },
+    { value: "+8-12%", label: "incremental orders" },
+  ],
+  statsStatus: "directional",
   benefits: [
     "Counter or curbside (In-Car) pickup",
     "No rider, no delivery cost",

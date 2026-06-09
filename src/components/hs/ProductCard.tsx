@@ -20,6 +20,10 @@ export type ProductCardData = {
   subhead: string;
   /** 1 stat → hero format; 2-3 → equal-weight row. Missing → placeholders. */
   stats?: StatHighlight[];
+  /** When "directional", a small italic disclaimer renders under the stat row signaling
+   * the numbers are not HS-validated benchmarks. Use for any card with Lovable-generated stats
+   * until Sherif or the relevant owner provides verified figures. */
+  statsStatus?: "directional";
   image?: ReactNode;
   /** Optional "What is it?" body — only for complex products. */
   body?: string | null;
@@ -85,6 +89,11 @@ export function ProductCard({
 
       {/* 3. Stat Highlights */}
       <StatHighlights stats={stats} size={size} />
+      {stats && data.statsStatus === "directional" && (
+        <p className="mt-3 text-[10px] italic text-muted-foreground/70 max-w-md">
+          Directional benchmarks — illustrative only, pending HS validation.
+        </p>
+      )}
 
       {/* 4. Image */}
       <div className={isFlag ? "mt-10" : "mt-6"}>

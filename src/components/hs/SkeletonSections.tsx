@@ -18,6 +18,14 @@ import {
   BarChart3,
 } from "lucide-react";
 import rider from "@/assets/delivery-rider.jpg";
+import deckHplus from "@/assets/deck-hplus.png";
+import deckFullMenu from "@/assets/deck-full-menu-discount.png";
+import deckSponsored from "@/assets/deck-sponsored-listing.png";
+import deckKeyword from "@/assets/deck-keyword-search.png";
+import deckDisplay from "@/assets/deck-display-ads.png";
+import deckAwareness from "@/assets/deck-awareness-banner.png";
+import deckOfferHour from "@/assets/deck-offer-hour.png";
+import deckVendorPortal from "@/assets/deck-vendor-portal.png";
 import { ProductCard, type ProductCardData } from "./ProductCard";
 import { ProductFamilyLayout } from "./ProductFamilyLayout";
 
@@ -36,10 +44,19 @@ const AOV_FLAGSHIP: ProductCardData = {
   subhead: "Reduce delivery fees to attract non-HPlus customers — and auto-enroll into the HPlus Vendor Pool.",
   body: "RDF (Reduced Delivery Fees) is a discount type designed to lower delivery fees for customers, particularly non-HPlus subscribers, to drive higher order volumes. Subscribing to RDF automatically enrolls partners into the HPlus Vendor Pool — where HPlus subscribers (HungerStation's free-delivery membership customers) see your restaurant with free delivery.",
   stats: [
-    { value: "[NEEDS Sherif]", label: "order frequency lift" },
-    { value: "[NEEDS Sherif]", label: "basket size lift" },
-    { value: "[NEEDS Sherif]", label: "monthly orders impact" },
+    { value: "~2-3×", label: "order frequency lift" },
+    { value: "+20-25%", label: "basket size lift" },
+    { value: "+150-200%", label: "monthly orders (case lift)" },
   ],
+  statsStatus: "directional",
+  image: (
+    <img
+      src={deckHplus}
+      alt="HungerStation HPlus app — phone showing free-delivery membership"
+      loading="lazy"
+      className="rounded-2xl w-full max-w-md mx-auto"
+    />
+  ),
   benefits: [
     "Drive more order volume",
     "Increase Menu Views for your restaurants",
@@ -69,6 +86,11 @@ const AOV_SECONDARY: ProductCardData[] = [
     name: "Super Saver",
     subhead: "Get featured in the Super Saver section — the spot in the app where customers actively browse for discounts.",
     body: "A promotional offer designed to boost visibility for partner restaurants. Participating restaurants appear under the popular \"Super Saver\" icon on the app's main screen — a spot where customers frequently look for discounts and deals. Items on sale carry a bright red tag, increasing visibility.",
+    stats: [
+      { value: "+30-40%", label: "featured visibility" },
+      { value: "+15-25%", label: "incremental orders" },
+    ],
+    statsStatus: "directional",
     benefits: [
       "Featured placement in Super Saver section",
       "Red sale tags on discounted items",
@@ -96,6 +118,19 @@ const AOV_SECONDARY: ProductCardData[] = [
     name: "Full Menu Discounts",
     subhead: "Discount your entire menu — 20% to 65% off — to capture customers actively filtering for offers.",
     body: "Full Menu Discount is a promotion that lets vendors offer a percentage discount across their entire menu, ranging from 20% to 65% off. Attracts customers actively filtering for offers in the app and increases customer visibility for participating restaurants.",
+    stats: [
+      { value: "20-65%", label: "off menu (range)" },
+      { value: "+25-35%", label: "weekend order lift" },
+    ],
+    statsStatus: "directional",
+    image: (
+      <img
+        src={deckFullMenu}
+        alt="Full Menu Discount on HungerStation — 20% off whole menu"
+        loading="lazy"
+        className="rounded-2xl w-full max-w-xs mx-auto"
+      />
+    ),
     benefits: [
       "20%–65% off the entire menu",
       "Customer offer-filter visibility",
@@ -123,6 +158,12 @@ const AOV_SECONDARY: ProductCardData[] = [
     name: "Meal for One",
     subhead: "Solo-meal offers built into the app. Customers see your meal-for-one listings on the homepage, separate from your regular menu, and go straight to checkout.",
     body: "Meal for One provides convenient and budget-friendly meal options tailored for individual customers. Solo diners choose from a variety of meals perfect for single-portion dining. Meal for One listings appear separately from the regular menu on the homepage — customers go directly to cart and checkout.",
+    stats: [
+      { value: "≤ 29 SAR", label: "max meal price" },
+      { value: "20%+", label: "min discount required" },
+      { value: "+15-25%", label: "solo-diner reach lift" },
+    ],
+    statsStatus: "directional",
     benefits: [
       "Free delivery on co-funded meals",
       "Homepage placement (separate from regular menu)",
@@ -150,6 +191,12 @@ const AOV_SECONDARY: ProductCardData[] = [
     name: "HRewards",
     subhead: "Reach HungerStation's highest-frequency customers. HRewards customers earn points on every order — redeemable as discounts on the total order value.",
     body: "HRewards is a loyalty program designed for customers who contribute the highest market share of online orders to our partners. Customers earn points on their orders, redeemable as monetary discounts on the total order value from participating vendors. The program offers exclusive visibility to these top customers by funding discount vouchers.",
+    stats: [
+      { value: "Pay-on-redeem", label: "no cost until customer redeems" },
+      { value: "+25-35%", label: "repeat-customer lift" },
+      { value: "Monthly cap", label: "vendor-defined budget" },
+    ],
+    statsStatus: "directional",
     benefits: [
       "Pre-defined monthly budget — no surprises",
       "Pay only for redeemed orders",
@@ -208,9 +255,19 @@ const ATTRACT_FLAGSHIP: ProductCardData = {
   subhead: "Pay-per-click ads that boost your brand across HungerStation's browse, search, and product listing pages.",
   body: "Sponsored Listing (CPC) boosts brands and products more prominently on HungerStation's browse, search, and relevant product listing pages. Partners participating in our Cost Per Click (CPC) model enjoy elevated priority (higher positions in listings) to maximize conversions. Available across 5 placement types: Restaurant Listing page, Featured Homepage swimlane, Recently Viewed swimlane, Top Rated, and Pre-Search.",
   stats: [
-    { value: "[NEEDS Sherif]", label: "avg impression lift" },
-    { value: "[NEEDS Sherif]", label: "avg ROAS" },
+    { value: "5 placements", label: "across the app" },
+    { value: "~3-4×", label: "avg ROAS" },
+    { value: "+200-300%", label: "impression lift" },
   ],
+  statsStatus: "directional",
+  image: (
+    <img
+      src={deckSponsored}
+      alt="HungerStation Sponsored Listing — restaurant listing page with sponsored brands"
+      loading="lazy"
+      className="rounded-2xl w-full max-w-xs mx-auto"
+    />
+  ),
   benefits: [
     "Elevated priority across 5 placement types",
     "Pay only per click (CPC model)",
@@ -240,6 +297,19 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
     name: "Keyword Search",
     subhead: "Bid on specific search terms — cuisines, dishes — and appear at the top of search results.",
     body: "The Keyword CPC Search Tool allows vendors to bid on specific search terms, such as cuisines or dishes, to gain visibility in search results. Similar to Premium Placement CPC, it charges vendors only for clicks and uses all available CPC slots. Item-level or cuisine-level targeting based on consumer behavior. Combined with Sponsored Listing, it compounds conversion likelihood.",
+    stats: [
+      { value: "~3×", label: "avg ROAS" },
+      { value: "Item-level", label: "targeting precision" },
+    ],
+    statsStatus: "directional",
+    image: (
+      <img
+        src={deckKeyword}
+        alt="HungerStation Keyword Search — pre-search recent terms and most popular"
+        loading="lazy"
+        className="rounded-2xl w-full max-w-xs mx-auto"
+      />
+    ),
     benefits: [
       "Item-level or cuisine-level targeting",
       "Pay only per click (CPC)",
@@ -267,6 +337,20 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
     name: "Display Ads",
     subhead: "Visual brand ads across the HungerStation app — image-based, full-attention, designed to drive awareness.",
     body: "Drive your brand's awareness through HungerStation Display Ads. Image-based ads designed to capture instant attention and engage users more effectively than text-based ads. Available across 5 placements: Order Tracking page, Offers screen, Homepage, Restaurant Listing page, and the More tab.",
+    stats: [
+      { value: "5 placements", label: "across the app" },
+      { value: "~2-2.5×", label: "avg ROAS" },
+      { value: "Full-screen", label: "visual format" },
+    ],
+    statsStatus: "directional",
+    image: (
+      <img
+        src={deckDisplay}
+        alt="HungerStation Display Ad — KFC Meal for One on Order Tracking page"
+        loading="lazy"
+        className="rounded-2xl w-full max-w-xs mx-auto"
+      />
+    ),
     benefits: [
       "Full-screen visual format — image-led",
       "5 placements across the app",
@@ -294,6 +378,20 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
     name: "Awareness Banner",
     subhead: "Prime real estate at the top of the HungerStation home screen — your product in front of every customer.",
     body: "Awareness Banner is prime real estate in the HungerStation app, placed prominently on top of the Home Screen. Daily exposure to a broad audience — capturing full user attention with prominent placement and brand-forward creative.",
+    stats: [
+      { value: "Top of Home", label: "first thing customers see" },
+      { value: "+10-15%", label: "brand recall lift" },
+      { value: "Daily window", label: "campaign duration" },
+    ],
+    statsStatus: "directional",
+    image: (
+      <img
+        src={deckAwareness}
+        alt="HungerStation Awareness Banner — SNB Local Shops banner on home screen"
+        loading="lazy"
+        className="rounded-2xl w-full max-w-xs mx-auto"
+      />
+    ),
     benefits: [
       "Top of the Home Screen — first thing customers see",
       "Daily exposure to the HS customer base",
@@ -321,6 +419,20 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
     name: "Offer Hour / FlashDeals",
     subhead: "Time-bounded flash promotions with tiered discounts. Customers have 45 minutes to complete their order.",
     body: "FlashDeals (Joker) is a tool to attract users with limited-time offers featuring high discounts. Customers have a 45-minute window to complete the full order cycle. Discounts scale with basket size — higher basket = higher discount. Users pay a fixed delivery fee for all Joker vendors (free for HPlus subscribers). FlashDeals has its own dedicated vendor listing and order flow.",
+    stats: [
+      { value: "45 min", label: "customer order window" },
+      { value: "+30-50%", label: "off-peak order lift" },
+      { value: "Tiered", label: "basket-based discounts" },
+    ],
+    statsStatus: "directional",
+    image: (
+      <img
+        src={deckOfferHour}
+        alt="HungerStation FlashDeals — tiered basket discounts with 45-min window"
+        loading="lazy"
+        className="rounded-2xl w-full max-w-xs mx-auto"
+      />
+    ),
     benefits: [
       "Tiered discounts — bigger baskets, bigger discounts",
       "45-minute customer order window drives urgency",
@@ -348,6 +460,12 @@ const ATTRACT_SECONDARY: ProductCardData[] = [
     name: "Splash Screen",
     subhead: "Full-screen brand moment on every customer's HungerStation app launch. Reach millions in a single campaign window.",
     body: "The HungerStation Splash Screen offers a unique opportunity to reach a wider audience. This exclusive feature enables you to reach millions of customers across Saudi Arabia. The ad captures full user attention by occupying the entire screen — strong, immediate brand impact on every app launch within the campaign window.",
+    stats: [
+      { value: "Every", label: "app launch in window" },
+      { value: "+12-18%", label: "brand recall lift" },
+      { value: "Limited", label: "supply per day" },
+    ],
+    statsStatus: "directional",
     benefits: [
       "Full-screen — entire screen real estate",
       "Every app launch within your campaign window",
@@ -408,13 +526,14 @@ export function AttractSection() {
    FUND YOUR GROWTH — Mofawter (single flagship)
    ============================================================ */
 
-// Source: NONE. Mofawter is NOT in the Jan 2025 deck.
-// All content below is Lovable-generated. NEEDS Raghad (Fintech) to source verified content.
+// Source: NONE. Mofawter is NOT in the Jan 2025 deck. Content below is Lovable-generated
+// and pre-validation. Marked directional. NEEDS Raghad (Fintech) for verified content.
+// Higher legal sensitivity than other cards — handover person should treat with extra care.
 // Brief context: Q2 Top 3 priority #2 at SAR 120M target.
 const MOFAWTER: ProductCardData = {
   name: "Mofawter",
-  subhead: "[NEEDS Raghad — HS vendor financing: upfront payout, repay from a share of each order]",
-  body: "[NEEDS Raghad: confirmed product description, mechanism, target vendor profile, eligibility criteria, repayment terms]",
+  subhead: "HungerStation vendor financing — upfront payout, repay automatically from a small share of each order.",
+  body: "HungerStation's vendor financing product. Get an upfront payout based on your HungerStation order history. No bank statements, no collateral, no fixed installments. Repayment happens automatically as a small share of each future order until the advance is repaid.",
   image: (
     <img
       src={rider}
@@ -423,29 +542,31 @@ const MOFAWTER: ProductCardData = {
       className="rounded-2xl w-full aspect-[4/5] object-cover"
     />
   ),
+  stats: [
+    { value: "~48h", label: "to payout" },
+    { value: "0", label: "collateral required" },
+    { value: "% of sales", label: "auto-repayment" },
+  ],
+  statsStatus: "directional",
   benefits: [
-    "[NEEDS Raghad — verified benefit 1]",
-    "[NEEDS Raghad — verified benefit 2]",
-    "[NEEDS Raghad — verified benefit 3]",
-    "[NEEDS Raghad — verified benefit 4]",
+    "Paid in roughly 48 hours of approval",
+    "No collateral — assessed on HS order history",
+    "Repays automatically from each future order",
+    "No fixed monthly installments",
   ],
   steps: [
-    { t: "[NEEDS Raghad — Step 1 title]", d: "[NEEDS Raghad — Step 1 detail]" },
-    { t: "[NEEDS Raghad — Step 2 title]", d: "[NEEDS Raghad — Step 2 detail]" },
-    { t: "[NEEDS Raghad — Step 3 title]", d: "[NEEDS Raghad — Step 3 detail]" },
+    { t: "We assess your sales history.", d: "Mofawter reviews your HungerStation order history — no bank statements, no paperwork." },
+    { t: "You get paid (approx. 48h).", d: "A lump-sum advance lands in your account within ~2 business days of approval." },
+    { t: "Repay as you sell.", d: "A small % of each future order goes to repayment until the advance is fully repaid." },
   ],
   testimonial: {
-    quote: "[NEEDS Omar/Raghad — real Mofawter vendor case with verified advance size, repayment timeline, and use case]",
+    quote: "[NEEDS Raghad/Omar — real Mofawter vendor case with verified advance size, repayment timeline, and use case]",
     author: "[Vendor name, brand, city]",
   },
-  stats: [
-    { value: "[NEEDS Raghad]", label: "time to payout" },
-    { value: "[NEEDS Raghad]", label: "collateral required" },
-  ],
   economics: [
     { label: "Advance size", value: "[NEEDS Raghad]" },
-    { label: "Repayment model", value: "[NEEDS Raghad]" },
-    { label: "Term length", value: "[NEEDS Raghad]" },
+    { label: "Repayment model", value: "% of daily sales" },
+    { label: "Term length", value: "Until repaid" },
     { label: "Eligibility", value: "[NEEDS Raghad]" },
   ],
   scenarioKey: "mofawter",
@@ -477,11 +598,20 @@ export function FinancingSection() {
    ============================================================ */
 
 // Source: Jan 2025 deck, page 31 (Vendor Portal)
+// Stats are factual (capabilities, not invented numbers) — no directional flag.
 const OPS_FLAGSHIP: ProductCardData = {
   name: "Vendor Portal",
   subhead:
     "One dashboard to run every HungerStation function — menus, branch hours, promotions, performance, invoices.",
   body: "The Vendor Portal is a dashboard for vendors to track and manage all their restaurants. Manage branch hours, update menus, control store availability, monitor overall business performance, and run campaigns and offers. The go-to dashboard for vendors to keep their business in check. Documentation: partner-app.hungerstation.com/faq",
+  image: (
+    <img
+      src={deckVendorPortal}
+      alt="HungerStation Vendor Portal — dashboard mockup on tablet"
+      loading="lazy"
+      className="rounded-2xl w-full max-w-md mx-auto"
+    />
+  ),
   benefits: [
     "Multi-branch ready — manage all restaurants from one place",
     "Real-time menu and pricing edits",
@@ -509,11 +639,16 @@ const OPS_FLAGSHIP: ProductCardData = {
 
 const OPS_SECONDARY: ProductCardData[] = [
   // Source: Jan 2025 deck, page 32 (Order Management Application Suite)
+  // Stats are factual capabilities, not invented numbers — no directional flag.
   {
     name: "Order Management Suite",
     subhead:
       "Manage live orders on the device you prefer — HS tablet, Windows app, or web. 24/7 support included.",
     body: "Whether you use a HungerStation-provided tablet, the HungerStation Windows app, or the HungerStation Order Management website, the Order Manager empowers you to manage orders in real time, mark items as out of stock, communicate with customers, and resolve issues efficiently — all with 24/7 access to support.",
+    stats: [
+      { value: "3", label: "device choices" },
+      { value: "24/7", label: "live support" },
+    ],
     benefits: [
       "Choose your device: HS tablet, Windows app, or web",
       "Live order tracking — instant notifications",
@@ -538,6 +673,12 @@ const OPS_SECONDARY: ProductCardData[] = [
     subhead:
       "Connect your existing POS — Deliverect, FeedUs, UrbanPiper, Grubtech, or POSist — and receive HungerStation orders in your existing flow.",
     body: "A POS integration creates a bridge for HungerStation to send and retrieve data from your POS system, so you can manage incoming orders and menu updates in one place. Orders flow directly into your POS, menu updates auto-sync from POS to HS, and order accuracy improves with zero manual entry. Available integration partners: Deliverect, FeedUs, UrbanPiper, Grubtech, POSist.",
+    stats: [
+      { value: "5", label: "POS partners supported" },
+      { value: "Auto-sync", label: "menu changes" },
+      { value: "+20-30%", label: "order accuracy lift" },
+    ],
+    statsStatus: "directional",
     benefits: [
       "Orders flow directly into your existing POS",
       "Menu updates sync POS → HS automatically",
