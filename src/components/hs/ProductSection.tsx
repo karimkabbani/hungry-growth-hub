@@ -99,6 +99,7 @@ const KITCHENS: ProductCardData = {
   name: "HungerStation Kitchens",
   subhead: "Cloud kitchens in high-demand zones, fully managed by us.",
   benefits: ["No real estate risk", "Open new neighborhoods fast", "Shared utilities"],
+  scenarioKey: "hsk",
 };
 
 export function GrowOnlineSection() {
