@@ -1,9 +1,9 @@
 import { Smartphone, type LucideIcon } from "lucide-react";
-import { PhoneMockup } from "./PhoneMockup";
 import { useHs } from "@/lib/hs-context";
 import { type ProductCardData } from "./ProductCard";
 import { ProductFamilyLayout } from "./ProductFamilyLayout";
 import dineInImage from "@/assets/dine-in-checkout.jpg";
+import deliveryCar from "@/assets/deck-delivery-car.png";
 
 // Source: Jan 2025 deck, page 9 (Delivery Service) + Why HS pillars
 const DELIVERY: ProductCardData = {
@@ -16,7 +16,14 @@ const DELIVERY: ProductCardData = {
     { value: "Largest", label: "fleet in KSA" },
   ],
   statsStatus: "directional",
-  image: <PhoneMockup />,
+  image: (
+    <img
+      src={deliveryCar}
+      alt="HungerStation mascot driving a delivery car next to a restaurant — Jan 2025 deck illustration"
+      loading="lazy"
+      className="w-full max-w-sm mx-auto"
+    />
+  ),
   benefits: [
     "100+ cities, served 24/7",
     "Largest fleet in Saudi Arabia",

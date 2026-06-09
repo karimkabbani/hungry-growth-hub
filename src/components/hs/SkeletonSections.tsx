@@ -17,7 +17,6 @@ import {
   MessageSquare,
   BarChart3,
 } from "lucide-react";
-import rider from "@/assets/delivery-rider.jpg";
 import deckHplus from "@/assets/deck-hplus.png";
 import deckFullMenu from "@/assets/deck-full-menu-discount.png";
 import deckSponsored from "@/assets/deck-sponsored-listing.png";
@@ -25,7 +24,6 @@ import deckKeyword from "@/assets/deck-keyword-search.png";
 import deckDisplay from "@/assets/deck-display-ads.png";
 import deckAwareness from "@/assets/deck-awareness-banner.png";
 import deckOfferHour from "@/assets/deck-offer-hour.png";
-import deckVendorPortal from "@/assets/deck-vendor-portal.png";
 import { ProductCard, type ProductCardData } from "./ProductCard";
 import { ProductFamilyLayout } from "./ProductFamilyLayout";
 
@@ -538,14 +536,8 @@ const VENDOR_FINANCING: ProductCardData = {
   name: "Vendor Financing",
   subhead: "[NEEDS owner — HungerStation vendor financing product: high-level description, target vendor, mechanism]",
   body: "[NEEDS owner — product description, eligibility criteria, repayment mechanism, target vendor profile, regulatory framing]",
-  image: (
-    <img
-      src={rider}
-      alt="HungerStation rider — placeholder until Vendor Financing imagery is available"
-      loading="lazy"
-      className="rounded-2xl w-full aspect-[4/5] object-cover"
-    />
-  ),
+  // image intentionally omitted — no authentic Vendor Financing imagery available;
+  // ProductCard falls back to "[Product mockup placeholder]" box. NEEDS owner.
   stats: [
     { value: "[NEEDS owner]", label: "advance size range" },
     { value: "[NEEDS owner]", label: "time to disbursement" },
@@ -608,14 +600,11 @@ const OPS_FLAGSHIP: ProductCardData = {
   subhead:
     "One dashboard to run every HungerStation function — menus, branch hours, promotions, performance, invoices.",
   body: "The Vendor Portal is a dashboard for vendors to track and manage all their restaurants. Manage branch hours, update menus, control store availability, monitor overall business performance, and run campaigns and offers. The go-to dashboard for vendors to keep their business in check. Documentation: partner-app.hungerstation.com/faq",
-  image: (
-    <img
-      src={deckVendorPortal}
-      alt="HungerStation Vendor Portal — dashboard mockup on tablet"
-      loading="lazy"
-      className="rounded-2xl w-full max-w-md mx-auto"
-    />
-  ),
+  // image intentionally omitted — the deck p.31 has 3 dashboard screenshots stacked
+  // but the extracted image variants are either too large to verify or are
+  // section-break stock photos (businessman with tablet) rather than the real dashboard.
+  // ProductCard falls back to "[Product mockup placeholder]" box. Once the actual
+  // Vendor Portal dashboard screenshot is available, wire it in here.
   benefits: [
     "Multi-branch ready — manage all restaurants from one place",
     "Real-time menu and pricing edits",
